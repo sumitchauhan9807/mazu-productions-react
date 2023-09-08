@@ -1,8 +1,97 @@
 import GayImage from '../assets/image/gay.png'
 import HeaderBackground from '../assets/image/bg.jpg'
-import PorntoolMovies from './porntool-movies'
 
+import Alex from '../assets/image/alex.png'
+import Ary from '../assets/image/arychoco.jpg'
+import Cola from '../assets/image/cola.jpg'
+import Zed from '../assets/image/zed.png'
+import SweetCandy from '../assets/image/sweetcandy.jpg'
+
+
+import PorntoolMovies from '../components/porntool-movies'
+import Slider from "react-slick";
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+function NextArrow() {
+  return <span class="slick-next">Next <i class="fas fa-caret-right"></i></span>
+}
+function PreviousArrow() {
+  return <span class="slick-prev"><i class="fas fa-caret-left"></i> previous</span>
+}
 function Main() {
+  var settings = {
+    className:'row gallery-active',
+    centerMode: true,
+    centerPadding: '350px',
+    slidesToShow: 1,
+    infinite: true,
+      speed: 500,
+    prevArrow: <PreviousArrow/>,
+    nextArrow: <NextArrow/>,
+    appendArrows: ".slider-nav",
+    arrows:true,
+    
+    autoplay:true,
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '220px',
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '180px',
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '160px',
+          arrows: false,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '60px',
+          arrows: false,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '0px',
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '0px',
+          arrows: false,
+        }
+      },
+    ]
+  };
   return (
     <main>
   {/* slider-area */}
@@ -158,47 +247,53 @@ function Main() {
 						</div> */}
     </div>
   </section>
+  <PorntoolMovies/>
+
   {/* slider-area-end */}
   {/* up-coming-movie-area */}
   {/*?php  include('./components/movies.php')?*/}
   {/* up-coming-movie-area-end */}
   {/* gallery-area */}
+  
   <div className="gallery-area position-relative">
+  <div className="gallery-bg"></div>
     <div className="container-fluid p-0 fix">
-      <div className="row gallery-active">
+      
+      <Slider {...settings}>
         <div className="col-12">
           <div className="gallery-item">
-            <img src="assets/image/cola.jpg" alt="" />
+            <img src={Alex} alt="" />
           </div>
         </div>
         <div className="col-12">
           <div className="gallery-item">
-            <img src="assets/image/alex.png" alt="" />
+          <img src={Ary} alt="" />
           </div>
         </div>
         <div className="col-12">
           <div className="gallery-item">
-            <img src="assets/image/arychoco.jpg" alt="" />
+          <img src={Cola} alt="" />
           </div>
         </div>
         <div className="col-12">
           <div className="gallery-item">
-            <img src="assets/image/zed.png" alt="" />
+          <img src={Zed} alt="" />
           </div>
         </div>
         <div className="col-12">
           <div className="gallery-item">
-            <img src="assets/image/sweetcandy.jpg" alt="" />
+          <img src={SweetCandy} alt="" />
           </div>
         </div>
-      </div>
+      </Slider>
+      <div className="slider-nav"></div>
     </div>
-    <div className="slider-nav" />
+    
   </div>
-  <PorntoolMovies/>
   <section
     className="services-area services-bg-two"
     data-background="https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg"
+    style={{backgroundImage:`url(https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg)`}}
   >
     <div className="container">
       <div className="row justify-content-between align-items-center">
@@ -260,6 +355,7 @@ function Main() {
   <section
     className="pricing-area pricing-bg"
     data-background="https://themebeyond.com/html/movflx/img/bg/pricing_bg.jpg"
+    style={{backgroundImage:`url(https://themebeyond.com/html/movflx/img/bg/pricing_bg.jpg)`}}
   >
     <div className="container">
       <div className="row justify-content-center">

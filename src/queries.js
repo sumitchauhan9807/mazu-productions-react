@@ -22,6 +22,17 @@ query getMediaByCategory($category:String!){
     thumbnail
     potrait
   }
-}
+}`
 
-`
+export const GET_MODEL_BY_CATEGORY = gql`
+query getModelByCategory($preference:String!){
+  getModelByCategory(preference:$preference){
+    id
+    username
+    usrType
+    profilePic
+    looks{
+      preference
+    }
+  }
+}`

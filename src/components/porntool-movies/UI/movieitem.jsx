@@ -1,7 +1,5 @@
+import {getUrl} from '../../../helpers'
 function MovieItem({movie}) {
-  const getUrl = (url) => {
-    return `https://storage.googleapis.com/mazuproductions/${url}`
-  }
   return (
     <div
     className="movie-item movie-item-two mb-30"

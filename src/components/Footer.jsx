@@ -1,3 +1,5 @@
+import logo from '../assets/image/mazuproductionslogo.png'
+import {Link} from "react-router-dom"; 
 function Footer () {
   return (
     <footer>
@@ -7,7 +9,7 @@ function Footer () {
           <div className="row align-items-center">
             <div className="col-lg-3">
               <div className="footer-logo">
-                <a href="index.html"><img src="assets/image/mazuproductionslogo.png" style={{height: '50px'}} alt="" /></a>
+                <Link to="/"><img src={logo} style={{height: '50px'}} alt="" /></Link>
               </div>
             </div>
             <div className="col-lg-9">

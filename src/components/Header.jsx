@@ -1,5 +1,7 @@
 import logo from '../assets/image/mazuproductionslogo.png'
+import {Link} from "react-router-dom"; 
 function Header() { 
+  let prefrences = ['gay','straight','lesbain','trans','bisexual']
   return (
     <div>
     <meta charSet="utf-8" />
@@ -58,9 +60,9 @@ function Header() {
               <div className="menu-wrap">
                 <nav className="menu-nav show">
                   <div className="logo">
-                    <a href="index.html">
+                    <Link to="/">
                       <img src={logo} style={{height: '50px'}} alt="Logo" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="navbar-wrap main-menu d-none d-lg-flex">
                     <ul className="navigation">
@@ -81,11 +83,13 @@ function Header() {
                       </li>
                       <li className="menu-item-has-children"><a href="#">Actors</a>
                         <ul className="submenu">
-                          {/*?php foreach($prefrences as $category): ?*/}
-                          <li>
-                            <a href="/models.php?cat=<?= $category ?>">{/*?= $category?*/}</a>
-                          </li>
-                          {/*?php endforeach ?*/}
+                          {prefrences.map((pref)=>{
+                            return (
+                              <li>
+                                 <Link to={`/actor/${pref}`}>{pref}</Link>
+                              </li>
+                            )
+                          })}
                         </ul>
                       </li>
                       <li><a href="tv-show.html">Join PornTool</a></li>
