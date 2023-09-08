@@ -1112,9 +1112,9 @@ label {
 	margin-bottom: 0;
 	transition: none !important;
 }
-.ucm-nav-wrap .nav-tabs li {
-    margin-right: 12px;
-	margin-top: 12px;
+.ucm-nav-wrap .nav-tabs a  {
+    margin-right: 8px;
+	margin-top: 8px;
 }
 .ucm-nav-wrap .nav-tabs li:last-child {
 	margin-right: 0;
@@ -1238,7 +1238,7 @@ label {
 }
 .ucm-active.owl-carousel .owl-nav button.owl-prev,
 .ucm-active-two.owl-carousel .owl-nav button.owl-prev {
-    padding-right: 17px;
+    padding-right: 17px  !important;
     margin-right: 13px;
 	position: relative;
 }

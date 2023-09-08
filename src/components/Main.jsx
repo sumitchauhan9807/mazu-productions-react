@@ -1,6 +1,6 @@
 import GayImage from '../assets/image/gay.png'
 import HeaderBackground from '../assets/image/bg.jpg'
-import Movies from './Movies'
+import PorntoolMovies from './porntool-movies'
 
 function Main() {
   return (
@@ -164,7 +164,6 @@ function Main() {
   {/* up-coming-movie-area-end */}
   {/* gallery-area */}
   <div className="gallery-area position-relative">
-    <div className="gallery-bg" />
     <div className="container-fluid p-0 fix">
       <div className="row gallery-active">
         <div className="col-12">
@@ -196,7 +195,7 @@ function Main() {
     </div>
     <div className="slider-nav" />
   </div>
-  <Movies/>
+  <PorntoolMovies/>
   <section
     className="services-area services-bg-two"
     data-background="https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg"
