@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.323c2ffd.css",
+    "main.js": "/static/js/main.f78f9b2e.js",
+    "static/media/sweetcandy.jpg": "/static/media/sweetcandy.34289ed6f2009953bb76.jpg",
+    "static/media/zed.png": "/static/media/zed.6fbfff94b55504d7a02f.png",
+    "static/media/cola.jpg": "/static/media/cola.d202509216f47f28991a.jpg",
+    "static/media/alex.png": "/static/media/alex.671f7dab97f903e0f3f2.png",
+    "static/media/bg.jpg": "/static/media/bg.1b5a8023d43bb0caefa9.jpg",
+    "static/media/gay.png": "/static/media/gay.789b8edaa7827698d6ec.png",
+    "static/media/arychoco.jpg": "/static/media/arychoco.4e4411ff112e6211e128.jpg",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.3ceb50e7bcafb577367c.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c967a94cfbe2b06627ff.woff2",
+    "static/media/mazuproductionslogo.png": "/static/media/mazuproductionslogo.bc688a296a31482abfa0.png",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.1008b5226941c24f4468.woff2",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.323c2ffd.css.map": "/static/css/main.323c2ffd.css.map",
+    "main.f78f9b2e.js.map": "/static/js/main.f78f9b2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.323c2ffd.css",
+    "static/js/main.f78f9b2e.js"
+  ]
+}
