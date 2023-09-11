@@ -6,7 +6,7 @@ import RegisterStepTwo from 'components/Register/RegisterStepTwo'
 
 function Register() {
 
-  let step = 2
+  let step = 1
 return (
   <React.Fragment>
     {step == 1 ? <RegisterStepOne/> :null}

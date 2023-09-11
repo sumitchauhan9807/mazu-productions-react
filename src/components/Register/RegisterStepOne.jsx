@@ -1,14 +1,20 @@
 import 'assets/css/custom/register.css'
+import registerBackgroundImage from 'assets/image/registerbg.jpg';
 
 function RegisterStepOne() {
   return (
-    <div className="container" style={{backgroundColor: 'white'}}>
-    <div className="login-box">
-      <center>
-        <h2 className="h2" style={{fontFamily: '"Arial", sans-serif', color: '#E3C900'}}>Model Registration </h2>
-      </center>
+    <div className="" style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}} > 
+    <div className="login-box lg:w-2/5 w-full px-4 py-5 mx-auto py-10 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 " style={{backgroundColor: '',}}>
+    
       {/* Radio buttons */}
-      <div className="radiobox">
+    
+      <div className='bg-white p-10 rounded-lg shadow-2xl '>
+      <div>  <center>
+        <h2  className=" text-xl font-sans uppercase " style={{fontFamily: '"Arial", sans-serif', color: '#E3C900'}}>Model Registration </h2>
+      </center></div>
+        
+        
+        <div className="radiobox bg-white">
         <label>
           <input type="radio" name="option" defaultValue="option1" /> Gay
         </label>
@@ -105,7 +111,8 @@ function RegisterStepOne() {
       </form>
       <div className="form-group">
         <button type="submit" style={{width: '100%', backgroundColor: '#E3C900'}}>Register</button>
-      </div>
+      </div></div>
+      
     </div>
   </div>
   )
