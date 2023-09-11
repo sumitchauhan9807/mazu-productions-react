@@ -3,16 +3,21 @@ import React from 'react';
 import RegisterStepOne from 'components/Register/RegisterStepOne'
 import RegisterStepTwo from 'components/Register/RegisterStepTwo'
 import RegisterStepThree from 'components/Register/RegisterStepThree'
-
+import {useSelector} from 'react-redux'
 
 function Register() {
-
-  let step = 3
+  const user = useSelector(state => state.user)
+  let step = null
+  if(user.userData) {
+    step = user.userData.profileSetupStep
+  }
+  console.log(user,"asdasd")
+  
 return (
   <React.Fragment>
-    {step == 1 ? <RegisterStepOne/> :null}
-    {step == 2 ? <RegisterStepTwo/> :null}
-    {step == 3 ? <RegisterStepThree/> :null}
+    {step == null ? <RegisterStepOne/> :null}
+    {step == 0 ? <RegisterStepTwo/> :null}
+    {step == 2 ? <RegisterStepThree/> :null}
   </React.Fragment>
  ) 
 }

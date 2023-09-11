@@ -83,7 +83,7 @@ if (loading) return <Loader/>;
 
 
 
-console.log(form.getValues(),"formformform")
+// console.log(form.getValues(),"formformform")
   
   const onSubmit = () => {
     if(values.password != values.confirm_password) {
@@ -91,7 +91,7 @@ console.log(form.getValues(),"formformform")
     }
       userRegister()
     };
-  console.log(errors,"formState");
+  // console.log(errors,"formState");
   return (
     <form onSubmit={handleSubmit(onSubmit)}  >
     <div className="" style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}} > 
@@ -223,7 +223,7 @@ console.log(form.getValues(),"formformform")
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  // console.log(state)
   return {
     numOfCakes : state.cake.numOfCakes,
     userData: state.user.userData
