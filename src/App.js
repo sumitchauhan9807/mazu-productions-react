@@ -7,6 +7,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Main from './views/Main'
 import Actor from './views/Actor'
+import Register from './views/Register'
 
 import Test from './views/Test'
 import {getUserAddress} from './helpers'
@@ -21,6 +22,8 @@ function App() {
             <Route exact path ="/" element= {<Main/>}/> 
             <Route exact path ="/actor/:id" element= {<Actor />}/> 
             <Route exact path ="/test" element= {<Test />}/> 
+            <Route exact path ="/register" element= {<Register />}/> 
+
           </Routes>
         <Footer/>
       </React.Fragment>
