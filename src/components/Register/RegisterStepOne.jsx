@@ -8,7 +8,7 @@ function RegisterStepOne() {
     
       {/* Radio buttons */}
     
-      <div className='bg-white p-10 rounded-lg shadow-2xl '>
+      <div className='bg-white p-10 rounded-lg sha '>
       <div>  <center>
         <h2  className=" text-xl font-sans uppercase " style={{fontFamily: '"Arial", sans-serif', color: '#E3C900'}}>Model Registration </h2>
       </center></div>

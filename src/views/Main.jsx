@@ -168,7 +168,7 @@ function Main() {
                   data-delay=".4s"
                 >
                   ZE[D]{" "}
-                  <span>
+                  <span className='font-bold'>
                     {" "}
                     <br />
                     The Inglorious Bastard
