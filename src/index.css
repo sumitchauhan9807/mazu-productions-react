@@ -5,7 +5,9 @@
 @import "./assets/css/style.css";
 @import "./assets/css/fontawesome-all.min.css";
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* @import "./assets//css/magnific-popup.css";
 @import "./assets//css/style.css";
 @import "./assets//css/style.css";
