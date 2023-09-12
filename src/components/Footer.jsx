@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 function Footer () {
   return (
     <footer>
-    <div className="footer-top-wrap" style={{backgroundColor: 'black'}}>
+    <div className="footer-top-wrap bg-gray-900" >
       <div className="container">
         <div className="footer-menu-wrap">
           <div className="row align-items-center">
