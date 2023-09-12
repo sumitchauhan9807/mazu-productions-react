@@ -75,3 +75,8 @@ export const USER_REGISTER = gql `
         }
     }
 `
+
+export const UPDATE_PROFILE_PIC = gql `mutation updateProfilePic($file: Upload!) {
+  updateProfilePic(file: $file)
+}
+`

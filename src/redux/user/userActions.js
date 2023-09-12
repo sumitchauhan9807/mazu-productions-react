@@ -1,4 +1,4 @@
-import { SET_USER_DATA }  from './userTypes';
+import { SET_USER_DATA ,UPDATE_SETUP_STEP }  from './userTypes';
 
 export const setUserData = (userData,token) => {
   return {
@@ -6,4 +6,11 @@ export const setUserData = (userData,token) => {
     userData:userData,
     token:token
   }
-}  
+}
+
+export const updateSetupStep = (step) => {
+  return {
+    type: UPDATE_SETUP_STEP,
+    stepCount:step
+  }
+}

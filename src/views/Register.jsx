@@ -12,12 +12,12 @@ function Register() {
     step = user.userData.profileSetupStep
   }
   console.log(user,"asdasd")
-  
+  // step = 0
 return (
   <React.Fragment>
     {step == null ? <RegisterStepOne/> :null}
     {step == 0 ? <RegisterStepTwo/> :null}
-    {step == 2 ? <RegisterStepThree/> :null}
+    {step == 1 ? <RegisterStepThree/> :null}
   </React.Fragment>
  ) 
 }
