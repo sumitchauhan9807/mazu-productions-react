@@ -37,6 +37,19 @@ query getModelByCategory($preference:String!){
   }
 }`
 
+export const GET_MODEL_DEFAULT_GALLERY = gql`
+query getModelDefaultGallery{
+  getModelDefaultGallery{
+    id
+    name
+    media{
+      id
+      cloudUrl
+      format
+    }
+  }
+}`
+
 export const USER_REGISTER = gql `
     mutation register($options:UsernamePasswordInput!,$addr: String!,$userType:String!,$preference:String!,$modelData:ModelRegisterFields){
         register(options:$options, addr:$addr,userType:$userType,preference:$preference,modelData:$modelData){
@@ -80,3 +93,32 @@ export const UPDATE_PROFILE_PIC = gql `mutation updateProfilePic($file: Upload!)
   updateProfilePic(file: $file)
 }
 `
+export const GET_CLOUD_PUT_URL = gql`
+  query getCloudPutUrl($filename: String!,$mimetype:String!,$bucket:String) {
+    getCloudPutUrl(filename: $filename,mimetype:$mimetype,bucket:$bucket) 
+  }
+`;
+export const ADD_MODEL_GALLERY_MEDIA = gql`
+  mutation addModelMedia(
+    $cost: Float!
+    $is_paid: Boolean!
+    $mediaCloudName:String!
+    $mimetype:String!
+  ) {
+    addModelMedia(
+      cost: $cost
+      is_paid: $is_paid
+      mediaCloudName:$mediaCloudName
+      mimetype:$mimetype
+    ){
+       id
+       url
+       cost
+       format
+       mediaCloudName
+       format
+       is_paid
+       cloudUrl
+     }
+  }
+`;

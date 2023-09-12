@@ -30,7 +30,7 @@ const setAuthorizationLink = setContext((request, previousContext) => ({
 }));
 const uploadLink = createUploadLink({ uri: baseUrl });
 
-const client = new ApolloClient({
+export const apolloClient = new ApolloClient({
   link:setAuthorizationLink.concat(uploadLink),
   uri: baseUrl,
   cache: new InMemoryCache(),
@@ -49,7 +49,7 @@ const options = {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <BrowserRouter>
       <AlertProvider template={AlertTemplate} {...options}>
         <App />
