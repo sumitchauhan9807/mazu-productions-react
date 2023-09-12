@@ -10,6 +10,7 @@ import Loader from 'components/UI/Loader'
 import {useDispatch} from 'react-redux'
 import {updateSetupStep} from '../../redux'
 
+
 const addModelMedia = async ({galleryId,filename,mimetype}) => {
 	try {
 		const { data, errors } = await apolloClient.mutate({
@@ -36,6 +37,7 @@ function RegisterStepThree() {
 
 
 
+
 	let fileInfpurRef = React.createRef();
 	let videoInfpurRef = React.createRef();
 
@@ -53,6 +55,7 @@ function RegisterStepThree() {
 		console.log(videos.length)
 
 		if(images.length >= 10 && videos.length >= 2) {
+			alertUser.show('Step three successfully completed')
 			dispatch(updateSetupStep(2))
 		}
 		videos = videos.map((video)=>{

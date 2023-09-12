@@ -14,14 +14,14 @@ function Register() {
     step = user.userData.profileSetupStep
   }
   console.log(user,"asdasd")
-  // step = 0
+  // step = null
 return (
   <React.Fragment>
     {step == null ? <RegisterStepOne/> :null}
     {step == 0 ? <RegisterStepTwo/> :null}
-    {step == 2 ? <RegisterStepThree/> :null}
-    {step == 3 ? <RegisterStepFour/> :null}
-    {step == 4 ? <RegisterStepOtp/> :null}
+    {step == 1 ? <RegisterStepThree/> :null}
+    {step == 2 ? <RegisterStepFour/> :null}
+    {step == 3 ? <RegisterStepOtp/> :null}
   </React.Fragment>
  ) 
 }
