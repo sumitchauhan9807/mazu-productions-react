@@ -9,7 +9,7 @@ import RegisterStepOtp from 'components/Register/RegisterOpt';
 
 function Register() {
   const user = useSelector(state => state.user)
-  let step = 4
+  let step = 2
   if(user.userData) {
     step = user.userData.profileSetupStep
   }

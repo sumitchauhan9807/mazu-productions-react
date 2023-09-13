@@ -14,15 +14,15 @@ export const RegisterStepFour = () => {
                 <div className="mt-5 mb-10 md:mt-0 md:col-span-2">
                     <form action="#" method="POST">
                         <div className="shadow overflow-hidden sm:rounded-md">
-                            <div className="lg:px-24 py-8  justify-center items-center bg-gray-900 px-2  rounded-xl bg-opacity-90  mx-auto  ">
-                                <div className="grid grid-cols-2 items-center mx-auto gap-6">
-                                    <div className=" ">
-                                        <label htmlFor="first-name" className="block text-sm font-medium text-gray-50">Skype ID</label>
+                            <div className="lg:px-5 py-8  justify-center items-center bg-gray-900 px-2  rounded-xl bg-opacity-90  mx-auto  ">
+                                <div className=" items-center mx-auto gap-6">
+                                  <div className='flex flex-wrap gap-5  mx-auto justify-center items-center'> <div className=" w-36">
+                                        <label htmlFor="first-name" className="text-sm font-medium text-gray-50">Skype ID</label>
                                         <input type="text" name="first-name" placeholder={1} id="first-name" autoComplete="given-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
                                     </div>
 
-                                    <div className=" ">
-                                        <label htmlFor="country" className="block text-sm font-medium text-gray-50">
+                                    <div className=" w-36">
+                                        <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Gender</label>
                                         <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>Male</option>
@@ -30,14 +30,14 @@ export const RegisterStepFour = () => {
                                             <option>other</option>
                                         </select>
                                     </div>
-                                    <div className=" ">
-                                        <label htmlFor="last-name" className="block text-sm font-medium text-gray-50">Date Of Birth</label>
+                                    <div className=" w-36">
+                                        <label htmlFor="last-name" className="text-sm font-medium text-gray-50">Date Of Birth</label>
                                         <input type="text" name="last-name" placeholder="09/02/2021" id="last-name" autoComplete="family-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
                                     </div>
 
 
-                                    <div className=" ">
-                                        <label htmlFor="country" className="block text-sm font-medium text-gray-50">
+                                    <div className=" w-36">
+                                        <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Location</label>
                                         <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent bg-black border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
 
@@ -45,19 +45,19 @@ export const RegisterStepFour = () => {
                                             <option>Mexico</option>
                                         </select>
                                     </div>
-                                    <div className=" ">
-                                        <label htmlFor="last-name" className="block text-sm font-medium text-gray-50">
+                                    <div className=" w-36">
+                                        <label htmlFor="last-name" className="text-sm font-medium text-gray-50">
                                             City</label>
                                         <input type="text" name="last-name" placeholder="City" id="last-name" autoComplete="family-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
                                     </div>
 
-                                    <div className=" ">
-                                        <label htmlFor="last-name" className="block text-sm font-medium text-gray-50">
+                                    <div className=" w-36">
+                                        <label htmlFor="last-name" className="text-sm font-medium text-gray-50">
                                             Age</label>
                                         <input type="text" name="last-name" placeholder="above 18" id="last-name" autoComplete="family-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
                                     </div>
-                                    <div className=" ">
-                                        <label htmlFor="country" className="block text-sm font-medium text-gray-50">
+                                    <div className=" w-36">
+                                        <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Dick Sizes in Inches</label>
                                         <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>1</option>
@@ -66,15 +66,16 @@ export const RegisterStepFour = () => {
                                         </select>
                                     </div>
 
-                                    <div className=" ">
-                                        <label htmlFor="country" className="block text-sm font-medium text-gray-500">
+                                    <div className=" w-36">
+                                        <label htmlFor="country" className="text-sm font-medium text-gray-500">
                                             Boobs Size</label>
                                         <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                         </select>
-                                    </div>
+                                    </div></div>
+                                   
 
 
 
