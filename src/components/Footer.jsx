@@ -6,7 +6,7 @@ function Footer () {
     <div className="footer-top-wrap bg-gray-900" >
       <div className="container">
         <div className="footer-menu-wrap">
-          <div className="row align-items-center">
+          <div className="flex flex-wrap">
             <div className="col-lg-3">
               <div className="footer-logo">
                 <Link to="/"><img src={logo} style={{height: '50px'}} alt="" /></Link>
@@ -14,8 +14,8 @@ function Footer () {
             </div>
             <div className="col-lg-9">
               <div className="footer-menu">
-                <nav>
-                  <ul className="navigation">
+                <nav className='flex flex-wrap'>
+                  <ul className=" flex flex-wrap gap-5">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html">Movie</a></li>
                     <li><a href="index.html">tv show</a></li>
@@ -36,8 +36,8 @@ function Footer () {
         <div className="footer-quick-link-wrap">
           <div className="row align-items-center">
             <div className="col-md-7">
-              <div className="quick-link-list">
-                <ul>
+              <div className="">
+                <ul className='flex flex-wrap justify-start items-start gap-5'>
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">Help Center</a></li>
                   <li><a href="#">Terms of Use</a></li>
@@ -64,12 +64,12 @@ function Footer () {
         <div className="row">
           <div className="col-lg-6 col-md-6">
             <div className="copyright-text">
-              <p>Copyright © 2021. All Rights Reserved By <a href="index.html">Movflx</a></p>
+              <p>Copyright © 2021. All Rights Reserved By <a href="index.html">MAZU Productions</a></p>
             </div>
           </div>
           <div className="col-lg-6 col-md-6">
             <div className="payment-method-img text-center text-md-right">
-              <img src="img/images/card_img.png" alt="img" />
+              {/* <img src="img/images/card_img.png" alt="img" /> */}
             </div>
           </div>
         </div>
