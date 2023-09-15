@@ -14,8 +14,8 @@ export const RegisterStepFour = () => {
                 <div className="mt-5 mb-10 md:mt-0 md:col-span-2">
                     <form action="#" method="POST">
                         <div className="shadow overflow-hidden sm:rounded-md">
-                            <div className="lg:px-5 py-8  justify-center items-center bg-gray-900 px-2  rounded-xl bg-opacity-90  mx-auto  ">
-                                <div className=" items-center mx-auto gap-6">
+                            <div className="lg:px-5 py-8  justify-center lg:w-96 items-center bg-gray-900 px-2  rounded-xl bg-opacity-90  mx-auto  ">
+                                <div className=" items-center mx-auto gap-6  ">
                                   <div className='flex flex-wrap gap-5  mx-auto justify-center items-center'> <div className=" w-36">
                                         <label htmlFor="first-name" className="text-sm font-medium text-gray-50">Skype ID</label>
                                         <input type="text" name="first-name" placeholder={1} id="first-name" autoComplete="given-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
@@ -221,8 +221,8 @@ export const RegisterStepFour = () => {
                         </div>
                       </div></div></fieldset> */}
                             </div>
-                            <div>
-                      <button className="flex flex-row items-center justify-center text-center w-full border rounded-xl outline-none py-3 bg-yellow-500 border-none text-white text-sm shadow-sm">
+                            <div className='flex flex-wrap mx-auto justify-center'>
+                      <button className="flex lg:w-96 flex-row items-center justify-center text-center w-full border rounded-xl outline-none py-3 bg-yellow-500 border-none text-white text-sm shadow-sm">
                        Save And N
                       </button>
                     </div>
