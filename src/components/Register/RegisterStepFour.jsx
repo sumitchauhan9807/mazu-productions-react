@@ -24,7 +24,7 @@ export const RegisterStepFour = () => {
                                     <div className=" w-36">
                                         <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Gender</label>
-                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-sm h-full mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>Male</option>
                                             <option>female</option>
                                             <option>other</option>
@@ -39,7 +39,7 @@ export const RegisterStepFour = () => {
                                     <div className=" w-36">
                                         <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Location</label>
-                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent bg-black border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent bg-black border-b-2 w-full text-gray-500 text-sm h-full mr-3 py-1 px-2 leading-tight focus:outline-none">
 
                                             <option>Canada</option>
                                             <option>Mexico</option>
@@ -59,7 +59,7 @@ export const RegisterStepFour = () => {
                                     <div className=" w-36">
                                         <label htmlFor="country" className="text-sm font-medium text-gray-50">
                                             Dick Sizes in Inches</label>
-                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-sm h-full mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -69,7 +69,7 @@ export const RegisterStepFour = () => {
                                     <div className=" w-36">
                                         <label htmlFor="country" className="text-sm font-medium text-gray-500">
                                             Boobs Size</label>
-                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-sm h-full mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -78,13 +78,17 @@ export const RegisterStepFour = () => {
                                     <div className=" w-36">
                                         <label htmlFor="country" className="text-sm font-medium text-gray-500">
                                             Hair Colour</label>
-                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                        <select id="country" name="country" autoComplete="country" className="text-center appearance-none bg-transparent border-b-2 w-full h-full text-gray-500 text-sm mr-3 py-1 px-2 leading-tight focus:outline-none">
                                             <option>Black</option>
                                             <option>Brown</option>
                                             <option>yellow</option>
                                         </select>
                                     </div>
-                                    
+                                    <div className=" w-36">
+                                        <label htmlFor="last-name" className="text-sm font-medium text-gray-50">
+                                           Contact Number</label>
+                                        <input type="number" name="last-name" placeholder="Phone" id="last-name" autoComplete="family-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-sm mr-3 py-1 px-2 leading-tight focus:outline-none" />
+                                    </div>
                                     
                                     
                                     
