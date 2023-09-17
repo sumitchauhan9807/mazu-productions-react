@@ -166,3 +166,41 @@ export const VERIFY_OTP = gql `mutation verifyOtp($otp:String!,$MP:Boolean){
       }
   }
 }`
+export const USER_LOGIN = gql `
+mutation login($usernameOrEmail: String!, $password: String!, $addr: String!) {
+    login(usernameOrEmail: $usernameOrEmail, password: $password, addr:$addr) {
+        errors {
+            field
+            message
+        }
+        token
+        user {
+            authSource
+            profilePic
+            username
+            email
+            profileSetupStep
+            profileComplete
+            photos {
+                id
+                image
+                unsafe
+            }
+            base_profile {
+                id
+                firstName
+                lastName
+            }
+            user_basic{
+              location
+            }
+        }
+        credit{
+            id
+            balance
+            flirtons
+            flirtonsAvailable
+        }
+    }
+}
+`

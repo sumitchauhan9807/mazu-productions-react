@@ -1,5 +1,5 @@
 /* eslint-disable */ 
-import {SET_USER_DATA,UPDATE_SETUP_STEP} from './userTypes'
+import {SET_USER_DATA,UPDATE_SETUP_STEP,LOG_OUT_USER} from './userTypes'
 
 const initialState = {
   userData: null,
@@ -20,6 +20,12 @@ const userReducer = (state = initialState,action) => {
         return {
           ... state,
           userData:userData,
+        }
+        case LOG_OUT_USER :
+        return {
+          ... state,
+          userData:null,
+          token:null,
         }
     default : return state
   }

@@ -43,6 +43,7 @@ export const RegisterStepFour = () => {
   let countries = getLocations()
   const alertUser = useAlert()
 	const dispatch = useDispatch()
+	let [isLoading,setLoading] = useState(false)
 //   console.log(isValidDate('1992-12-02'))
   const [country_code,setCountryCode] = useState(countries[0].calling_codes)
   const basicSelections = useQuery(BASIC_SELCETIONS);
@@ -84,10 +85,13 @@ export const RegisterStepFour = () => {
 		data.phone = country.calling_codes + data.phone
 		console.log(data,'asdasdasdasdasdasd')
 		try{
+			setLoading(true)
 			await addBasicInfo(data)
 			alertUser.show('Step four successfully completed')
 			dispatch(updateSetupStep(3))
+			setLoading(false)
 		}catch(e) {
+			setLoading(false)
 			alertUser.error(e.message)
 		}
 	}
@@ -98,7 +102,7 @@ export const RegisterStepFour = () => {
 
     return (
         <div className="bg-deep-purple-accent-700 h-full" style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-
+					{ isLoading && <Loader/>}
             <section className="text-gray-600  body-font py-5 mb-10 h-full m-0 p-0 relative" />  <div className="w-full h-14 font-sans text-center 5 uppercase   shadow overflow-hidden sm:rounded-md font-sans text-3xl text-white ">
                 User Informations
             </div>

@@ -1,7 +1,23 @@
 import logo from '../assets/image/mazuproductionslogo.png'
 import {Link} from "react-router-dom"; 
+import {useSelector} from 'react-redux'
+import { useAlert } from 'react-alert'
+import {useDispatch} from 'react-redux'
+import {logoutUser} from '../redux'
+import { useNavigate } from "react-router-dom";
+
+
 function Header() { 
+  const user = useSelector(state => state.user)
   let prefrences = ['gay','straight','lesbain','trans','bisexual']
+  const alertUser = useAlert()
+	const dispatch = useDispatch()
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    dispatch(logoutUser())
+    navigate('/login')
+  }
   return (
     <div>
     <meta charSet="utf-8" />
@@ -105,14 +121,14 @@ function Header() {
                   </div>
                   <div className="header-action d-none d-md-block">
                     <ul>
-                      <li className="d-none d-xl-block">
+                      {/* <li className="d-none d-xl-block">
                         <div className="footer-search">
                           <form action="#">
                             <input type="text" placeholder="Find Favorite Movie" />
                             <button><i className="fas fa-search" /></button>
                           </form>
                         </div>
-                      </li>
+                      </li> */}
                       <li className="header-lang">
                         <form action="#">
                           <div className="icon"><i className="flaticon-globe" /></div>
@@ -124,7 +140,9 @@ function Header() {
                           </select>
                         </form>
                       </li>
-                      <li className="header-btn"><a href="#" className="btn">Sign In</a></li>
+                      {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="btn">Logout</a></li> : <li className="header-btn"><Link to="/login" href="#" className="btn">Sign In</Link></li>}
+                      {!user.token && <li className="header-btn"><Link to="/register" className="btn">Register</Link></li>}
+
                     </ul>
                   </div>
                 </nav>

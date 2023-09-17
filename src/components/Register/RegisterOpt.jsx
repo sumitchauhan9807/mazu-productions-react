@@ -1,12 +1,12 @@
 import registerBackgroundImage from 'assets/image/bg.jpg';
 import {apolloClient} from 'index'
 import { VERIFY_OTP } from 'queries'
-import React from 'react';  
+import React ,{useState} from 'react';  
 import {useDispatch} from 'react-redux'
 import {setUserData} from '../../redux'
 import { useAlert } from 'react-alert'
 import { useNavigate } from "react-router-dom";
-
+import Loader from 'components/UI/Loader'
 
 const verifyOTP = async (otp) => {
 	try {
@@ -28,6 +28,7 @@ const verifyOTP = async (otp) => {
 
 const RegisterStepOtp = () => {
   let inputRef = React.createRef();
+  let [isLoading,setLoading] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -35,19 +36,23 @@ const RegisterStepOtp = () => {
   const verify = async () => {
     let otp = inputRef.current.value
     try {
+      setLoading(true)
       let  {data,errors}  = await verifyOTP(otp)
       if(data) {
         dispatch(setUserData(data.verifyOtp.user))
       }
+      setLoading(false)
       // dispatch(setUserData(4))
       alertUser.show('success')
       navigate("/dashboard");
     }catch(e) {
+      setLoading(false)
       alertUser.error(e.message)
     }
   }
   return(
     <div className="relative flex flex-col justify-center overflow-hidden bg-gray-700 py-12" style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      { isLoading && <Loader/>}
         <div className="relative bg-gray-800 px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl">
           <div className="mx-auto flex w-full max-w-md flex-col space-y-16">
             <div className="flex flex-col items-center justify-center text-center space-y-2">
