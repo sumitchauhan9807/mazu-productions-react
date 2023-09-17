@@ -10,6 +10,8 @@ import Actor from './views/Actor'
 import Register from './views/Register'
 import Login from 'views/Login'
 
+import ModelDashboard from 'views/Model/Dashboard' 
+
 import Test from './views/Test'
 import {getUserAddress} from './helpers'
 function App() {
@@ -25,6 +27,7 @@ function App() {
             <Route exact path ="/test" element= {<Test />}/> 
             <Route exact path ="/register" element= {<Register />}/> 
             <Route exact path ="/login" element= {<Login/>}/>
+            <Route exact path ="/dashboard" element= {<ModelDashboard/>}/>
 
           </Routes>
         <Footer/>

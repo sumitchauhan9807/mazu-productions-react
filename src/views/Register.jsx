@@ -6,15 +6,23 @@ import RegisterStepThree from 'components/Register/RegisterStepThree'
 import {useSelector} from 'react-redux'
 import RegisterStepFour from 'components/Register/RegisterStepFour'
 import RegisterStepOtp from 'components/Register/RegisterOpt';
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 function Register() {
   const user = useSelector(state => state.user)
-  let step = 2
+  const navigate = useNavigate();
+  let step
   if(user.userData) {
     step = user.userData.profileSetupStep
+    if(user.userData.profileComplete) {
+      setTimeout(()=>{
+        navigate("/dashboard");
+      })
+    }
   }
+  
   console.log(user,"asdasd")
-  // step = null
+  // step = 2
 return (
   <React.Fragment>
     {step == null ? <RegisterStepOne/> :null}

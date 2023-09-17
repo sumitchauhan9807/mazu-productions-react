@@ -1,0 +1,5 @@
+male, female, transgender, gender neutral, non-binary, agender, pangender, genderqueer, two-spirit, third gender
+
+
+options:-
+  solo actor/couple actor / both

@@ -122,3 +122,47 @@ export const ADD_MODEL_GALLERY_MEDIA = gql`
      }
   }
 `;
+
+
+export const BASIC_SELCETIONS = gql `query{
+  basicInfoSelections{
+    hairColorTypes
+    genders
+    preferences
+  }
+}`
+export const ADD_BASIC_INFO = gql `mutation addBasicInformation($options:BasicInfoInput!){
+  addBasicInformation(options:$options)
+}`
+export const VERIFY_OTP = gql `mutation verifyOtp($otp:String!,$MP:Boolean){
+  verifyOtp(otp:$otp,MP:$MP){
+      user{            
+          profilePic
+          username
+          email
+          age
+          usrType
+          profileSetupStep
+          profileComplete
+          photos {
+              id
+              image
+              unsafe
+          }
+          base_profile {
+              id
+              firstName
+              lastName
+          }
+          user_basic{
+            location
+          }
+      }
+      credit{
+          id
+          balance
+          flirtons
+          flirtonsAvailable
+      }
+  }
+}`

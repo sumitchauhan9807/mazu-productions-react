@@ -1,6 +1,7 @@
 import { SET_USER_DATA ,UPDATE_SETUP_STEP }  from './userTypes';
 
 export const setUserData = (userData,token) => {
+  alert('dfgdfgfd')
   return {
     type: SET_USER_DATA,
     userData:userData,
