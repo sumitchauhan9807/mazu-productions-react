@@ -69,12 +69,14 @@ function Login() {
         setTimeout(()=>{
           if(data.login.user.profileComplete) {
             navigate("/dashboard");
+            setLoading(false)
           }else {
             navigate("/register");
+            setLoading(false)
           }
         },1000)
       }
-      setLoading(false)
+      
 
     }catch(e) {
         alert(e)

@@ -21,8 +21,9 @@ function Dashboard() {
   })
   if(!user) return null
 
-  console.log(user)
-  const logOut = () => {
+  // console.log(user)
+  const logOut = (e) => {
+    e.preventDefault()
     setLoading(true)
     dispatch(logoutUser())
     setTimeout(()=>{

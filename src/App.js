@@ -16,10 +16,7 @@ function App() {
   let currentPath = location.pathname
   return (
     <Provider store={store().store}>
-      <PersistGate 
-      onBeforeLift={onBeforeLift}
-
-      loading={'Loading'} persistor={store().persistor}>
+      <PersistGate loading={'Loading'} persistor={store().persistor}>
           <IndexWeb/>
       </PersistGate>
     </Provider>

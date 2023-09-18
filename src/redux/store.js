@@ -24,7 +24,9 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import cakeReducer from './cake/cakeReducer'
 import userReducer from './user/userReducer'
-import { combineReducers } from 'redux';
+import { combineReducers ,applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
+import logger from 'redux-logger'
 
 const reducers = combineReducers({
   cake:cakeReducer,
@@ -36,7 +38,7 @@ const persistedReducer = persistReducer({
 }, reducers)
 // const store = createStore(cakeReducer)
 export default () => {
-  let store = createStore(persistedReducer)
+  let store = createStore(persistedReducer,applyMiddleware(thunk,logger))
   let persistor = persistStore(store)
   return { store, persistor }
 }

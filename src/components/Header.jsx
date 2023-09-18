@@ -30,7 +30,8 @@ function Header() {
 	const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  const logOut = () => {
+  const logOut = (e) => {
+    e.preventDefault()
     dispatch(logoutUser())
   }
   return (

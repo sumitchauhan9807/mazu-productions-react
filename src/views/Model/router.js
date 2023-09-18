@@ -15,7 +15,7 @@ function ModelDashboard() {
 
   
   if(user){
-    console.log(user)
+    // console.log(user)
     if(!user.token) {
       window.location.href = '/login'
       // navigate('/login')
