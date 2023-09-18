@@ -2,36 +2,18 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import store from './redux/store'
-import {Routes , Route } from "react-router-dom"; 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Main from './views/Main'
-import Actor from './views/Actor'
-import Register from './views/Register'
-import Login from 'views/Login'
+import Website from 'views/website/router'
+import ModelDashboard from 'views/Model/router'
+import { useHistory ,useLocation } from 'react-router-dom';
 
-import ModelDashboard from 'views/Model/Dashboard' 
-
-import Test from './views/Test'
-import {getUserAddress} from './helpers'
 function App() {
-  //  getUserAddress()
+  const location = useLocation()
+  let currentPath = location.pathname
   return (
     <Provider store={store().store}>
       <PersistGate loading={null} persistor={store().persistor}>
-      <React.Fragment>
-        <Header/>
-          <Routes> 
-            <Route exact path ="/" element= {<Main/>}/> 
-            <Route exact path ="/actor/:id" element= {<Actor />}/> 
-            <Route exact path ="/test" element= {<Test />}/> 
-            <Route exact path ="/register" element= {<Register />}/> 
-            <Route exact path ="/login" element= {<Login/>}/>
-            <Route exact path ="/dashboard" element= {<ModelDashboard/>}/>
-
-          </Routes>
-        <Footer/>
-      </React.Fragment>
+          {!currentPath.includes('dashboard') && <Website/>}
+          {currentPath.includes('dashboard') && <ModelDashboard/>}
       </PersistGate>
     </Provider>
   );

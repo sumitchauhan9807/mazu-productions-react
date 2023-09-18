@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import C1 from '../components/test/C1'
-import C2 from '../components/test/C2'
+import C1 from 'components/test/C1'
+import C2 from 'components/test/C2'
 import {useState} from 'react'
-import { buyCake } from '../redux'
+import { buyCake } from '../../redux'
 function Test(props) {
   console.log(props,"props")
   let [myName,setName] = useState('sumit')

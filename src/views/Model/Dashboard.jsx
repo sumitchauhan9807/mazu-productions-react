@@ -1,7 +1,7 @@
-function ModelDashboard() {
+function Dashboard() {
   return (
-    <h1>asdasdasdasdasd</h1>
+    <h1 style={{color:"red"}}>MODEL DASHBOARD</h1>
   )
 }
 
-export default ModelDashboard
+export default Dashboard

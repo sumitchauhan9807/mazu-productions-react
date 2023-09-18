@@ -5,7 +5,7 @@ import React ,{useState} from 'react'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
 import {useDispatch} from 'react-redux'
-import {setUserData} from '../redux'
+import {setUserData} from '../../redux'
 import { useNavigate } from "react-router-dom";
 // import logo from '../assets/image/mazuproductionslogo.png'
 const doLogin = async (emailOrUname,password) => {

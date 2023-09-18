@@ -1,5 +1,5 @@
-import HeaderBackground from '../assets/image/bg.jpg'
-import PorntoolModels from '../components/porntool-models'
+import HeaderBackground from 'assets/image/bg.jpg'
+import PorntoolModels from 'components/porntool-models'
 import {useParams} from 'react-router-dom';
 function Actor() {
   const params = useParams();

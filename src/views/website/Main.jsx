@@ -1,14 +1,14 @@
-import GayImage from '../assets/image/gay.png'
-import HeaderBackground from '../assets/image/bg.jpg'
+import GayImage from 'assets/image/gay.png'
+import HeaderBackground from 'assets/image/bg.jpg'
 
-import Alex from '../assets/image/alex.png'
-import Ary from '../assets/image/arychoco.jpg'
-import Cola from '../assets/image/cola.jpg'
-import Zed from '../assets/image/zed.png'
-import SweetCandy from '../assets/image/sweetcandy.jpg'
+import Alex from 'assets/image/alex.png'
+import Ary from 'assets/image/arychoco.jpg'
+import Cola from 'assets/image/cola.jpg'
+import Zed from 'assets/image/zed.png'
+import SweetCandy from 'assets/image/sweetcandy.jpg'
 
 
-import PorntoolMovies from '../components/porntool-movies'
+import PorntoolMovies from 'components/porntool-movies'
 import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+// import './index.css';
 import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -48,13 +48,11 @@ const options = {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <ApolloProvider client={apolloClient}>
+   <ApolloProvider client={apolloClient}>
       <BrowserRouter>
       <AlertProvider template={AlertTemplate} {...options}>
         <App />
         </AlertProvider>
       </BrowserRouter>
     </ApolloProvider>
-  
-);
+  );
