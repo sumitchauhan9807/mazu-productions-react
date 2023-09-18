@@ -12,7 +12,7 @@ const userReducer = (state = initialState,action) => {
       return {
         ... state,
         userData:action.userData,
-        ...(action.token != null && {token:action.token})
+        token:action.token
       }
       case UPDATE_SETUP_STEP :
         let userData = state.userData

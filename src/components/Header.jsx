@@ -19,7 +19,7 @@ function Header() {
     dispatch(logoutUser())
     setTimeout(()=>{
       navigate('/login')
-    })
+    },1000)
   }
   return (
     <div>

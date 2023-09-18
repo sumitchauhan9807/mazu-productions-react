@@ -49,7 +49,7 @@ function Login() {
         console.log(result,"resultresult")
         setTimeout(()=>{
           navigate("/register");
-        })
+        },1000)
       }
       setLoading(false)
 
