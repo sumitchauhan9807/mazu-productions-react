@@ -5,15 +5,22 @@ import store from './redux/store'
 import Website from 'views/website/router'
 import ModelDashboard from 'views/Model/router'
 import { useHistory ,useLocation } from 'react-router-dom';
+import IndexWeb from 'views/index'
+
 
 function App() {
+  const onBeforeLift = () =>{
+    console.log("onBeforeLift")
+  }
   const location = useLocation()
   let currentPath = location.pathname
   return (
     <Provider store={store().store}>
-      <PersistGate loading={null} persistor={store().persistor}>
-          {!currentPath.includes('dashboard') && <Website/>}
-          {currentPath.includes('dashboard') && <ModelDashboard/>}
+      <PersistGate 
+      onBeforeLift={onBeforeLift}
+
+      loading={'Loading'} persistor={store().persistor}>
+          <IndexWeb/>
       </PersistGate>
     </Provider>
   );

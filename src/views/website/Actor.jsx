@@ -4,7 +4,6 @@ import {useParams} from 'react-router-dom';
 function Actor() {
   const params = useParams();
   let prefrence = params.id
-  console.log(prefrence)
   return (
     <main>
       {/* breadcrumb-area */}

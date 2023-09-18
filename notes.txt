@@ -3,3 +3,18 @@ male, female, transgender, gender neutral, non-binary, agender, pangender, gende
 
 options:-
   solo actor/couple actor / both
+
+
+  dashboard
+  1. galobal activities
+    -> daily/weekly/monthly
+    under global:
+    XHamster
+    Cams.com
+    Faphouse
+    ManyVid
+    Other Sources
+
+Subscriptions
+  From new fans
+  From old fans

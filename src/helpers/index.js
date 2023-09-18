@@ -1,1 +1,1 @@
-export { uploadToCloud } from "./common";
+export { uploadToCloud ,getNavigateURL } from "./common";

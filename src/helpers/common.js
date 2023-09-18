@@ -2,6 +2,17 @@
 import { GET_CLOUD_PUT_URL } from 'queries'
 import {apolloClient} from 'index'
 import axios from 'axios'
+
+
+
+export const getNavigateURL = (user) => {
+  if(user.token) {
+    return '/dashboard'
+  }
+  if(!user.token) {
+    return '/login'
+  }
+}
 export const uploadToCloud = async (file,progressCallback) => {
   try {
     

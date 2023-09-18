@@ -1,6 +1,39 @@
+import {Link} from "react-router-dom"; 
+import { useAlert } from 'react-alert'
+import {useDispatch,useSelector} from 'react-redux'
+import {logoutUser} from '../../redux'
+import { useNavigate } from "react-router-dom";
+import  Loader from 'components/UI/Loader'
+import {useState,useEffect,useRef} from 'react'
+import {getNavigateURL} from 'helpers/index'
+import {getUrlFT} from 'helpers'
+
 function Dashboard() {
+  const [loading,setLoading] = useState(false)
+  const alertUser = useAlert()
+	const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const user = useSelector((state)=>{
+    if(state._persist.rehydrated) {
+      return state.user
+    }
+  })
+  if(!user) return null
+
+  console.log(user)
+  const logOut = () => {
+    setLoading(true)
+    dispatch(logoutUser())
+    setTimeout(()=>{
+      setLoading(false)
+
+      // navigate('/login')
+    },1000)
+  }
   return (
     <div>
+      {loading  && <Loader/>}
     <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
       <div>
         <div className="-mx-6 px-6 py-4">
@@ -9,9 +42,9 @@ function Dashboard() {
           </a>
         </div>
         <div className="mt-8 text-center">
-          <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" />
-          <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
-          <span className="hidden text-gray-400 lg:block">Admin</span>
+          <img src={getUrlFT(user.userData.profilePic)} alt="" className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" />
+          <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{user.userData.username}</h5>
+          {/* <span className="hidden text-gray-400 lg:block">Admin</span> */}
         </div>
         <ul className="space-y-2 tracking-wide mt-8">
           <li>
@@ -67,7 +100,7 @@ function Dashboard() {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
           </svg>
-          <span className="group-hover:text-gray-700">Logout</span>
+          <a href="#" onClick={logOut}><span className="group-hover:text-gray-700">Logout</span></a>
         </button>
       </div>
     </aside>
@@ -159,7 +192,7 @@ function Dashboard() {
               <table className="w-full text-gray-600">
                 <tbody>
                   <tr>
-                    <td className="py-2">Tailored ui</td>
+                    <td className="py-2">XHamster</td>
                     <td className="text-gray-500">896</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,7 +211,7 @@ function Dashboard() {
                     </td>   
                   </tr>
                   <tr>
-                    <td className="py-2">Customize</td>
+                    <td className="py-2">Cams.com</td>
                     <td className="text-gray-500">1200</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +230,45 @@ function Dashboard() {
                     </td>   
                   </tr>
                   <tr>
-                    <td className="py-2">Other</td>
+                    <td className="py-2">Faphouse</td>
+                    <td className="text-gray-500">12</td>
+                    <td>
+                      <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={19} width={14} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={35} width={14} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={51} width={17} height={21} rx={1} fill="#e4e4f2" />
+                        <path d="M0 6C8.62687 6 6.85075 12.75 17 12.75C27.1493 12.75 25.3731 9 34 9C42.6269 9 42.262 13.875 49 13.875C55.5398 13.875 58.3731 6 67 6" stroke="url(#paint0_linear_622:13649)" strokeWidth={2} strokeLinejoin="round" />
+                        <defs>
+                          <linearGradient id="paint0_linear_622:13649" x1={67} y1="7.96873" x2="1.67368" y2="8.44377" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#FFD422" />
+                            <stop offset={1} stopColor="#FF7D05" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </td>   
+                  </tr>
+                  <tr>
+                    <td className="py-2">ManyVid</td>
+                    <td className="text-gray-500">12</td>
+                    <td>
+                      <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={19} width={14} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={35} width={14} height={21} rx={1} fill="#e4e4f2" />
+                        <rect opacity="0.4" x={51} width={17} height={21} rx={1} fill="#e4e4f2" />
+                        <path d="M0 6C8.62687 6 6.85075 12.75 17 12.75C27.1493 12.75 25.3731 9 34 9C42.6269 9 42.262 13.875 49 13.875C55.5398 13.875 58.3731 6 67 6" stroke="url(#paint0_linear_622:13649)" strokeWidth={2} strokeLinejoin="round" />
+                        <defs>
+                          <linearGradient id="paint0_linear_622:13649" x1={67} y1="7.96873" x2="1.67368" y2="8.44377" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#FFD422" />
+                            <stop offset={1} stopColor="#FF7D05" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </td>   
+                  </tr>
+                  <tr>
+                    <td className="py-2">Other Sources</td>
                     <td className="text-gray-500">12</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">

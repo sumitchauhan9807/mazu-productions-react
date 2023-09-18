@@ -5,21 +5,33 @@ import { useAlert } from 'react-alert'
 import {useDispatch} from 'react-redux'
 import {logoutUser} from '../redux'
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from 'react';
+import {getNavigateURL} from 'helpers/index'
+
+
+function useDidUpdateEffect(fn, inputs) {
+  const didMountRef = useRef(false)
+
+  useEffect(() => {
+    if (didMountRef.current) { 
+      return fn();
+    }
+    didMountRef.current = true;
+  }, inputs);
+}
+
 
 
 function Header() { 
   const user = useSelector(state => state.user)
+  
   let prefrences = ['gay','straight','lesbain','trans','bisexual']
   const alertUser = useAlert()
 	const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const logOut = () => {
-    // alert("logginf outt")
     dispatch(logoutUser())
-    setTimeout(()=>{
-      navigate('/login')
-    },1000)
   }
   return (
     <div>

@@ -1,13 +1,27 @@
 import registerBackgroundImage from 'assets/image/bg.jpg';
 import {USER_LOGIN} from 'queries'
 import {apolloClient} from 'index'
-import React ,{useState,useEffect} from 'react'
+import React ,{useState,useEffect,useRef} from 'react'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
 import {useDispatch,useSelector} from 'react-redux'
 import {setUserData} from '../../redux'
 import { useNavigate } from "react-router-dom";
+import {getNavigateURL} from 'helpers/index'
 // import logo from '../assets/image/mazuproductionslogo.png'
+
+function useDidUpdateEffect(fn, inputs) {
+  const didMountRef = useRef(false)
+
+  useEffect(() => {
+    if (didMountRef.current) { 
+      return fn();
+    }
+    didMountRef.current = true;
+  }, inputs);
+}
+
+
 const doLogin = async (emailOrUname,password) => {
   try {
     let result = apolloClient.mutate({
@@ -31,7 +45,12 @@ function Login() {
   const alertUser = useAlert()
 	const dispatch = useDispatch()
   const navigate = useNavigate();
-  const user = useSelector(state => state.user)
+  const user = useSelector((state)=>{
+    if(state._persist.rehydrated) {
+      return state.user
+    }
+  })
+  
   
   const loginUser = async () => {
     try {
@@ -42,13 +61,17 @@ function Login() {
       }
       if(data.login.user) {
         alertUser.success("Logged in successfully")
-        console.log(data.login.user,"userr login")
-        console.log(data.login.token,"token iusss")
+       
 
-        let result = dispatch(setUserData(data.login.user,data.login.token))
-        console.log(result,"resultresult")
+        dispatch(setUserData(data.login.user,data.login.token))
+        
+        
         setTimeout(()=>{
-          navigate("/register");
+          if(data.login.user.profileComplete) {
+            navigate("/dashboard");
+          }else {
+            navigate("/register");
+          }
         },1000)
       }
       setLoading(false)
