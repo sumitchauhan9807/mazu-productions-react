@@ -1,10 +1,10 @@
 import registerBackgroundImage from 'assets/image/bg.jpg';
 import {USER_LOGIN} from 'queries'
 import {apolloClient} from 'index'
-import React ,{useState} from 'react'
+import React ,{useState,useEffect} from 'react'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {setUserData} from '../../redux'
 import { useNavigate } from "react-router-dom";
 // import logo from '../assets/image/mazuproductionslogo.png'
@@ -31,7 +31,8 @@ function Login() {
   const alertUser = useAlert()
 	const dispatch = useDispatch()
   const navigate = useNavigate();
-
+  const user = useSelector(state => state.user)
+  
   const loginUser = async () => {
     try {
       setLoading(true)
@@ -41,8 +42,14 @@ function Login() {
       }
       if(data.login.user) {
         alertUser.success("Logged in successfully")
-        dispatch(setUserData(data.login.user,data.login.token))
-        navigate("/register");
+        console.log(data.login.user,"userr login")
+        console.log(data.login.token,"token iusss")
+
+        let result = dispatch(setUserData(data.login.user,data.login.token))
+        console.log(result,"resultresult")
+        setTimeout(()=>{
+          navigate("/register");
+        })
       }
       setLoading(false)
 

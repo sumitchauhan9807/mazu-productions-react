@@ -10,6 +10,7 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 function Register() {
   const user = useSelector(state => state.user)
+  console.log(user,"ussss")
   const navigate = useNavigate();
   let step
   if(user.userData) {

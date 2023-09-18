@@ -15,8 +15,11 @@ function Header() {
   const navigate = useNavigate();
 
   const logOut = () => {
+    // alert("logginf outt")
     dispatch(logoutUser())
-    navigate('/login')
+    setTimeout(()=>{
+      navigate('/login')
+    })
   }
   return (
     <div>
