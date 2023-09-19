@@ -8,10 +8,6 @@ import Actor from 'views/website/Actor'
 import Register from 'views/website/Register'
 import Login from 'views/website/Login'
 import Test from 'views/website/Test'
-import { useNavigate } from "react-router-dom";
-import {useDispatch,useSelector} from 'react-redux'
-import {getNavigateURL} from 'helpers/index'
-
 
 
 function Website() {

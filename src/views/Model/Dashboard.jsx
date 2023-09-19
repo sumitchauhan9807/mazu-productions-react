@@ -1,26 +1,31 @@
 import {Link} from "react-router-dom"; 
 import { useAlert } from 'react-alert'
 import {useDispatch,useSelector} from 'react-redux'
-import {logoutUser} from '../../redux'
+import {logoutUser,changeUserName} from '../../redux'
 import { useNavigate } from "react-router-dom";
 import  Loader from 'components/UI/Loader'
 import {useState,useEffect,useRef} from 'react'
 import {getNavigateURL} from 'helpers/index'
 import {getUrlFT} from 'helpers'
 
-function Dashboard() {
+function Dashboard({user}) {
+  console.log("INNERDASHBOARD RENDER")
   const [loading,setLoading] = useState(false)
   const alertUser = useAlert()
 	const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const user = useSelector((state)=>{
-    if(state._persist.rehydrated) {
-      return state.user
-    }
-  })
-  if(!user) return null
 
+  const changeName = (e) => {
+    e.preventDefault()
+    dispatch(changeUserName())
+  }
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     dispatch(changeUserName())
+  //   },3000)  
+  // })
+  
   // console.log(user)
   const logOut = (e) => {
     e.preventDefault()
@@ -49,7 +54,7 @@ function Dashboard() {
         </div>
         <ul className="space-y-2 tracking-wide mt-8">
           <li>
-            <a href="#" aria-label="dashboard" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
+            <a onClick={changeName} href="#" aria-label="dashboard" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
               <svg className="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
                 <path d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z" className="fill-current text-cyan-400 dark:fill-slate-600" />
                 <path d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z" className="fill-current text-cyan-200 group-hover:text-cyan-300" />

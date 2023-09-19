@@ -1,4 +1,4 @@
-import { SET_USER_DATA ,UPDATE_SETUP_STEP,LOG_OUT_USER }  from './userTypes';
+import { SET_USER_DATA ,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME }  from './userTypes';
 
 export const setUserData = (userData,token) => {
   return {
@@ -18,5 +18,11 @@ export const updateSetupStep = (step) => {
 export const logoutUser = () => {
   return {
     type: LOG_OUT_USER,
+  }
+}
+
+export const changeUserName  = () =>{
+  return {
+    type:CHNAGE_USERNAME
   }
 }
