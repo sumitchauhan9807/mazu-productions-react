@@ -274,7 +274,7 @@ function Dashboard({user}) {
                     </td>   
                   </tr>
                   <tr>
-                    <td className="py-2">Other Sources</td>
+                    <td className="py-2">Mazu Network</td>
                     <td className="text-gray-500">12</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
