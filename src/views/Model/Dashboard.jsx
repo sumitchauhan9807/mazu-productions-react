@@ -298,7 +298,7 @@ function Dashboard({user}) {
           </div>
           <div>
             <div className="h-full py-6 px-6 rounded-xl border border-gray-200 bg-white">
-              <h5 className="text-xl text-gray-700">Downloads</h5>
+              <h5 className="text-xl text-gray-700">Subscriptions</h5>
               <div className="my-8">
                 <h1 className="text-5xl font-bold text-gray-800">64,5%</h1>
                 <span className="text-gray-500">Compared to last week $13,988</span>
