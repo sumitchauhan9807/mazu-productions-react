@@ -18,3 +18,15 @@ options:-
 Subscriptions
   From new fans
   From old fans
+
+
+Awards
+  Bronze - 5000 views per month (5 EUR)
+
+  Silver . 10.000 views per month (10 EUR)
+
+  Gold 25.000 views per moth (15 EUR)
+
+  Platinum - 50.000 views (30 EUR)
+
+  Diamond - 100.000 views  up (50 EUR)
