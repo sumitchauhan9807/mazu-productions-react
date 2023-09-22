@@ -8,6 +8,7 @@ import Actor from 'views/website/Actor'
 import Register from 'views/website/Register'
 import Login from 'views/website/Login'
 import Test from 'views/website/Test'
+import ModelLogin from 'views/Model/Modellogin'
 
 
 function Website() {
@@ -20,6 +21,7 @@ function Website() {
           <Route exact path ="/test" element= {<Test />}/> 
           <Route exact path ="/register" element= {<Register />}/> 
           <Route exact path ="/login" element= {<Login/>}/>
+          <Route exact path ="/model-login" element= {<ModelLogin/>}/>
         </Routes>
       <Footer/>
     </React.Fragment>
