@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.cf6755dd.css",
-    "main.js": "/static/js/main.30e1eb19.js",
+    "main.js": "/static/js/main.8f744199.js",
     "static/css/384.3f1389a6.chunk.css": "/static/css/384.3f1389a6.chunk.css",
-    "static/js/384.52f44f2c.chunk.js": "/static/js/384.52f44f2c.chunk.js",
+    "static/js/384.eab0aeaa.chunk.js": "/static/js/384.eab0aeaa.chunk.js",
     "static/css/967.51f89858.chunk.css": "/static/css/967.51f89858.chunk.css",
     "static/js/967.f26d8a05.chunk.js": "/static/js/967.f26d8a05.chunk.js",
     "static/media/sweetcandy.jpg": "/static/media/sweetcandy.34289ed6f2009953bb76.jpg",
@@ -24,14 +24,14 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.cf6755dd.css.map": "/static/css/main.cf6755dd.css.map",
-    "main.30e1eb19.js.map": "/static/js/main.30e1eb19.js.map",
+    "main.8f744199.js.map": "/static/js/main.8f744199.js.map",
     "384.3f1389a6.chunk.css.map": "/static/css/384.3f1389a6.chunk.css.map",
-    "384.52f44f2c.chunk.js.map": "/static/js/384.52f44f2c.chunk.js.map",
+    "384.eab0aeaa.chunk.js.map": "/static/js/384.eab0aeaa.chunk.js.map",
     "967.51f89858.chunk.css.map": "/static/css/967.51f89858.chunk.css.map",
     "967.f26d8a05.chunk.js.map": "/static/js/967.f26d8a05.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf6755dd.css",
-    "static/js/main.30e1eb19.js"
+    "static/js/main.8f744199.js"
   ]
 }
