@@ -1,7 +1,9 @@
 import React from 'react'
+import BasicChart from './Components/BasicChart'
 function Dashboard() {
   return (
     <React.Fragment>
+      
           <div>
        
         <div className="container w-full mx-auto pt-20">
@@ -109,7 +111,9 @@ function Dashboard() {
                     <h5 className="font-bold uppercase text-gray-600">Graph</h5>
                   </div>
                   <div className="p-5">
-                    <canvas id="chartjs-7" className="chartjs" width="undefined" height="undefined" />
+                  <BasicChart
+                    type="bar"
+                  />
                   </div>
                 </div>
                 {/*/Graph Card*/}
@@ -121,30 +125,37 @@ function Dashboard() {
                     <h5 className="font-bold uppercase text-gray-600">Graph</h5>
                   </div>
                   <div className="p-5">
-                    <canvas id="chartjs-0" className="chartjs" width="undefined" height="undefined" />
+                  <BasicChart
+                    type="line"
+                  />
                   </div>
                 </div>
                 {/*/Graph Card*/}
               </div>
-              <div className="w-full md:w-1/2 xl:w-1/3 p-3">
+              <div className="w-full md:w-1/2 xl:w-1/2 p-3">
                 {/*Graph Card*/}
                 <div className="bg-white border rounded shadow">
                   <div className="border-b p-3">
                     <h5 className="font-bold uppercase text-gray-600">Graph</h5>
                   </div>
                   <div className="p-5">
-                    <canvas id="chartjs-1" className="chartjs" width="undefined" height="undefined" />
+                  <BasicChart
+                    type="area"
+                  />
                   </div>
                 </div>
                 {/*/Graph Card*/}
               </div>
-              <div className="w-full md:w-1/2 xl:w-1/3 p-3">
+              <div className="w-full md:w-1/2 xl:w-1/2 p-3">
                 {/*Graph Card*/}
                 <div className="bg-white border rounded shadow">
                   <div className="border-b p-3">
                     <h5 className="font-bold uppercase text-gray-600">Graph</h5>
                   </div>
-                  <div className="p-5"><canvas id="chartjs-4" className="chartjs" width="undefined" height="undefined" />
+                  <div className="p-5">
+                  <BasicChart
+                    type="pie"
+                  />
                   </div>
                 </div>
                 {/*/Graph Card*/}
