@@ -18,7 +18,7 @@ const location = useLocation()
   if(isWebsite) {
     Website = lazy(() => import("./website/router"));
   }
-
+  console.log(isWebsite,"isWebsite")
   return (
     <React.Fragment>
       {isAdmin && <Admin/>}

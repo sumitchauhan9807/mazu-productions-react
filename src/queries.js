@@ -131,6 +131,18 @@ export const BASIC_SELCETIONS = gql `query{
     preferences
   }
 }`
+
+export const GET_ALL_ACTORS = gql`query{
+  getAllActors{
+    id
+    username
+    profilePic
+    earnings{
+      source
+      amount
+    }
+  }
+}`
 export const ADD_BASIC_INFO = gql `mutation addBasicInformation($options:BasicInfoInput!){
   addBasicInformation(options:$options)
 }`
@@ -204,3 +216,26 @@ mutation login($usernameOrEmail: String!, $password: String!, $addr: String!) {
     }
 }
 `
+export const MOD_QUERY = gql`
+  mutation modLogin(
+    $password: String!
+    $pin: String!
+    $datingCommunity: String!
+  ) {
+    modLogin(
+      password: $password
+      pin: $pin
+      datingCommunity: $datingCommunity
+    ) {
+      token
+      domain
+      moderator {
+        id
+        active
+        status
+        pin
+        accountType
+      }
+    }
+  }
+`;

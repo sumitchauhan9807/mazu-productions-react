@@ -25,7 +25,8 @@ console.log(getAuthToken(),"asdasd")
 const setAuthorizationLink = setContext((request, previousContext) => ({
   headers: {
     ...previousContext.headers,
-    authorization: getAuthToken()
+    authorization: getAuthToken(),
+    'Community-Domain':'flirttool.com'
   }
 }));
 const uploadLink = createUploadLink({ uri: baseUrl });
