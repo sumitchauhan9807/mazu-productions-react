@@ -13,7 +13,6 @@ function Loader(props) {
       </div> 
      }
   </div>
-  <button>hey</button>
 </div>
   )
 }
