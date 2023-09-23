@@ -8,7 +8,7 @@ import Register from 'views/website/Register'
 import Login from 'views/website/Login'
 import Test from 'views/website/Test'
 import ModelLogin from 'views/Model/Modellogin'
-
+import 'website.css'
 
 function Website() {
   return (

@@ -1,8 +1,8 @@
 import Model from './Model/router'
-import Website from './website/router'
+// import Website from './website/router'
 import Admin from './Admin/router'
 import { useHistory ,useLocation } from 'react-router-dom';
-import React, { useEffect ,useRef,useState} from 'react'
+import React, { useEffect ,useRef,useState,lazy,Suspense} from 'react'
 import 'index.css'
 
 
@@ -13,13 +13,16 @@ const location = useLocation()
   let isDashboard = currentPath.includes('dashboard')
   let isAdmin =  currentPath.includes('admin')
   let isWebsite = !isDashboard && !isAdmin
+  
+  let Website = () => <h1>asdasd</h1>
   if(isWebsite) {
-    require('website.css')
+    Website = lazy(() => import("./website/router"));
   }
+
   return (
     <React.Fragment>
       {isAdmin && <Admin/>}
-      {isWebsite && <Website/>}
+      {isWebsite && <Suspense><Website/></Suspense>}
       {isDashboard && <Model/>}
     </React.Fragment>
   )

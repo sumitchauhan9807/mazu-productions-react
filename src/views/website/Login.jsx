@@ -6,7 +6,7 @@ import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
 import {useDispatch,useSelector} from 'react-redux'
 import {setUserData} from '../../redux'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {getNavigateURL} from 'helpers/index'
 // import logo from '../assets/image/mazuproductionslogo.png'
 
@@ -149,6 +149,10 @@ return(
                          type="button" className="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                       Sign in
                     </button>
+                    <Link   to="/admin"
+                          className="w-full flex justify-center bg-gradient-to-r from-indigo-500 to-blue-600  hover:bg-gradient-to-l hover:from-blue-500 hover:to-indigo-600 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                     sdsdsd
+                    </Link>
                   </div>
                 </form>
               </div>
