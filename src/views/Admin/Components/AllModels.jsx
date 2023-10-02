@@ -21,20 +21,10 @@ import {GET_ALL_ACTORS} from 'queries'
 import {apolloClient} from 'index'
  import Loader from 'components/UI/Loader'
  import {getUrlFT} from 'helpers'
+import { Link } from "react-router-dom";
 
-const TABLE_HEAD = ["Actor", "Username","Earnings"];
+const TABLE_HEAD = ["Actor", "Username","Videos"];
  
-const getAllActors = async () => {
-  try {
-    let result = apolloClient.query({
-      query: GET_ALL_ACTORS,
-      // fetchPolicy:'no-cache'
-    })
-    return result
-  }catch(e) {
-    throw Error(e)
-  }
-}
 function AllModels() {
 
   const [allModels,setAllModels] = useState([])
@@ -44,18 +34,20 @@ function AllModels() {
     (async ()=>{
       try {
         setLoading(true)
-       let {data} = await getAllActors()
+        let {data,errors} = await apolloClient.query({
+          query: GET_ALL_ACTORS,
+          // fetchPolicy:'no-cache'
+        })
        setAllModels(data.getAllActors)
        setLoading(false)
 
       }catch(e) {
         setLoading(false)
-        alert(e)
+        alert(e.message)
       }
     })()
   },[])
 
-console.log(allModels,"allModelsallModelsallModels")
   if(isLoading) return <Loader/>
   return (
     <div className="container w-full mx-auto pt-20 mt-12 mb-4">
@@ -133,9 +125,9 @@ console.log(allModels,"allModelsallModelsallModels")
                       </Typography>
                     </td>
                     <td className={classes}>
-                      <Tooltip content="Edit User">
+                      <Tooltip content="Actor Videos">
                         <IconButton variant="text">
-                          <PencilIcon className="h-4 w-4" />
+                          <Link to={`/admin/model/videos/${model.id}`}><PencilIcon className="h-4 w-4" /></Link>
                         </IconButton>
                       </Tooltip>
                     </td>

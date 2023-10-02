@@ -11,6 +11,8 @@ import Loader from 'components/UI/Loader'
 import Header from 'views/Admin/Components/Header'
 import Footer from 'views/Admin/Components/Footer'
 import AllModels from 'views/Admin/Components/AllModels'
+import ModelVideos from 'views/Admin/Components/ModelVideos'
+
 
 
 
@@ -40,8 +42,7 @@ function AdminDashboard() {
       <Routes>
         <Route exact path ="/admin" element= {<Dashboard/>}/> 
         <Route exact path ="/admin/models" element= {<AllModels/>}/> 
-
-        
+        <Route exact path ="/admin/model/videos/:id" element= {<ModelVideos/>}/> 
       </Routes>
       <Footer/>
       </ThemeProvider>

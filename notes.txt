@@ -47,6 +47,39 @@ add counter in mazupanel
 
 
 
+Video name     publishing date  views   amount in USD
+
+total fans             new fans
+
+
+new subscription
+
+team
+
+1. teamleader (10 percent)
+
+every agent of him with there total amount 
+
+2. agent account
+
+1. name of actor
+
+2. Income from :
+
+XHamster
+
+Faphouse
+
+Cams.com
+
+ManyVids
+
+Mazunetwork
+
+
+from amount that the actors earn: 5%
+
+showing by Day, Week, last week and this month, last month
 
 
 
@@ -55,6 +88,35 @@ add counter in mazupanel
 
 
 
+
+next to models affiliates
+  3 different roles
+    1. Admin (Eric)
+      -> Admin createa team
+      -> Team mamanger
+
+
+
+
+
+      SUPER ADMIN (Eric)
+
+      Affilates (next to models)
+        create team (name,Team managers,Recuiters)
+
+Team manager
+  My Team (All recuiters listed)
+  Team Affilates
+    -> Name of actor , Affilate number , contract date , amount of earnings, /day/month/weak, payout Requests
+    -> Media (pics,videos,links ,text)
+
+
+Recuiters
+  -> My affilates (Name of actor , Affilate number , contract date , amount of earnings, /day/month/weak)
+  -> 
+
+
+          
 
 
 

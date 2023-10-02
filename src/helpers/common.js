@@ -13,7 +13,7 @@ export const getNavigateURL = (user) => {
     return '/login'
   }
 }
-export const uploadToCloud = async (file,progressCallback) => {
+export const uploadToCloud = async (file,progressCallback,bucket="private_mazuproductions") => {
   try {
     
     let mimeType = file.type
@@ -25,6 +25,7 @@ export const uploadToCloud = async (file,progressCallback) => {
     variables: {
       filename: name,
       mimetype: mimeType,
+      bucket:bucket
     },
   });
   let putUrl = data.getCloudPutUrl

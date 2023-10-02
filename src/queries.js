@@ -24,6 +24,23 @@ query getMediaByCategory($category:String!){
   }
 }`
 
+
+
+export const GET_ALL_ACTOR_WEB_VIDEOS = gql`
+query getAllActorWebVideos($id:String!){
+  getAllActorWebVideos(id:$id){
+    id
+    source
+    cover
+    name
+    updates{
+      id
+      amount
+      views
+    }
+  }
+}`
+
 export const GET_MODEL_BY_CATEGORY = gql`
 query getModelByCategory($preference:String!){
   getModelByCategory(preference:$preference){
@@ -123,6 +140,24 @@ export const ADD_MODEL_GALLERY_MEDIA = gql`
   }
 `;
 
+export const ADD_MODEL_WEB_VIDEO = gql`
+  mutation addWebVideo(
+    $source: String!
+    $id: String!
+    $name:String!
+    $cover:String!
+  ) {
+    addWebVideo(
+      source: $source
+      id: $id
+      name:$name
+      cover:$cover
+    ){
+       id
+       source
+     }
+  }
+`;
 
 export const BASIC_SELCETIONS = gql `query{
   basicInfoSelections{
@@ -137,10 +172,6 @@ export const GET_ALL_ACTORS = gql`query{
     id
     username
     profilePic
-    earnings{
-      source
-      amount
-    }
   }
 }`
 export const ADD_BASIC_INFO = gql `mutation addBasicInformation($options:BasicInfoInput!){

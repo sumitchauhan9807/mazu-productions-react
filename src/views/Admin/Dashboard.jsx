@@ -1,5 +1,5 @@
 import React from 'react'
-import BasicChart from './Components/BasicChart'
+import BasicChart from './Components/small/BasicChart'
 function Dashboard() {
   return (
     <React.Fragment>
