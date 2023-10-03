@@ -110,6 +110,19 @@ export const UPDATE_PROFILE_PIC = gql `mutation updateProfilePic($file: Upload!)
   updateProfilePic(file: $file)
 }
 `
+
+export const CREATE_TEAM = gql `mutation createTeam($name: String!) {
+  createTeam(name: $name){
+    name
+    recuiter{
+      id
+    }
+    manager{
+      id
+    }
+  }
+}
+`
 export const GET_CLOUD_PUT_URL = gql`
   query getCloudPutUrl($filename: String!,$mimetype:String!,$bucket:String) {
     getCloudPutUrl(filename: $filename,mimetype:$mimetype,bucket:$bucket) 

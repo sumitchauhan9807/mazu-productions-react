@@ -1,9 +1,10 @@
 /* eslint-disable */ 
-import {SET_USER_DATA,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME} from './userTypes'
+import {SET_USER_DATA,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME ,SET_COMMUNITY_DOMAIN} from './userTypes'
 
 const initialState = {
   userData: null,
   token:null,
+  community_domain:null
 }
 
 const userReducer = (state = initialState,action) => {
@@ -34,6 +35,11 @@ const userReducer = (state = initialState,action) => {
         return {
           ... state,
           userData:UuserData
+        }
+        case SET_COMMUNITY_DOMAIN :
+        return {
+          ... state,
+          community_domain:action.domain
         }
     default : return state
   }

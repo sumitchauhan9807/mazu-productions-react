@@ -10,9 +10,9 @@ import Loader from 'components/UI/Loader'
 
 import Header from 'views/Admin/Components/Header'
 import Footer from 'views/Admin/Components/Footer'
-import AllModels from 'views/Admin/Components/AllModels'
-import ModelVideos from 'views/Admin/Components/ModelVideos'
-
+import AllModels from 'views/Admin/AllModels'
+import ModelVideos from 'views/Admin/ModelVideos'
+import AllTeams from 'views/Admin/AllTeams'
 
 
 
@@ -27,7 +27,9 @@ function AdminDashboard() {
 
   if(!user) return <Loader/>
   if(!user.token) {
-    window.location.href = '/ad-login'
+    setTimeout(()=>{
+      window.location.href = '/ad-login'
+    },1000)
     return <Loader/>
   }
   if(user.userData.accountType != 'admin') {
@@ -42,6 +44,8 @@ function AdminDashboard() {
       <Routes>
         <Route exact path ="/admin" element= {<Dashboard/>}/> 
         <Route exact path ="/admin/models" element= {<AllModels/>}/> 
+        <Route exact path ="/admin/teams" element= {<AllTeams/>}/> 
+
         <Route exact path ="/admin/model/videos/:id" element= {<ModelVideos/>}/> 
       </Routes>
       <Footer/>

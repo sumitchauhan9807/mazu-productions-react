@@ -21,12 +21,22 @@ const getAuthToken = () => {
   userData = JSON.parse(userData)
   return `Bearer ${userData.token}`
 }
+
+const getCommunityDomain = () => {
+  let reduxData = localStorage.getItem('persist:root')
+  if(!reduxData) return null
+  reduxData = JSON.parse(reduxData)
+  let userData = reduxData.user
+  if(!userData) return null
+  userData = JSON.parse(userData)
+  return userData.community_domain
+}
 console.log(getAuthToken(),"asdasd")
 const setAuthorizationLink = setContext((request, previousContext) => ({
   headers: {
     ...previousContext.headers,
     authorization: getAuthToken(),
-    'Community-Domain':'flirttool.com'
+    'Community-Domain':getCommunityDomain()
   }
 }));
 const uploadLink = createUploadLink({ uri: baseUrl });

@@ -1,4 +1,4 @@
-import { SET_USER_DATA ,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME }  from './userTypes';
+import { SET_USER_DATA ,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME ,SET_COMMUNITY_DOMAIN}  from './userTypes';
 
 export const setUserData = (userData,token) => {
   return {
@@ -24,5 +24,12 @@ export const logoutUser = () => {
 export const changeUserName  = () =>{
   return {
     type:CHNAGE_USERNAME
+  }
+}
+
+export const setCommunityDomain  = (domain) =>{
+  return {
+    type:SET_COMMUNITY_DOMAIN,
+    domain:domain
   }
 }

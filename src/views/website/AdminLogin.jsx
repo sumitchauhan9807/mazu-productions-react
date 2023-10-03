@@ -5,7 +5,7 @@ import React ,{useState,useEffect,useRef} from 'react'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
 import {useDispatch,useSelector} from 'react-redux'
-import {setUserData} from '../../redux'
+import {setUserData,setCommunityDomain} from '../../redux'
 import { useNavigate } from "react-router-dom";
 import {getNavigateURL} from 'helpers/index'
 // import logo from '../assets/image/mazuproductionslogo.png'
@@ -13,12 +13,12 @@ import {getNavigateURL} from 'helpers/index'
 
 
 
-const doLogin = async (emailOrUname,password) => {
+const doLogin = async (emailOrUname,password,datingCommunity) => {
   try {
     let result = apolloClient.mutate({
       mutation: MOD_QUERY,
       variables: {
-        datingCommunity: 'flirttool.com',
+        datingCommunity: datingCommunity,
         pin: emailOrUname,
         password: password,
       },
@@ -32,7 +32,11 @@ const doLogin = async (emailOrUname,password) => {
 function AdminLogin() {
   let usernameOrEmail = React.createRef();
   let password = React.createRef();
+  let datingCommunity = React.createRef();
+
 	let [isLoading,setLoading] = useState(false)
+	let [datingCommunities,setDatingCommunities] = useState([])
+
   const alertUser = useAlert()
 	const dispatch = useDispatch()
   const navigate = useNavigate();
@@ -45,17 +49,20 @@ function AdminLogin() {
   
   const loginUser = async () => {
     try {
+      if(datingCommunity.current.value == 'null') return alertUser.error('Please select a dating community')
       setLoading(true)
-      let {data,errors} = await doLogin(usernameOrEmail.current.value,password.current.value)
+      let {data,errors} = await doLogin(usernameOrEmail.current.value,password.current.value,datingCommunity.current.value)
       if(data?.login?.errors) {
         alertUser.error(data.login.errors[0].message)
         setLoading(false)
       }
+      
       if(data.modLogin.moderator) {
         alertUser.success("Logged in successfully")
        
 
         dispatch(setUserData(data.modLogin.moderator,data.modLogin.token))
+        dispatch(setCommunityDomain(data.modLogin.domain))
         
         setTimeout(()=>{
           window.location.href="/admin"
@@ -70,7 +77,17 @@ function AdminLogin() {
         setLoading(false)
     }
   }
-
+  useEffect(()=>{
+    const response =  fetch(
+      "https://mazutech.online/api/system/dating-communities-public",{method:'POST'}
+    )
+    .then((response) => response.json())
+    .then((data)=>{
+      setDatingCommunities(data)
+      console.log(data)
+    })
+  },[])
+//https://mazutech.online/api/system/dating-communities-public
 return(
 
   <div
@@ -104,6 +121,14 @@ return(
               ref={password}
 
             />
+          </div>
+          <div className="mb-4 text-lg">
+          <select ref={datingCommunity} className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 rounded-3xl">
+            <option value='null' selected>Choose Your Community</option>
+              {datingCommunities.map((community)=>{
+                return <option value={community.domain}>{community.name}</option>
+              })}
+          </select>
           </div>
           <div className="mt-8 flex justify-center text-lg text-black">
             <button
