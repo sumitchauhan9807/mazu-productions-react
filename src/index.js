@@ -8,7 +8,7 @@ import { createUploadLink } from "apollo-upload-client";
 import {BrowserRouter} from "react-router-dom" 
 import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
-const baseUrl = "https://flirttool.com/graphql"
+const baseUrl = "https://api.mazupanel.info/graphql"
 // const baseUrl = "http://localhost:8080/graphql"
 
 

@@ -180,6 +180,70 @@ export const BASIC_SELCETIONS = gql `query{
   }
 }`
 
+export const GET_ALL_TEAMS = gql `query{
+  getAllTeams {
+    id
+    name
+  }
+}`
+
+export const GET_TEAM_MANAGERS = gql `query getTeamManagers($id:String!) {
+  getTeamManagers(id:$id) {
+    manager{
+      id
+      username
+      name
+      email
+    }
+    team{
+      name
+    }
+  }
+}`
+
+export const GET_MANAGER_RECUITERS = gql `query getManagerRecuiters($id:String!) {
+  getManagerRecuiters(id:$id) {
+    recuiter{
+      id
+      username
+      name
+      email
+    }
+    manager{
+      name
+      username
+    }
+  }
+}`
+
+export const ADD_MANAGER = gql `mutation addManager(
+  $name:String!
+  $password:String!,
+  $email:String!,
+  $team:String!,
+  $username:String!
+){
+  addManager(name:$name,password:$password,email:$email,team:$team,username:$username){
+    id
+    username
+    email
+  }
+}`
+
+export const ADD_RECUITER = gql `mutation addRecuiter(
+  $name:String!
+  $password:String!,
+  $email:String!,
+  $manager:String!,
+  $username:String!
+){
+  addRecuiter(name:$name,password:$password,email:$email,manager:$manager,username:$username){
+    id
+    username
+    email
+  }
+}`
+
 export const GET_ALL_ACTORS = gql`query{
   getAllActors{
     id

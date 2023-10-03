@@ -1,35 +1,61 @@
 import AddTeam from 'views/Admin/Components/AddTeam'
-import {useState} from 'react'
-import {CREATE_TEAM} from 'queries'
+import {useEffect, useState} from 'react'
+import {CREATE_TEAM,GET_ALL_TEAMS} from 'queries'
 import {apolloClient} from 'index'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
+import { Link } from 'react-router-dom'
+
 
 
 function AllTeams() {
   let [addTeamModel,toggleAddTeamModal] = useState(false)
+  let [allTeams,setAllTeams] = useState([])
   let [isLoading,setLoading] = useState(false)
+  let [addedTeams,setAddedTeams] = useState(0)
+
   const alertUser = useAlert()
+
+  useEffect(()=>{
+    (async ()=>{
+      try {
+        setLoading(true)
+        let {data,errors} = await apolloClient.query({
+          query: GET_ALL_TEAMS,
+          fetchPolicy:'no-cache'
+        })
+        setAllTeams(data.getAllTeams)
+        console.log(data.getAllTeams)
+       setLoading(false)
+
+      }catch(e) {
+        setLoading(false)
+        alert(e.message)
+      }
+    })()
+  },[addedTeams])
   
-  const addTeam = async (data) => {
+  const addTeam = async (teamData) => {
     try {
       setLoading(true)
       const { data, errors } = await apolloClient.mutate({
         mutation: CREATE_TEAM,
         variables: {
-          name:data.name,
+          name:teamData.name,
         },
       });
       setLoading(false)
       if(data.createTeam){
         alertUser.success('Team Added Successfully')
         toggleAddTeamModal(false)
+        setAddedTeams(addedTeams + 1)
+        console.log(addedTeams)
       }
     }catch(e) {
       setLoading(false)
       alert(e)
     }
-    console.log(data)
+    console.log(teamData)
   }
 
   return (
@@ -59,17 +85,21 @@ function AllTeams() {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-blue-600 border-b border-blue-400">
+              {allTeams.map((team)=>{
+               return (
+                <tr className="bg-blue-600 border-b border-blue-400">
                 <th scope="row" className="px-6 py-4 font-medium bg-blue-500 text-blue-50 whitespace-nowrap dark:text-blue-100">
-                  Apple MacBook Pro 17"
+                  {team.name}
                 </th>
                 <td className="px-6 py-4">
                   Silver
                 </td>
-                <td className="px-6 py-4 bg-blue-500">
-                  <a href="#" className="font-medium text-white hover:underline">View Team Managers</a>
-                </td>
-              </tr>
+                  <td className="px-6 py-4 bg-blue-500">
+                    <Link to={`/admin/team/managers/${team.id}`} className="font-medium text-white hover:underline">View Team Managers</Link>
+                  </td>
+                </tr>
+               )
+              })}
             </tbody>
           </table>
         </div>

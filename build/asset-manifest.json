@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.972e4070.css",
-    "main.js": "/static/js/main.ea801228.js",
+    "main.css": "/static/css/main.caf6807c.css",
+    "main.js": "/static/js/main.678db808.js",
     "static/css/503.6e862220.chunk.css": "/static/css/503.6e862220.chunk.css",
-    "static/js/503.525bc90c.chunk.js": "/static/js/503.525bc90c.chunk.js",
+    "static/js/503.e02dcd35.chunk.js": "/static/js/503.e02dcd35.chunk.js",
     "static/css/779.ff14cfac.chunk.css": "/static/css/779.ff14cfac.chunk.css",
     "static/js/779.b7b91058.chunk.js": "/static/js/779.b7b91058.chunk.js",
     "static/media/sweetcandy.jpg": "/static/media/sweetcandy.34289ed6f2009953bb76.jpg",
@@ -23,15 +23,15 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.972e4070.css.map": "/static/css/main.972e4070.css.map",
-    "main.ea801228.js.map": "/static/js/main.ea801228.js.map",
+    "main.caf6807c.css.map": "/static/css/main.caf6807c.css.map",
+    "main.678db808.js.map": "/static/js/main.678db808.js.map",
     "503.6e862220.chunk.css.map": "/static/css/503.6e862220.chunk.css.map",
-    "503.525bc90c.chunk.js.map": "/static/js/503.525bc90c.chunk.js.map",
+    "503.e02dcd35.chunk.js.map": "/static/js/503.e02dcd35.chunk.js.map",
     "779.ff14cfac.chunk.css.map": "/static/css/779.ff14cfac.chunk.css.map",
     "779.b7b91058.chunk.js.map": "/static/js/779.b7b91058.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.972e4070.css",
-    "static/js/main.ea801228.js"
+    "static/css/main.caf6807c.css",
+    "static/js/main.678db808.js"
   ]
 }

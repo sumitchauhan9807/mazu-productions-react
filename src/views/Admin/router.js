@@ -13,6 +13,8 @@ import Footer from 'views/Admin/Components/Footer'
 import AllModels from 'views/Admin/AllModels'
 import ModelVideos from 'views/Admin/ModelVideos'
 import AllTeams from 'views/Admin/AllTeams'
+import TeamManagers from 'views/Admin/TeamManagers'
+import Recuiters from 'views/Admin/Recuiters'
 
 
 
@@ -45,6 +47,8 @@ function AdminDashboard() {
         <Route exact path ="/admin" element= {<Dashboard/>}/> 
         <Route exact path ="/admin/models" element= {<AllModels/>}/> 
         <Route exact path ="/admin/teams" element= {<AllTeams/>}/> 
+        <Route exact path ="/admin/team/managers/:id" element= {<TeamManagers/>}/> 
+        <Route exact path ="/admin/team/recuiters/:id" element= {<Recuiters/>}/> 
 
         <Route exact path ="/admin/model/videos/:id" element= {<ModelVideos/>}/> 
       </Routes>
