@@ -102,7 +102,7 @@ next to models affiliates
       SUPER ADMIN (Eric)
 
       Affilates (next to models)
-        create team (name,Team managers,Recuiters)
+        create team (name,Team Admin,Team managers,Recuiters)
 
 Team manager
   My Team (All recuiters listed)

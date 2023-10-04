@@ -36,7 +36,7 @@ const setAuthorizationLink = setContext((request, previousContext) => ({
   headers: {
     ...previousContext.headers,
     authorization: getAuthToken(),
-    'Community-Domain':getCommunityDomain()
+    'Community-Domain':'flirttool.com'
   }
 }));
 const uploadLink = createUploadLink({ uri: baseUrl });
