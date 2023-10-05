@@ -184,6 +184,11 @@ export const GET_ALL_TEAMS = gql `query{
   getAllTeams {
     id
     name
+    admin{
+      id
+      username
+      name
+    }
   }
 }`
 
@@ -200,6 +205,16 @@ export const GET_TEAM_MANAGERS = gql `query getTeamManagers($id:String!) {
     }
   }
 }`
+
+export const GET_TEAM_ADMINS = gql `query getAllTeamManagers{
+  getAllTeamManagers {
+    id
+    username
+    name
+    email
+  }
+}`
+
 
 export const GET_MANAGER_RECUITERS = gql `query getManagerRecuiters($id:String!) {
   getManagerRecuiters(id:$id) {
@@ -229,6 +244,28 @@ export const ADD_MANAGER = gql `mutation addManager(
     email
   }
 }`
+
+export const ADD_TEAM_ADMIN = gql `mutation addTeamAdmin(
+  $name:String!
+  $password:String!,
+  $email:String!,
+  $username:String!
+){
+  addTeamAdmin(name:$name,password:$password,email:$email,username:$username){
+    id
+    username
+    email
+  }
+}`
+
+export const UPDATE_TEAM_ADMIN = gql `mutation updateTeamAdmin(
+  $teamId:String!
+  $adminId:String!,
+){
+  updateTeamAdmin(teamId:$teamId,adminId:$adminId)
+}`
+
+
 
 export const ADD_RECUITER = gql `mutation addRecuiter(
   $name:String!

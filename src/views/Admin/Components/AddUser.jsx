@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useAlert } from 'react-alert'
 function AddManagerModal(props) {
   const alertUser = useAlert()
-
+  console.log(props)
   let name = useRef('')
   let username = useRef('')
   let email = useRef('')
@@ -30,6 +30,7 @@ function AddManagerModal(props) {
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              {props.activeTeam && <center class="mb-4">Adding Admin for <b>{props.activeTeam.name}</b></center>}
               <div className="md:flex md:items-center mb-6">
                 <div className="md:w-1/3">
                   <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-full-name">

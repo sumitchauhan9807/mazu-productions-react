@@ -86,6 +86,12 @@ showing by Day, Week, last week and this month, last month
 
 
 
+                    ADMIN -> 3 teams under this admin   (PRATAP)  3  
+
+                    TEAM   -> one admin ,  multiple team managers  
+
+
+
 
 
 
