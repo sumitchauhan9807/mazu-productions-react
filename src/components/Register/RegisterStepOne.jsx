@@ -9,6 +9,9 @@ import {USER_REGISTER} from 'queries'
 import Loader from 'components/UI/Loader'
 import { setUserData } from '../../redux'
 import {buyCake} from '../../redux'
+import { useSearchParams } from 'react-router-dom'
+
+
 const ERROR_MESSAGES = {
   required:'This field is required',
   minLength: "Min length is not reached",
@@ -17,7 +20,10 @@ const ERROR_MESSAGES = {
 
 
 function RegisterStepOne(props) {
-  
+
+const [searchParams, setSearchParams] = useSearchParams()
+let affiliate = searchParams.get('affiliate')
+
 const alertUser = useAlert()
 const form = useForm({
   defaultValues: {
@@ -51,6 +57,7 @@ const [userRegister,{ data, loading, error }] = useMutation(USER_REGISTER,{
     },
     userType: "model",
     preference: values.sexuality,
+    modelAff:affiliate,
     modelData: {
       offer_chat: values.offer?.chat,
       offer_livecam: values.offer?.livecam,
@@ -65,6 +72,7 @@ const [userRegister,{ data, loading, error }] = useMutation(USER_REGISTER,{
   },
   onError(err) {
     console.log(err);
+    alert(err.message)
   },
 });
 useEffect(()=>{

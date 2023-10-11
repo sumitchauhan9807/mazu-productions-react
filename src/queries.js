@@ -68,8 +68,8 @@ query getModelDefaultGallery{
 }`
 
 export const USER_REGISTER = gql `
-    mutation register($options:UsernamePasswordInput!,$addr: String!,$userType:String!,$preference:String!,$modelData:ModelRegisterFields){
-        register(options:$options, addr:$addr,userType:$userType,preference:$preference,modelData:$modelData){
+    mutation register($options:UsernamePasswordInput!,$addr: String!,$userType:String!,$preference:String!,$modelData:ModelRegisterFields,$modelAff:String){
+        register(options:$options, addr:$addr,userType:$userType,preference:$preference,modelData:$modelData,modelAff:$modelAff,){
             errors{
                 field
                 message
