@@ -22,7 +22,7 @@ const ERROR_MESSAGES = {
 function RegisterStepOne(props) {
 
 const [searchParams, setSearchParams] = useSearchParams()
-let affiliate = searchParams.get('affiliate')
+let affiliate = searchParams.get('aff')
 
 const alertUser = useAlert()
 const form = useForm({
