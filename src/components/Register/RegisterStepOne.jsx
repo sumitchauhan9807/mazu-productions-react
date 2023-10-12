@@ -200,12 +200,12 @@ if (loading) return <Loader/>;
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
-          <input type="password" style={{borderColor: '#E3C900'}} {...register('password', { required: true, maxLength: 15 })} />
+          <input type="text" style={{borderColor: '#E3C900'}} {...register('password', { required: true, maxLength: 15 })} />
           {errors.password &&  <p className="mt-2 text-red-500 text-xs italic">{ERROR_MESSAGES[errors.password.type]}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Confirm Password:</label>
-          <input type="password" id="password" style={{borderColor: '#E3C900'}} {...register('confirm_password', { required: true, maxLength: 15 })} />
+          <input type="text" id="password" style={{borderColor: '#E3C900'}} {...register('confirm_password', { required: true, maxLength: 15 })} />
           {errors.confirm_password &&  <p className="mt-2 text-red-500 text-xs italic">{ERROR_MESSAGES[errors.confirm_password.type]}</p>}
         </div>
         <div className="form-group">
