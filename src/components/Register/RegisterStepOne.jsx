@@ -33,6 +33,7 @@ const form = useForm({
       email: "",
       username: "",
       password: "",
+      confirm_password:"",
       firstName: "",
       lastName: "",
       age: "",

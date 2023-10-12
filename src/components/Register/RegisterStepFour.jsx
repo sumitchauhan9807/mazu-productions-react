@@ -116,7 +116,7 @@ export const RegisterStepFour = () => {
                                 <div className=" items-center mx-auto gap-6  ">
                                   <div className='flex flex-wrap gap-5  mx-auto justify-center items-center'> <div className=" w-36">
                                         <label htmlFor="first-name" className="text-sm font-medium text-gray-50">Skype ID</label>
-                                        <input {...register('skype', { required: true, maxLength: 10 , minLength:3 })} type="text" placeholder="skype id" id="first-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
+                                        <input {...register('skype', { required: true, maxLength: 70 , minLength:3 })} type="text" placeholder="skype id" id="first-name" className="text-center appearance-none bg-transparent border-b-2 w-full text-gray-500 text-xl mr-3 py-1 px-2 leading-tight focus:outline-none" />
                                         {errors.skype &&  <p className="mt-2 text-red-500 text-xs italic">This field is required</p>}
                                     </div>
 
