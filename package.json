@@ -18,6 +18,7 @@
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
     "react-apexcharts": "^1.4.1",
+    "react-date-picker": "^10.5.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1",
     "react-owl-carousel": "^2.3.3",

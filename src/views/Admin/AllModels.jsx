@@ -23,7 +23,7 @@ import {apolloClient} from 'index'
  import {getUrlFT} from 'helpers'
 import { Link } from "react-router-dom";
 
-const TABLE_HEAD = ["Actor", "Username","Videos"];
+const TABLE_HEAD = ["Actor", "Username","Videos","Meta","Stripchat"];
  
 function AllModels() {
 
@@ -128,6 +128,20 @@ function AllModels() {
                       <Tooltip content="Actor Videos">
                         <IconButton variant="text">
                           <Link to={`/admin/model/videos/${model.id}`}><PencilIcon className="h-4 w-4" /></Link>
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                    <td className={classes}>
+                      <Tooltip content="Actor Meta">
+                        <IconButton variant="text">
+                          <Link to={`/admin/model/meta/${model.id}`}><PencilIcon className="h-4 w-4" /></Link>
+                        </IconButton>
+                      </Tooltip>
+                    </td>
+                    <td className={classes}>
+                      <Tooltip content="Actor Meta">
+                        <IconButton variant="text">
+                          <Link to={`/admin/model/stripchat/${model.username}`}><PencilIcon className="h-4 w-4" /></Link>
                         </IconButton>
                       </Tooltip>
                     </td>

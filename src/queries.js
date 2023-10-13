@@ -41,6 +41,11 @@ query getAllActorWebVideos($id:String!){
   }
 }`
 
+export const STRIP_CHAT_API = gql`
+query stripChatAPI($username:String!,$periodStart:String!,$periodEnd:String!){
+  stripChatAPI(username:$username,periodStart:$periodStart,periodEnd:$periodEnd)
+}`
+
 export const GET_MODEL_BY_CATEGORY = gql`
 query getModelByCategory($preference:String!){
   getModelByCategory(preference:$preference){
@@ -66,6 +71,25 @@ query getModelDefaultGallery{
     }
   }
 }`
+
+export const GET_ACTOR_META = gql`
+query getActorMeta($id:String!){
+  getActorMeta(id:$id){
+    actorMeta{
+      stripChatUsername
+    }
+  }
+}`
+
+export const UPDATE_ACTOR_META = gql`
+mutation UpdateActorMeta($stripChatUsername:String!,$id:String!){
+  UpdateActorMeta(stripChatUsername:$stripChatUsername,id:$id){
+    actorMeta{
+      stripChatUsername
+    }
+  }
+}`
+
 
 export const USER_REGISTER = gql `
     mutation register($options:UsernamePasswordInput!,$addr: String!,$userType:String!,$preference:String!,$modelData:ModelRegisterFields,$modelAff:String){

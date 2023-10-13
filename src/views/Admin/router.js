@@ -17,6 +17,9 @@ import TeamAdmins from 'views/Admin/TeamAdmins'
 
 import TeamManagers from 'views/Admin/TeamManagers'
 import Recuiters from 'views/Admin/Recuiters'
+import ActorMeta from 'views/Admin/ActorMeta'
+import StripChat from 'views/Admin/StripChat'
+
 
 
 
@@ -55,6 +58,10 @@ function AdminDashboard() {
         <Route exact path ="/admin/team/recuiters/:id" element= {<Recuiters/>}/> 
 
         <Route exact path ="/admin/model/videos/:id" element= {<ModelVideos/>}/> 
+        <Route exact path ="/admin/model/meta/:id" element= {<ActorMeta/>}/> 
+        <Route exact path ="/admin/model/stripchat/:id" element= {<StripChat/>}/> 
+
+
       </Routes>
       <Footer/>
       </ThemeProvider>
