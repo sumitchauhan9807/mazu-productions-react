@@ -310,6 +310,9 @@ export const GET_ALL_ACTORS = gql`query{
     id
     username
     profilePic
+    recuiter{
+      username
+    }
   }
 }`
 export const ADD_BASIC_INFO = gql `mutation addBasicInformation($options:BasicInfoInput!){
@@ -404,6 +407,26 @@ export const MOD_QUERY = gql`
         status
         pin
         accountType
+      }
+    }
+  }
+`;
+
+export const GET_ACTOR_MEDIA_ADMIN = gql`
+  query getActorMediaById($id: String!) {
+    getActorMediaById(id: $id) {
+      mediaGallery {
+        id
+        name
+        media {
+          url
+          mediaCategory
+          format
+          cloudUrl
+        }
+      }
+      user{
+        username
       }
     }
   }

@@ -122,10 +122,6 @@ Recuiters
   -> 
 
 
-          
-
-
-
-
-
-
+For stripchat
+  do cron job every day at 6AM taiwan time
+    -> save the totalEarnings /tips /publicChatTips /privateChatTips
