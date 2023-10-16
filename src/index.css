@@ -4,3 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-calendar__tile--active {
+  color: black !important;
+  font-weight: bold;
+}

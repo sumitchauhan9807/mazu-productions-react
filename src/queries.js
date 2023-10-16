@@ -41,9 +41,14 @@ query getAllActorWebVideos($id:String!){
   }
 }`
 
-export const STRIP_CHAT_API = gql`
-query stripChatAPI($username:String!,$periodStart:String!,$periodEnd:String!){
-  stripChatAPI(username:$username,periodStart:$periodStart,periodEnd:$periodEnd)
+export const STRIP_CHAT_DATA = gql`
+query stripChatAPI($id:String!){
+  stripChatData(id:$id){
+    id
+    startDate
+    endDate
+    totalEarnings
+  }
 }`
 
 export const GET_MODEL_BY_CATEGORY = gql`
