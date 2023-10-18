@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import {STRIP_CHAT_DATA,RELEASE_STRIPCHAT_PAYMENT} from 'queries'
 import {apolloClient} from 'index'
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
 import DatePicker from 'react-date-picker';
@@ -117,8 +117,10 @@ const [apiCount,setCount] = useState(0)
         
     <div className="w-full px-4 md:px-0 md:mt-8  text-gray-800 leading-normal">
       <div className="p-4 justify-center items-center pb-4">
-      <h3 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">Stripchat Earnings of {stripChatData?.actor?.username}</h3>
+      <center><h3 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">Stripchat Earnings of {stripChatData?.actor?.username}</h3></center>
+      <center> <Link  to={`/admin/model/stripchatstats/${params.id}`} className="w-1/4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4 mt-4">View Stripchat Stats of {stripChatData?.actor?.username}</Link> </center>
       <div className="relative overflow-x-auto mt-12">
+     
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>

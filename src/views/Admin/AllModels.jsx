@@ -156,7 +156,7 @@ function AllModels() {
                       </Tooltip>
                     </td>
                     <td className={classes}>
-                      <Tooltip content="Actor Meta">
+                      <Tooltip content="Stripchat Earnings">
                         <IconButton variant="text">
                           <Link to={`/admin/model/stripchat/${model.id}`}><PencilIcon className="h-4 w-4" /></Link>
                         </IconButton>

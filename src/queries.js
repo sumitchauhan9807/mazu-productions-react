@@ -44,16 +44,43 @@ export const GET_ALL_ACTOR_WEB_VIDEOS = gql`
 export const STRIP_CHAT_DATA = gql`
   query stripChatAPI($id: String!) {
     stripChatData(id: $id) {
-     earnings{
-      id
-      startDate
-      endDate
-      totalEarnings
-      isPaid
-     }
-     actor {
-       username
-     }
+      earnings {
+        id
+        startDate
+        endDate
+        totalEarnings
+        isPaid
+      }
+      actor {
+        username
+      }
+    }
+  }
+`;
+
+export const STRIPCHAT_PAYOUTS = gql`
+  query actorStripchatPayouts($id: String!) {
+    actorStripchatPayouts(id: $id) {
+      actor {
+        username
+      }
+      payouts {
+        id
+        amount
+        managerShare
+        companyShare
+        actorShare
+        actor {
+          username
+        }
+        recuiter {
+          username
+        }
+        manager {
+          username
+        }
+        recuiterShare
+      }
     }
   }
 `;
@@ -91,20 +118,43 @@ export const GET_ACTOR_META = gql`
     getActorMeta(id: $id) {
       actorMeta {
         stripChatUsername
+        stripChatCompanyShare
+        stripChatRecuiterShare
+        stripChatActorShare
+        stripChatManagerShare
       }
     }
   }
 `;
 
 export const UPDATE_ACTOR_META = gql`
-  mutation UpdateActorMeta($stripChatUsername: String!, $id: String!) {
-    UpdateActorMeta(stripChatUsername: $stripChatUsername, id: $id) {
+  mutation UpdateActorMeta($stripChatUsername: String!, 
+      $id: String!,
+      $stripChatCompanyShare:Float,
+      $stripChatRecuiterShare:Float,
+      $stripChatActorShare:Float,
+      $stripChatManagerShare:Float,
+    ) {
+    UpdateActorMeta(
+      stripChatUsername: $stripChatUsername, 
+      id: $id,
+      stripChatCompanyShare: $stripChatCompanyShare, 
+      stripChatRecuiterShare: $stripChatRecuiterShare, 
+      stripChatActorShare: $stripChatActorShare, 
+      stripChatManagerShare: $stripChatManagerShare, 
+    ) {
       actorMeta {
         stripChatUsername
+        stripChatCompanyShare
+        stripChatRecuiterShare
+        stripChatActorShare
+        stripChatManagerShare
       }
     }
   }
 `;
+
+
 
 export const USER_REGISTER = gql`
   mutation register(
@@ -165,18 +215,23 @@ export const UPDATE_PROFILE_PIC = gql`
   }
 `;
 
-export const RELEASE_STRIPCHAT_PAYMENT = gql`mutation releaseStripchatPayment($id:String!,$startDate:DateTime!,$endDate:DateTime!) {
-  releaseStripchatPayment(id: $id,startDate:$startDate,endDate:$endDate){
-    payout{
-      id
-      amount
-    }
-    paidEarnings{
-      id
-      totalEarnings
+export const RELEASE_STRIPCHAT_PAYMENT = gql`
+  mutation releaseStripchatPayment(
+    $id: String!
+    $startDate: DateTime!
+    $endDate: DateTime!
+  ) {
+    releaseStripchatPayment(id: $id, startDate: $startDate, endDate: $endDate) {
+      payout {
+        id
+        amount
+      }
+      paidEarnings {
+        id
+        totalEarnings
+      }
     }
   }
-}
 `;
 
 export const CREATE_TEAM = gql`
