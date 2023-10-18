@@ -16,6 +16,7 @@ let [meta,setMeta] = useState({
   stripChatActorShare:30,
   stripChatManagerShare:20
 })
+let [username,setUsername] = useState("")
 const params = useParams();
 const alertUser = useAlert()
 
@@ -34,6 +35,9 @@ const alertUser = useAlert()
         console.log(data.getActorMeta)
         if(data.getActorMeta?.actorMeta){ 
           setMeta(data.getActorMeta.actorMeta)
+        }
+        if(data.getActorMeta) {
+          setUsername(data.getActorMeta.username)
         }
        setLoading(false)
 
@@ -91,6 +95,7 @@ const alertUser = useAlert()
         { isLoading && <Loader/>}
       <div className="w-full px-4 md:px-0 md:mt-8  text-gray-800 leading-normal">
           <div className="p-4  justify-center items-center">
+          <center><h3 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">Stripchat Actor meta of {username}</h3></center>
             <div className="mb-6">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stripchat Username</label>
               <input type="text" value={meta.stripChatUsername} onChange={e => setMetaValues(e,'stripChatUsername')} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>

@@ -116,6 +116,7 @@ export const GET_MODEL_DEFAULT_GALLERY = gql`
 export const GET_ACTOR_META = gql`
   query getActorMeta($id: String!) {
     getActorMeta(id: $id) {
+      username
       actorMeta {
         stripChatUsername
         stripChatCompanyShare
