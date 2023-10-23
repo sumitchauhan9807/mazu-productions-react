@@ -193,7 +193,7 @@ function Dashboard({user}) {
                     <span>0%</span>
                   </div>
                 </div>
-                <span className="block text-center text-gray-500">Compared to last week $13,988</span>
+                <span className="block text-center text-gray-500">Compared to last week $0</span>
               </div>
               <table className="w-full text-gray-600">
                 <tbody>
@@ -301,7 +301,7 @@ function Dashboard({user}) {
               <h5 className="text-xl text-gray-700">Subscriptions</h5>
               <div className="my-8">
                 <h1 className="text-5xl font-bold text-gray-800">0%</h1>
-                <span className="text-gray-500">Compared to last week $13,988</span>
+                <span className="text-gray-500">Compared to last week $0</span>
               </div>
               <svg className="w-full" viewBox="0 0 218 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 67.5C27.8998 67.5 24.6002 15 52.5 15C80.3998 15 77.1002 29 105 29C132.9 29 128.6 52 156.5 52C184.4 52 189.127 63.8158 217.027 63.8158" stroke="url(#paint0_linear_622:13664)" strokeWidth={3} strokeLinecap="round" />
