@@ -185,12 +185,12 @@ function Dashboard({user}) {
               <div>
                 <h5 className="text-xl text-gray-600 text-center">Global Activities</h5>
                 <div className="mt-2 flex justify-center gap-4">
-                  <h3 className="text-3xl font-bold text-gray-700">$23,988</h3>
+                  <h3 className="text-3xl font-bold text-gray-700">$0</h3>
                   <div className="flex items-end gap-1 text-green-500">
                     <svg className="w-3" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z" fill="currentColor" />
                     </svg>
-                    <span>2%</span>
+                    <span>0%</span>
                   </div>
                 </div>
                 <span className="block text-center text-gray-500">Compared to last week $13,988</span>
@@ -199,7 +199,7 @@ function Dashboard({user}) {
                 <tbody>
                   <tr>
                     <td className="py-2">XHamster</td>
-                    <td className="text-gray-500">896</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -218,7 +218,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">Cams.com</td>
-                    <td className="text-gray-500">1200</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -237,7 +237,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">Faphouse</td>
-                    <td className="text-gray-500">12</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -256,7 +256,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">ManyVid</td>
-                    <td className="text-gray-500">12</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -275,7 +275,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">MAZU Network</td>
-                    <td className="text-gray-500">12</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -300,7 +300,7 @@ function Dashboard({user}) {
             <div className="h-full py-6 px-6 rounded-xl border border-gray-200 bg-white">
               <h5 className="text-xl text-gray-700">Subscriptions</h5>
               <div className="my-8">
-                <h1 className="text-5xl font-bold text-gray-800">64,5%</h1>
+                <h1 className="text-5xl font-bold text-gray-800">0%</h1>
                 <span className="text-gray-500">Compared to last week $13,988</span>
               </div>
               <svg className="w-full" viewBox="0 0 218 69" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -321,7 +321,7 @@ function Dashboard({user}) {
                 <tbody>
                   <tr>
                     <td className="py-2">From new users</td>
-                    <td className="text-gray-500">896</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -340,7 +340,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">From old users</td>
-                    <td className="text-gray-500">1200</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -379,12 +379,12 @@ function Dashboard({user}) {
               <div className="mt-6">
                 <h5 className="text-xl text-gray-700 text-center">Ask to customize</h5>
                 <div className="mt-2 flex justify-center gap-4">
-                  <h3 className="text-3xl font-bold text-gray-700">28</h3>
+                  <h3 className="text-3xl font-bold text-gray-700">0</h3>
                   <div className="flex items-end gap-1 text-green-500">
                     <svg className="w-3" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z" fill="currentColor" />
                     </svg>
-                    <span>2%</span>
+                    <span>0%</span>
                   </div>
                 </div>
                 <span className="block text-center text-gray-500">Compared to last week 13</span>
@@ -393,7 +393,7 @@ function Dashboard({user}) {
                 <tbody>
                   <tr>
                     <td className="py-2">Tailored ui</td>
-                    <td className="text-gray-500">896</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -412,7 +412,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">Customize</td>
-                    <td className="text-gray-500">1200</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
@@ -431,7 +431,7 @@ function Dashboard({user}) {
                   </tr>
                   <tr>
                     <td className="py-2">Other</td>
-                    <td className="text-gray-500">12</td>
+                    <td className="text-gray-500">0</td>
                     <td>
                       <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.4" width={17} height={21} rx={1} fill="#e4e4f2" />
