@@ -2,12 +2,15 @@ import {getUrl} from 'helpers'
 import { Link } from 'react-router-dom'
 function VideoCard(props) {
   console.log(props)
+  let videEarnings = props.video.updates.reduce((accumulator,currentValue)=>{
+      return accumulator + Number(currentValue.earnings)
+  },0)
   return (
     <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
       {/* <h3 className="mb-3 text-xl font-bold text-indigo-600">Beginner Friendly</h3> */}
       <div className="relative">
         <img className="w-full rounded-xl" src={getUrl(props.video.cover)} alt="Colors" />
-        <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">$50</p>
+        <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">$ {videEarnings}</p>
       </div>
       <h1 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">{props.video.name}</h1>
       <div className="my-4">
