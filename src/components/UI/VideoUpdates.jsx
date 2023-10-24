@@ -1,24 +1,26 @@
 import { useEffect, useRef, useState } from "react"
 
 function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
-  console.log(videoData,"ss")
-  console.log(updatedapiCount,"updatedapiCount")
-  let earningsRef = useRef("2")
+  
+  let earningsRef = useRef("")
   let bonusRef = useRef("")
   let viewsRef = useRef("")
+
   videoData = videoData.map((vd)=>{
     return {...vd,updating:false}
   })
   let [earnings,setEarnings] = useState(videoData)
+
   useEffect(()=>{
     setEarnings(videoData)
   },[videoData.length,updatedapiCount])
+
   const setIsUpdating = (findex) => {
     let UpdateTable = earnings.map((e,index)=>{
       if(index == findex) {
         earningsRef.current = e.earnings
         bonusRef.current = e.bonus
-        viewsRef.current = e.bonus
+        viewsRef.current = e.views
 
         return { ...e , updating:true}
       }

@@ -8,6 +8,7 @@ import {apolloClient} from 'index'
 import VideoUpdates from 'components/UI/VideoUpdates'
 
 function VideoEarnings(){ 
+  console.log("renede")
   let [addEarningModel,toggleAddEarningModel] = useState(false)
   let [isLoading,setLoading] = useState(false)
   const [videoData,setVideoData] = useState({
@@ -25,7 +26,7 @@ function VideoEarnings(){
   useEffect(()=>{
     (async ()=> {
       try {
-        // setLoading(true)
+        setLoading(true)
         let {data,errors} = await apolloClient.query({
           query: GET_WEB_VIDEO,
           variables: {
@@ -34,9 +35,15 @@ function VideoEarnings(){
           fetchPolicy:'no-cache'
         })
         if(data.getWebVideo) {
+          data.getWebVideo.updates.forEach((u)=>{
+            u.updating = false
+          }) 
            setVideoData(data.getWebVideo)
+           setUpdatedapiCount((prev)=>{
+              return prev + 1
+           })
         }
-      //  setLoading(false)
+       setLoading(false)
       }catch(e) {
         setLoading(false)
         alertUser.error(e.message)
@@ -89,12 +96,7 @@ function VideoEarnings(){
         setCount((prev)=>{
           return prev + 1
         })
-        setTimeout(()=>{
-          setLoading(false)
-          setUpdatedapiCount((prev)=>{
-              return prev + 1
-          })
-        },1000)
+        setLoading(false)
       }
     }catch(e) {
       setLoading(false)
@@ -122,11 +124,11 @@ function VideoEarnings(){
         <div className="w-full px-4 md:px-0  text-gray-800 leading-normal">
           <div className="p-4 justify-center items-center pb-4">
             <div className="relative overflow-x-auto mt-12">
-              {  <VideoUpdates 
+              {  videoData.updates.length ? <VideoUpdates 
                 videoData = {videoData.updates}
                 updateEarningData={updateEarningData}
                 updatedapiCount={updatedapiCount}
-              />}
+              />: <h2>No Earnings Found</h2>}
             </div>
           </div>
         </div>
