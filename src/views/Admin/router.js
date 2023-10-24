@@ -21,7 +21,7 @@ import ActorMeta from 'views/Admin/ActorMeta'
 import StripChat from 'views/Admin/StripChat'
 import StripchatStats from 'views/Admin/StripchatStats'
 import ModelDemoMedia from 'views/Admin/ModelDemoMedia'
-
+import VideoEarnings from 'views/Admin/VideoEarnings'
 
 
 
@@ -65,10 +65,8 @@ function AdminDashboard() {
         <Route exact path ="/admin/model/stripchatstats/:id" element= {<StripchatStats/>}/> 
 
         <Route exact path ="/admin/model/modeldemomedia/:id" element= {<ModelDemoMedia/>}/> 
-
-
-
-      </Routes>
+        <Route exact path ="/admin/videoearnings/:id" element= {<VideoEarnings/>}/> 
+     </Routes>
       <Footer/>
       </ThemeProvider>
     </React.Fragment>

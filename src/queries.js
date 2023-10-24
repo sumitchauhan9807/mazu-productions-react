@@ -34,8 +34,9 @@ export const GET_ALL_ACTOR_WEB_VIDEOS = gql`
       name
       updates {
         id
-        amount
+        earnings
         views
+        bonus
       }
     }
   }
@@ -566,6 +567,33 @@ export const GET_ACTOR_MEDIA_ADMIN = gql`
       }
       user {
         username
+      }
+    }
+  }
+`;
+
+
+export const ADD_WEB_VIDEO_UPDATE = gql`
+  mutation addWebVideoUpdate($id: String!,$earnings:String!,$bonus:String,$earnigDate:DateTime,$views:String!) {
+    addWebVideoUpdate(id: $id,earnings:$earnings,bonus:$bonus,earnigDate:$earnigDate,views:$views) {
+      id
+      earnings
+    }
+  }
+`;
+
+export const GET_WEB_VIDEO = gql`
+  query getWebVideo($id: String!) {
+    getWebVideo(id: $id) {
+      video {
+        id
+        name
+      }
+      updates {
+        id
+        earnings
+        views
+        earningDate
       }
     }
   }

@@ -1,4 +1,5 @@
 import {getUrl} from 'helpers'
+import { Link } from 'react-router-dom'
 function VideoCard(props) {
   console.log(props)
   return (
@@ -34,7 +35,7 @@ function VideoCard(props) {
           </span>
           <p><a style={{color:"blue"}} href="#">views-earnings</a></p>
         </div>
-        <button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">Update</button>
+        <Link to={`/admin/videoearnings/${props.video.id}`} className="mt-4 block text-xl w-full text-white bg-indigo-600 py-2 px-4 text-center  rounded-xl shadow-lg">Add Earning</Link>
         
       </div>
     </div>
