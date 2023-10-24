@@ -593,8 +593,14 @@ export const GET_WEB_VIDEO = gql`
         id
         earnings
         views
+        bonus
         earningDate
       }
     }
+  }
+`;
+export const UPDATE_WEB_VIDE_UPDATE = gql`
+  mutation updateWebVideoUpdate($id: String!,$earnings:String!,$bonus:String!,$views:String!) {
+    updateWebVideoUpdate(id: $id,earnings:$earnings,bonus:$bonus,views:$views)
   }
 `;

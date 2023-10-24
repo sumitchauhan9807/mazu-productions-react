@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import AddEarning from './Components/AddVideoEarning'
 import Loader from 'components/UI/Loader'
-import { ADD_WEB_VIDEO_UPDATE ,GET_WEB_VIDEO } from 'queries'
+import { ADD_WEB_VIDEO_UPDATE ,GET_WEB_VIDEO ,UPDATE_WEB_VIDE_UPDATE } from 'queries'
 import {useParams} from 'react-router-dom';
 import { useAlert } from 'react-alert'
 import {apolloClient} from 'index'
@@ -15,6 +15,9 @@ function VideoEarnings(){
     updates:[]
   })
   const [apiCount,setCount] = useState(0)
+  const [updatedapiCount,setUpdatedapiCount] = useState(0)
+
+  
   const params = useParams();
   const alertUser = useAlert()
 
@@ -32,7 +35,6 @@ function VideoEarnings(){
         })
         if(data.getWebVideo) {
            setVideoData(data.getWebVideo)
-          
         }
       //  setLoading(false)
       }catch(e) {
@@ -43,7 +45,7 @@ function VideoEarnings(){
   },[apiCount])
 
   const addEarning = async (earningData) => {
-    console.log(earningData)
+    
     // return 
     try {
       setLoading(true)
@@ -70,6 +72,35 @@ function VideoEarnings(){
       alertUser.error(e.message)
     }
   }
+  const updateEarningData = async (toUpdateData) => {
+    try {
+      setLoading(true)
+      let {data,errors} = await apolloClient.mutate({
+        mutation: UPDATE_WEB_VIDE_UPDATE,
+        variables: {
+          id:String(toUpdateData.id),
+          earnings:toUpdateData.earnings,
+          bonus:toUpdateData.bonus,
+          views:toUpdateData.views
+        },
+        fetchPolicy:'no-cache'
+      })
+      if(data.updateWebVideoUpdate) {
+        setCount((prev)=>{
+          return prev + 1
+        })
+        setTimeout(()=>{
+          setLoading(false)
+          setUpdatedapiCount((prev)=>{
+              return prev + 1
+          })
+        },1000)
+      }
+    }catch(e) {
+      setLoading(false)
+      alertUser.error(e.message)
+    }
+  }
   if(isLoading) return <Loader />
   return (
     <div className="container w-full mx-auto pt-20">
@@ -91,9 +122,11 @@ function VideoEarnings(){
         <div className="w-full px-4 md:px-0  text-gray-800 leading-normal">
           <div className="p-4 justify-center items-center pb-4">
             <div className="relative overflow-x-auto mt-12">
-              <VideoUpdates 
+              {  <VideoUpdates 
                 videoData = {videoData.updates}
-              />
+                updateEarningData={updateEarningData}
+                updatedapiCount={updatedapiCount}
+              />}
             </div>
           </div>
         </div>

@@ -1,5 +1,48 @@
-function VideoUpdates({videoData}) {
-  console.log(videoData,"videoData")
+import { useEffect, useRef, useState } from "react"
+
+function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
+  console.log(videoData,"ss")
+  console.log(updatedapiCount,"updatedapiCount")
+  let earningsRef = useRef("2")
+  let bonusRef = useRef("")
+  let viewsRef = useRef("")
+  videoData = videoData.map((vd)=>{
+    return {...vd,updating:false}
+  })
+  let [earnings,setEarnings] = useState(videoData)
+  useEffect(()=>{
+    setEarnings(videoData)
+  },[videoData.length,updatedapiCount])
+  const setIsUpdating = (findex) => {
+    let UpdateTable = earnings.map((e,index)=>{
+      if(index == findex) {
+        earningsRef.current = e.earnings
+        bonusRef.current = e.bonus
+        viewsRef.current = e.bonus
+
+        return { ...e , updating:true}
+      }
+      return { ...e , updating:false}
+    })
+    setEarnings(UpdateTable)
+  }
+  const cancelUpdate = () => {
+    let UpdateTable = earnings.map((e,index)=>{
+      return { ...e , updating:false}
+    })
+    setEarnings(UpdateTable)
+  }
+
+  const updateEarning = (index) => {
+    let entry = earnings[index]
+    updateEarningData({
+      id:entry.id,
+      earnings:earningsRef.current.value,
+      bonus:bonusRef.current.value,
+      views:viewsRef.current.value,
+      earningDate:entry.earningDate
+    })
+  }
   return (
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -22,27 +65,31 @@ function VideoUpdates({videoData}) {
             </tr>
           </thead>
           <tbody>
-            {videoData.map((data,index)=>{
+            {earnings.map((data,index)=>{
               return (
                 <tr key={index}>
                   <td className="px-6 py-4">
-                   {data.earnings}
+                   {data.updating ? <input ref={earningsRef} defaultValue={earningsRef.current} onChange={(e)=>{e.target.value=earningsRef.current.value}} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="number" placeholder="Earnings" />:data.earnings}
                   </td>
                   <td className="px-6 py-4">
-                  {data.bonus}
+                  {data.updating ? <input ref={bonusRef} defaultValue={bonusRef.current}  onChange={(e)=>{e.target.value=bonusRef.current.value}}  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="number" placeholder="Bonus" />:data.bonus}
                   </td>
                   <td className="px-6 py-4">
-                  {data.views}
+                  {data.updating ? <input ref={viewsRef} defaultValue={viewsRef.current} onChange={(e)=>{e.target.value=viewsRef.current.value}}   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="number" placeholder="Views" />:data.views}
                   </td>
                   <td className="px-6 py-4">
                   {formatDate(data.earningDate)}
                   </td>
                   <td className="px-6 py-4">
-                  <button  type="button" className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Update</button>
+                  {data.updating ? 
+                  <>
+                  <button  onClick={()=>updateEarning(index)} type="button" className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Confirm Update</button> 
+                  <button  onClick={cancelUpdate} type="button" className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Cancel</button> 
+                  
+                  </>
+                  : <button  onClick={()=>setIsUpdating(index)} type="button" className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Update</button>}
                   </td>
                 </tr>
-
-                
               )
             })}
           </tbody>
