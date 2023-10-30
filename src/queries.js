@@ -650,10 +650,16 @@ export const RELEASE_VIDEO_PAYMENT = gql`
 `;
 
 export const GET_ACTOR_PAYOUTS = gql`
-  query getActorPayouts{
-    getActorPayouts{
+  query getActorPayouts {
+    getActorPayouts {
       id
+      amount
       source
+      actorShare
+      recuiterShare
+      managerShare
+      companyShare
+      createdAt
     }
   }
 `;

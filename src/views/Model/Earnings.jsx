@@ -4,9 +4,11 @@ import {GET_ACTOR_PAYOUTS} from 'queries'
 import {apolloClient} from 'index'
 import Loader from 'components/UI/Loader'
 import { useAlert } from 'react-alert'
+import ActorPayouts from 'components/common/ActorPayouts'
 
 function Earnings() {
   let [isLoading,setLoading] = useState(false)
+  const [actorPayouts,setActorPayouts] = useState([])
   useEffect(()=>{
     (async ()=>{
       try {
@@ -15,7 +17,9 @@ function Earnings() {
           query: GET_ACTOR_PAYOUTS,
           fetchPolicy:'no-cache'
         })
-        
+        if(data.getActorPayouts) {
+          setActorPayouts(data.getActorPayouts)
+        }
        setLoading(false)
 
       }catch(e) {
@@ -27,9 +31,12 @@ function Earnings() {
 
   return (
     <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+      {isLoading  && <Loader/>}
         <Header name='Earnings'/>
       <div className="px-6 pt-6 2xl:container">
-        \asdasdasdas
+          <ActorPayouts
+          payouts={actorPayouts}
+          />
         </div>
     </div>
   
