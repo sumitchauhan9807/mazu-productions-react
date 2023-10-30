@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 
-function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
+function VideoUpdates({videoData,updateEarningData,updatedapiCount,releasePayment}) {
   
   let earningsRef = useRef("")
   let bonusRef = useRef("")
@@ -45,6 +45,11 @@ function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
       earningDate:entry.earningDate
     })
   }
+
+  const releaseVideoPayment = (index)  => {
+    let entry = earnings[index]
+    releasePayment(entry)
+  }
   return (
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -86,7 +91,7 @@ function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
                   {formatDate(data.earningDate)}
                   </td>
                   <td className="px-6 py-4">
-                  <button   type="button" className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Release Payment</button>
+                  {!data.isPaid && <button onClick={()=>releaseVideoPayment(index)}   type="button" className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Release Payment</button>}
                   </td>
                   <td className="px-6 py-4">
                   {data.updating ? 

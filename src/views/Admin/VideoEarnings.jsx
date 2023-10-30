@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import AddEarning from './Components/AddVideoEarning'
 import Loader from 'components/UI/Loader'
-import { ADD_WEB_VIDEO_UPDATE ,GET_WEB_VIDEO ,UPDATE_WEB_VIDE_UPDATE } from 'queries'
+import { ADD_WEB_VIDEO_UPDATE ,GET_WEB_VIDEO ,UPDATE_WEB_VIDE_UPDATE ,RELEASE_VIDEO_PAYMENT} from 'queries'
 import {useParams} from 'react-router-dom';
 import { useAlert } from 'react-alert'
 import {apolloClient} from 'index'
@@ -103,6 +103,34 @@ function VideoEarnings(){
       alertUser.error(e.message)
     }
   }
+
+  const releasePayment = async (videoData) => {
+    try {
+      setLoading(true)
+      var date = new Date(videoData.earningDate)
+      date.setDate(date.getDate() + 1)
+      let {data,errors} = await apolloClient.mutate({
+        mutation: RELEASE_VIDEO_PAYMENT,
+        variables: {
+          videoId:String(params.id),
+          startDate:videoData.earningDate,
+          endDate:date,
+        },
+        fetchPolicy:'no-cache'
+      })
+      if(data.releaseVideoPayment) {
+        alertUser.success("payment released successfully")
+        setCount((prev)=>{
+          return prev + 1
+        })
+      }
+      setLoading(false)
+
+    }catch(e) {
+      setLoading(false)
+      alertUser.error(e.message)
+    }
+  }
   if(isLoading) return <Loader />
   return (
     <div className="container w-full mx-auto pt-20">
@@ -128,6 +156,7 @@ function VideoEarnings(){
                 videoData = {videoData.updates}
                 updateEarningData={updateEarningData}
                 updatedapiCount={updatedapiCount}
+                releasePayment={releasePayment}
               />: <h2>No Earnings Found</h2>}
             </div>
           </div>

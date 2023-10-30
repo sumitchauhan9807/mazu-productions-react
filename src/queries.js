@@ -71,6 +71,7 @@ export const STRIPCHAT_PAYOUTS = gql`
         managerShare
         companyShare
         actorShare
+        source
         actor {
           username
         }
@@ -130,20 +131,21 @@ export const GET_ACTOR_META = gql`
 `;
 
 export const UPDATE_ACTOR_META = gql`
-  mutation UpdateActorMeta($stripChatUsername: String!, 
-      $id: String!,
-      $stripChatCompanyShare:Float,
-      $stripChatRecuiterShare:Float,
-      $stripChatActorShare:Float,
-      $stripChatManagerShare:Float,
-    ) {
+  mutation UpdateActorMeta(
+    $stripChatUsername: String!
+    $id: String!
+    $stripChatCompanyShare: Float
+    $stripChatRecuiterShare: Float
+    $stripChatActorShare: Float
+    $stripChatManagerShare: Float
+  ) {
     UpdateActorMeta(
-      stripChatUsername: $stripChatUsername, 
-      id: $id,
-      stripChatCompanyShare: $stripChatCompanyShare, 
-      stripChatRecuiterShare: $stripChatRecuiterShare, 
-      stripChatActorShare: $stripChatActorShare, 
-      stripChatManagerShare: $stripChatManagerShare, 
+      stripChatUsername: $stripChatUsername
+      id: $id
+      stripChatCompanyShare: $stripChatCompanyShare
+      stripChatRecuiterShare: $stripChatRecuiterShare
+      stripChatActorShare: $stripChatActorShare
+      stripChatManagerShare: $stripChatManagerShare
     ) {
       actorMeta {
         stripChatUsername
@@ -155,8 +157,6 @@ export const UPDATE_ACTOR_META = gql`
     }
   }
 `;
-
-
 
 export const USER_REGISTER = gql`
   mutation register(
@@ -572,10 +572,21 @@ export const GET_ACTOR_MEDIA_ADMIN = gql`
   }
 `;
 
-
 export const ADD_WEB_VIDEO_UPDATE = gql`
-  mutation addWebVideoUpdate($id: String!,$earnings:String!,$bonus:String,$earnigDate:DateTime,$views:String!) {
-    addWebVideoUpdate(id: $id,earnings:$earnings,bonus:$bonus,earnigDate:$earnigDate,views:$views) {
+  mutation addWebVideoUpdate(
+    $id: String!
+    $earnings: String!
+    $bonus: String
+    $earnigDate: DateTime
+    $views: String!
+  ) {
+    addWebVideoUpdate(
+      id: $id
+      earnings: $earnings
+      bonus: $bonus
+      earnigDate: $earnigDate
+      views: $views
+    ) {
       id
       earnings
     }
@@ -595,12 +606,54 @@ export const GET_WEB_VIDEO = gql`
         views
         bonus
         earningDate
+        isPaid
       }
     }
   }
 `;
 export const UPDATE_WEB_VIDE_UPDATE = gql`
-  mutation updateWebVideoUpdate($id: String!,$earnings:String!,$bonus:String!,$views:String!) {
-    updateWebVideoUpdate(id: $id,earnings:$earnings,bonus:$bonus,views:$views)
+  mutation updateWebVideoUpdate(
+    $id: String!
+    $earnings: String!
+    $bonus: String!
+    $views: String!
+  ) {
+    updateWebVideoUpdate(
+      id: $id
+      earnings: $earnings
+      bonus: $bonus
+      views: $views
+    )
+  }
+`;
+
+export const RELEASE_VIDEO_PAYMENT = gql`
+  mutation releaseVideoPayment(
+    $videoId: String!
+    $startDate: DateTime!
+    $endDate: DateTime!
+  ) {
+    releaseVideoPayment(
+      videoId: $videoId
+      startDate: $startDate
+      endDate: $endDate
+    ) {
+      payout {
+        id
+        recuiter {
+          username
+        }
+        source
+      }
+    }
+  }
+`;
+
+export const GET_ACTOR_PAYOUTS = gql`
+  query getActorPayouts{
+    getActorPayouts{
+      id
+      source
+    }
   }
 `;

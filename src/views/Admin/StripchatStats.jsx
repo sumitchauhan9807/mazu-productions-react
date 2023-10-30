@@ -72,6 +72,9 @@ const [apiCount,setCount] = useState(0)
               <th scope="col" className="px-6 py-3">
                 Recuiter Share (usd)
               </th>
+              <th scope="col" className="px-6 py-3">
+                Earning Source
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -79,19 +82,22 @@ const [apiCount,setCount] = useState(0)
               return (
                 <tr>
                   <td className="px-6 py-4">
-                    {getAmountUSD(payout.amount)}
+                    {payout.source == 'stripchat' ? getAmountUSD(payout.amount) : payout.amount}
                   </td>
                   <td className="px-6 py-4">
-                   {getAmountUSD(payout.companyShare)}
+                   {payout.source == 'stripchat' ? getAmountUSD(payout.companyShare) : payout.companyShare}
                   </td>
                   <td className="px-6 py-4">
-                   {getAmountUSD(payout.actorShare)}
+                   {payout.source == 'stripchat' ? getAmountUSD(payout.actorShare) : payout.actorShare}
                   </td>
                   <td className="px-6 py-4">
-                    {getAmountUSD(payout.managerShare)}
+                    {payout.source == 'stripchat' ? getAmountUSD(payout.managerShare) : payout.managerShare}
                   </td>
                   <td className="px-6 py-4">
-                    {getAmountUSD(payout.recuiterShare)}
+                    {payout.source == 'stripchat' ? getAmountUSD(payout.recuiterShare) : payout.recuiterShare}
+                  </td>
+                  <td className="px-6 py-4">
+                    {payout.source}
                   </td>
                 </tr>
               )
