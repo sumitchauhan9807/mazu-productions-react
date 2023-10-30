@@ -62,6 +62,9 @@ function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
                 Earning Date
               </th>
               <th scope="col" className="px-6 py-3">
+                Release Payment
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Update Earnings
               </th>
             </tr>
@@ -81,6 +84,9 @@ function VideoUpdates({videoData,updateEarningData,updatedapiCount}) {
                   </td>
                   <td className="px-6 py-4">
                   {formatDate(data.earningDate)}
+                  </td>
+                  <td className="px-6 py-4">
+                  <button   type="button" className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto">Release Payment</button>
                   </td>
                   <td className="px-6 py-4">
                   {data.updating ? 
