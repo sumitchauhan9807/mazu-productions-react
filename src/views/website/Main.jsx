@@ -1,4 +1,4 @@
-import GayImage from 'assets/image/gay.png'
+import GayImage from 'assets/image/gay.jpg'
 import HeaderBackground from 'assets/image/bg.jpg'
 
 import Alex from 'assets/image/alex.png'
@@ -167,11 +167,11 @@ function Main() {
                   data-animation="fadeInUp"
                   data-delay=".4s"
                 >
-                  ZE[D]{" "}
+                 Cuba Nuevo{" "}
                   <span className='font-bold'>
                     {" "}
                     <br />
-                    The Inglorious Bastard
+                    The Mask Wanker
                   </span>{" "}
                 </h2>
                 <div
