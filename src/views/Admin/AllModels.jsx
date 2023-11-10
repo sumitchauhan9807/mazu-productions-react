@@ -16,19 +16,25 @@ import {
   Tooltip,
   Input,
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
-import {GET_ALL_ACTORS} from 'queries'
+import { useEffect, useRef, useState } from "react";
+import {GET_ALL_ACTORS,REMOVE_ACCOUNT} from 'queries'
 import {apolloClient} from 'index'
  import Loader from 'components/UI/Loader'
  import {getUrlFT} from 'helpers'
 import { Link } from "react-router-dom";
-
-const TABLE_HEAD = ["Actor", "Username","Recuiter","Demo Media","Videos","Meta","Stripchat"];
+import Swal from "sweetalert2"
+import { useAlert } from 'react-alert'
+const TABLE_HEAD = ["Actor", "Username","Recuiter","Demo Media","Videos","Meta","Stripchat","Remove Model"];
  
 function AllModels() {
 
   const [allModels,setAllModels] = useState([])
   const [isLoading,setLoading] = useState(false)
+  const [page,setPage] = useState(1)
+  const [pageCount,setPageCount] = useState(0)
+  const [apiCount,setCount] = useState(0)
+  const alertUser = useAlert()
+
 
   useEffect(() => {
     (async ()=>{
@@ -36,9 +42,13 @@ function AllModels() {
         setLoading(true)
         let {data,errors} = await apolloClient.query({
           query: GET_ALL_ACTORS,
-          // fetchPolicy:'no-cache'
+          variables:{
+            page:page
+          },
+          fetchPolicy:'no-cache'
         })
-       setAllModels(data.getAllActors)
+       setAllModels(data.getAllActors.user)
+       setPageCount(data.getAllActors.count)
        setLoading(false)
 
       }catch(e) {
@@ -46,7 +56,47 @@ function AllModels() {
         alert(e.message)
       }
     })()
-  },[])
+  },[page,apiCount])
+
+  const setCurrentPage = (val) => {
+    let nextPage = page + val
+    if(nextPage < 1) return
+    if(nextPage > pageCount) return
+    setPage(nextPage)
+  } 
+  const removeUser = async (id) => {
+    try {
+      let Vdata = await new Swal({
+        title: "Are you sure?",
+        text: "This model will be removed completely from the system",
+        type: "confirm",
+        showCancelButton: true,
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes, I am sure!',
+        cancelButtonText: "No, cancel it!",
+      })
+      if(!Vdata.isConfirmed) return 
+      setLoading(true)
+      let {data,errors} = await apolloClient.mutate({
+        mutation: REMOVE_ACCOUNT,
+        variables:{
+          usr:String(id)
+        }
+        // fetchPolicy:'no-cache'
+      })
+      if(data.removeUser) {
+        alertUser.success('User removed successfully')
+        setCount((prev)=>{
+          return prev + 1
+        })
+      }
+     setLoading(false)
+
+    }catch(e) {
+      setLoading(false)
+      alert(e.message)
+    }
+  }
 
   if(isLoading) return <Loader/>
   return (
@@ -162,6 +212,13 @@ function AllModels() {
                         </IconButton>
                       </Tooltip>
                     </td>
+                    <td className={classes}>
+                      <Tooltip content="Remove Model">
+                        <IconButton variant="text">
+                          <a onClick={()=> removeUser(model.id)}><PencilIcon className="h-4 w-4" /></a>
+                        </IconButton>
+                      </Tooltip>
+                    </td>
                   </tr>
                 );
               },
@@ -170,33 +227,19 @@ function AllModels() {
         </table>
       </CardBody>
       <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-        <Button variant="outlined" size="sm">
+        <Button onClick={() => setCurrentPage(-1)} variant="outlined" size="sm">
           Previous
         </Button>
         <div className="flex items-center gap-2">
-          <IconButton variant="outlined" size="sm">
-            1
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            2
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            3
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            ...
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            8
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            9
-          </IconButton>
-          <IconButton variant="text" size="sm">
-            10
-          </IconButton>
+          {Array.from(Array(pageCount)).map((index,val)=>{
+            return (
+              <IconButton key={val+1} onClick={()=>setPage(val+1)} variant={`${(val+1) == page ? 'outlined' : 'text'}`} size="sm">
+                 {val +1}
+              </IconButton>
+            )
+          })}
         </div>
-        <Button variant="outlined" size="sm">
+        <Button onClick={()=>setCurrentPage(1)} variant="outlined" size="sm">
           Next
         </Button>
       </CardFooter>

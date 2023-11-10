@@ -51,6 +51,7 @@ export const STRIP_CHAT_DATA = gql`
         endDate
         totalEarnings
         isPaid
+        createdAt
       }
       actor {
         username
@@ -436,14 +437,18 @@ export const ADD_RECUITER = gql`
 `;
 
 export const GET_ALL_ACTORS = gql`
-  query {
-    getAllActors {
-      id
-      username
-      profilePic
-      recuiter {
+  query getAllActors($page:Float) {
+    getAllActors(page:$page) {
+      user {
+        id
         username
+        profileComplete
+        profilePic
+        recuiter {
+          username
+        }
       }
+      count
     }
   }
 `;
@@ -661,5 +666,10 @@ export const GET_ACTOR_PAYOUTS = gql`
       companyShare
       createdAt
     }
+  }
+`;
+export const REMOVE_ACCOUNT = gql`
+  mutation removeUser($usr: String!) {
+    removeUser(usr: $usr)
   }
 `;

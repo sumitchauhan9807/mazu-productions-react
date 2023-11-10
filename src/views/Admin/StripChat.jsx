@@ -108,7 +108,7 @@ const [apiCount,setCount] = useState(0)
       alertUser.error(e.message)
     }
   }
-
+  let sr = 0
   
   return (
     <div className="container w-full mx-auto pt-20">
@@ -124,6 +124,9 @@ const [apiCount,setCount] = useState(0)
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
+            <th scope="col" className="px-6 py-3">
+                Sr
+              </th>
               <th scope="col" className="px-6 py-3">
                 Earnings
               </th>
@@ -140,8 +143,12 @@ const [apiCount,setCount] = useState(0)
           </thead>
           <tbody>
            {stripChatData.earnings.map((stripData)=>{
+             sr++
              return (
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                 <td className="px-6 py-4">
+               {sr}
+              </td>
               <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {stripData.totalEarnings}
               </th>
