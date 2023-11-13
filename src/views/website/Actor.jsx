@@ -1,5 +1,7 @@
 import HeaderBackground from 'assets/image/bg.jpg'
 import PorntoolModels from 'components/porntool-models'
+import SweetCandy from 'assets/image/catpng.png'
+// import HeaderBackground from '../../assets/image/bg.jpg'
 import {useParams} from 'react-router-dom';
 function Actor() {
   const params = useParams();
@@ -8,9 +10,9 @@ function Actor() {
     <main>
       {/* breadcrumb-area */}
       <section
-        className="breadcrumb-area breadcrumb-bg"
-        data-background="img/bg/breadcrumb_bg.jpg"
-        
+        className="breadcrumb-area breadcrumb-bg object-cover"
+        // data-background="img/bg/breadcrumb_bg.jpg"
+        style={{backgroundImage:`url(${SweetCandy})`}}
       >
         <div className="container">
           <div className="row">

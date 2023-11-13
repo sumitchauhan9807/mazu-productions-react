@@ -102,6 +102,8 @@ function Header() {
                         <ul className="submenu">
                           <li><a href="index.html">RentAGay Productions
                             </a></li>
+                            <li><a href="index.html">Cuba Nuevo
+                            </a></li>
                           <li className="active"><a href="index-2.html">Pussy Deluxe
                             </a></li>
                           <li className="active"><a href="index-2.html">Black Bitch Films                                                  </a></li>
@@ -157,7 +159,7 @@ function Header() {
                         </form>
                       </li>
                       {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="btn">Logout</a></li> : <li className="header-btn"><Link to="/login" href="#" className="btn">Sign In</Link></li>}
-                      {!user.token && <li className="header-btn"><Link to="/register" className="btn">Register</Link></li>}
+                      {!user.token && <li className="header-btn"><Link to="/registernow" className="btn">Register</Link></li>}
 
                     </ul>
                   </div>

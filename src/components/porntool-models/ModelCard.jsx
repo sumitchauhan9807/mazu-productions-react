@@ -1,10 +1,15 @@
 import {getUrlFT} from '../../helpers'
 function ModelCard({model}) {
+  const divStyle = {
+    height: '500px',
+    
+    // Add other style properties as needed
+  };
  return (
   <div className="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
     <div className="movie-item movie-item-three mb-50">
       <div className="movie-poster">
-        <img
+        <img className=' w-full object-cover' style={divStyle}
           src={getUrlFT(model.profilePic)}
           alt=""
         />
@@ -15,6 +20,11 @@ function ModelCard({model}) {
             <i className="fas fa-star" />
             <i className="fas fa-star" />
             <i className="fas fa-star" />
+          </li>
+          <li>
+            <a href="movie-details.html" className="btn">
+              Join Flan club
+            </a>
           </li>
           <li>
             <a href="movie-details.html" className="btn">

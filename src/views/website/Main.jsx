@@ -6,6 +6,7 @@ import Ary from 'assets/image/arychoco.jpg'
 import Cola from 'assets/image/cola.jpg'
 import Zed from 'assets/image/zed.png'
 import SweetCandy from 'assets/image/sweetcandy.jpg'
+import SweetCandy1 from 'assets/image/catpng.png'
 
 
 import PorntoolMovies from 'components/porntool-movies'
@@ -157,7 +158,7 @@ function Main() {
                   data-animation="fadeInUp"
                   data-delay=".2s"
                 >
-                  RentAGay{" "}
+                  Cuba Nuevo{" "}
                   <span style={{ fontSize: "13px", color: "white" }}>
                     PRESENTS:
                   </span>{" "}
@@ -255,32 +256,33 @@ function Main() {
   {/* up-coming-movie-area-end */}
   {/* gallery-area */}
   
-  <div className="gallery-area position-relative">
+  <div className="gallery-area position-relative  bg-gray-900"  >
   <div className="gallery-bg"></div>
-    <div className="container-fluid p-0 fix">
+    <div className="container-fluid p-0 fix  mx-auto justify-center items-center">
       
       <Slider {...settings}>
-        <div className="col-12">
+        <div className="col-10">
           <div className="gallery-item">
-            <img src={Alex} alt="" />
+            <img src={Alex} alt=""  c />
           </div>
+          
         </div>
-        <div className="col-12">
+        <div className="col-10">
           <div className="gallery-item">
           <img src={Ary} alt="" />
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-10">
           <div className="gallery-item">
           <img src={Cola} alt="" />
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-10">
           <div className="gallery-item">
           <img src={Zed} alt="" />
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-10">
           <div className="gallery-item">
           <img src={SweetCandy} alt="" />
           </div>

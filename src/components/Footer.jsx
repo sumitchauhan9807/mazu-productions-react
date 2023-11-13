@@ -15,12 +15,12 @@ function Footer () {
             <div className="col-lg-9">
               <div className="footer-menu">
                 <nav className='flex flex-wrap'>
-                  <ul className=" flex flex-wrap gap-5">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">Movie</a></li>
-                    <li><a href="index.html">tv show</a></li>
-                    <li><a href="index.html">pages</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                  <ul className=" flex flex-wrap  gap-5">
+                    <li><a href="index.html" className='text-yellow-500'>Home</a></li>
+                    <li><a href="index.html" className='text-white' >Movie</a></li>
+                    <li><a href="index.html" className='text-white'>tv show</a></li>
+                    <li><a href="index.html" className='text-white'>pages</a></li>
+                    <li><a href="/register" className='text-yellow-600'>MODELS NEEDED</a></li>
                   </ul>
                   <div className="footer-search">
                     <form action="#">
@@ -38,10 +38,10 @@ function Footer () {
             <div className="col-md-7">
               <div className="">
                 <ul className='flex flex-wrap justify-start items-start gap-5'>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Help Center</a></li>
-                  <li><a href="#">Terms of Use</a></li>
-                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#" className='text-white'>FAQ</a></li>
+                  <li><a href="#" className='text-white'>Help Center</a></li>
+                  <li><a href="#" className='text-white'>Terms of Use</a></li>
+                  <li><a href="#" className='text-white'>Privacy</a></li>
                 </ul>
               </div>
             </div>

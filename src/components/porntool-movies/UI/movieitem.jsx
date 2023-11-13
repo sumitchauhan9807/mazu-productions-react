@@ -7,7 +7,7 @@ function MovieItem({movie}) {
   >
     <div className="movie-poster">
       <a href="movie-details.html">
-        <img src={getUrl(movie.potrait)} alt="" />
+        <img className='h-96 object-cover' src={getUrl(movie.potrait)} alt="" />
       </a>
     </div>
     <div className="movie-content">
@@ -21,7 +21,7 @@ function MovieItem({movie}) {
       <h5 className="title">
         <a href="movie-details.html">{movie.title}</a>
       </h5>
-      <span className="rel">Adventure</span>
+      {/* <span className="rel">{activeCategory}</span> */}
       <div className="movie-content-bottom">
         <ul>
           <li className="tag">

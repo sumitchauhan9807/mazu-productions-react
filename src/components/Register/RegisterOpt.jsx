@@ -60,7 +60,7 @@ const RegisterStepOtp = () => {
                 <p>Email Verification</p>
               </div>
               <div className="flex flex-row text-sm font-medium text-gray-400">
-                <p>We have sent a 5 code Digit to your email ba**@dipainhouse.com</p>
+                <p>We have sent a 5 code Digit to your email Please Check Your MAIL BOX</p>
               </div>
             </div>
             <div>

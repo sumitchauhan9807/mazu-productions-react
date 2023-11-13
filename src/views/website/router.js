@@ -9,6 +9,7 @@ import Login from 'views/website/Login'
 import Test from 'views/website/Test'
 import ModelLogin from 'views/Model/Modellogin'
 import AdminLogin from 'views/website/AdminLogin'
+import UserRegister from 'views/website/Userregister'
 import 'website.css'
 
 function Website() {
@@ -23,6 +24,7 @@ function Website() {
           <Route exact path ="/login" element= {<Login/>}/>
           <Route exact path ="/model-login" element= {<ModelLogin/>}/>
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
+          <Route exact path ="/registernow" element= {<UserRegister/>}/>
         </Routes>
       <Footer/>
     </React.Fragment>
