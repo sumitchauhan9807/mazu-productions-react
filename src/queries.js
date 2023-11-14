@@ -673,3 +673,19 @@ export const REMOVE_ACCOUNT = gql`
     removeUser(usr: $usr)
   }
 `;
+
+export const GET_MEDIA_INFO = gql`
+  query getMediaInfo($media: Float!) {
+    getMediaInfo(media: $media){
+      id
+      title
+      description
+      potrait
+      duration
+      tags{
+        name
+      }
+      createdAt
+    }
+  }
+`;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {getUrl} from '../../../helpers'
 function MovieItem({movie}) {
   return (
@@ -6,9 +7,9 @@ function MovieItem({movie}) {
     data-blocked="<?= $gayVideo->blocked_in ?>"
   >
     <div className="movie-poster">
-      <a href="movie-details.html">
+      <Link to={`/video/${movie.id}`}>
         <img className='h-96 object-cover' src={getUrl(movie.potrait)} alt="" />
-      </a>
+      </Link>
     </div>
     <div className="movie-content">
       <div className="rating">
