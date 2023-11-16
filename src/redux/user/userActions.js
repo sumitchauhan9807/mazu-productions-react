@@ -1,10 +1,11 @@
 import { SET_USER_DATA ,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME ,SET_COMMUNITY_DOMAIN}  from './userTypes';
 
-export const setUserData = (userData,token) => {
+export const setUserData = (userData,token,userType) => {
   return {
     type: SET_USER_DATA,
     userData:userData,
-    token:token
+    token:token,
+    userType:userType
   }
 }
 

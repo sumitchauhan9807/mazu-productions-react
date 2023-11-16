@@ -83,7 +83,7 @@ useEffect(()=>{
       alertUser.show(data.errors[2].message)
     }
     if(data.register?.user){
-      props.setUserData(data.register.user,data.register.token)
+      props.setUserData(data.register.user,data.register.token,'model')
       alertUser.show('Step one successfully completed')
     }
   }

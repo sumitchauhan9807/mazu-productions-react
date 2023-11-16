@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 import {GET_ALL_ACTORS,GET_MEDIA_INFO} from 'queries'
 import {apolloClient} from 'index'
 import {getUrl} from 'helpers'
-
+import 'video-react/dist/video-react.css';
+import { Player } from 'video-react';
 function ModelVideo() {
   const params = useParams();
   let id = params.id
@@ -30,6 +31,11 @@ function ModelVideo() {
   },[])
   return (
     <main>
+       <Player
+       poster="https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg"
+       >
+      <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+    </Player>
       <section className="movie-details-area" data-background="https://themebeyond.com/html/movflx/img/bg/movie_details_bg.jpg" style={{backgroundImage: 'url("https://themebeyond.com/html/movflx/img/bg/movie_details_bg.jpg")'}}>
         <div className="container">
           <div className="row align-items-center position-relative">

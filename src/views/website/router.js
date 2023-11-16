@@ -6,6 +6,8 @@ import Main from 'views/website/Main'
 import Actor from 'views/website/Actor'
 import Register from 'views/website/Register'
 import Login from 'views/website/Login'
+import UserLogin from 'views/website/UserLogin'
+
 import Test from 'views/website/Test'
 import ModelLogin from 'views/Model/Modellogin'
 import AdminLogin from 'views/website/AdminLogin'
@@ -26,6 +28,8 @@ function Website() {
           <Route exact path ="/model-login" element= {<ModelLogin/>}/>
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
+          <Route exact path ="/userlogin" element= {<UserLogin/>}/>
+
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 
         </Routes>

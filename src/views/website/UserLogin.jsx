@@ -1,5 +1,5 @@
 import registerBackgroundImage from 'assets/image/bg.jpg';
-import {USER_LOGIN} from 'queries'
+import {MP_USER_LOGIN} from 'queries'
 import {apolloClient} from 'index'
 import React ,{useState,useEffect,useRef} from 'react'
 import Loader from 'components/UI/Loader'
@@ -24,11 +24,10 @@ function useDidUpdateEffect(fn, inputs) {
 
 const doLogin = async (emailOrUname,password) => {
   try {
-    let result = apolloClient.mutate({
-      mutation: USER_LOGIN,
+    let result = apolloClient.query({
+      query: MP_USER_LOGIN,
       variables: {
-        addr: '',
-        usernameOrEmail: emailOrUname,
+        username: emailOrUname,
         password: password,
       },
     })
@@ -38,7 +37,7 @@ const doLogin = async (emailOrUname,password) => {
   }
 }
 
-function Login() {
+function UserLogin() {
   let usernameOrEmail = React.createRef();
   let password = React.createRef();
 	let [isLoading,setLoading] = useState(false)
@@ -51,36 +50,33 @@ function Login() {
     }
   })
   
-  
+  useEffect(()=>{
+		if(user.userData) {
+			navigate("/");
+		}
+	},[user.userData])
   const loginUser = async () => {
     try {
       setLoading(true)
       let {data,errors} = await doLogin(usernameOrEmail.current.value,password.current.value)
-      if(data?.login?.errors) {
-        alertUser.error(data.login.errors[0].message)
-        setLoading(false)
+      if(data?.MpLogin?.errors) {
+        alertUser.error(data.MpLogin.errors[0].message)
+        
       }
-      if(data.login.user) {
+      if(data.MpLogin.user) {
         alertUser.success("Logged in successfully")
        
-
-        dispatch(setUserData(data.login.user,data.login.token,'model'))
-        
-        
-        setTimeout(()=>{
-          if(data.login.user.profileComplete) {
-            navigate("/dashboard");
-            setLoading(false)
-          }else {
-            navigate("/register");
-            setLoading(false)
-          }
-        },1000)
+        if(data.MpLogin.error) {
+          return alertUser.error(data.MpLogin.error.message)
+        }
+        if(data.MpLogin.user) {
+          dispatch(setUserData(data.MpLogin.user,data.MpLogin.token,'MpUser'))
+        } 
       }
-      
+      setLoading(false)
 
     }catch(e) {
-        alert(e)
+      alertUser.error(e.message)
         setLoading(false)
     }
   }
@@ -96,11 +92,9 @@ return(
             <div className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative"style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="absolute bg-gradient-to-b from-gray-600 to-gray-500 opacity-0 inset-0 z-0" />
               <div className="w-full  max-w-md z-10">
-                <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6 uppercase">  <span className="text-yellow-500"> M</span>AZU login</div>
-                <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> What is Lorem Ipsum Lorem Ipsum is simply dummy
-                  text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it
-                  has?</div>
+                <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6 uppercase">  <span className="text-yellow-500"> U</span>SER login</div>
+                <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> Login to Mazu Productions Account
+                </div>
               </div>
               {/*-remove custom style*/}
               <ul className="circles">
@@ -163,4 +157,4 @@ return(
 
 }
 
-export default Login
+export default UserLogin

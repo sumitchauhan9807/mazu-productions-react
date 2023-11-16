@@ -437,8 +437,8 @@ export const ADD_RECUITER = gql`
 `;
 
 export const GET_ALL_ACTORS = gql`
-  query getAllActors($page:Float) {
-    getAllActors(page:$page) {
+  query getAllActors($page: Float) {
+    getAllActors(page: $page) {
       user {
         id
         username
@@ -510,6 +510,7 @@ export const USER_LOGIN = gql`
         email
         profileSetupStep
         profileComplete
+        usrType
         photos {
           id
           image
@@ -676,16 +677,48 @@ export const REMOVE_ACCOUNT = gql`
 
 export const GET_MEDIA_INFO = gql`
   query getMediaInfo($media: Float!) {
-    getMediaInfo(media: $media){
+    getMediaInfo(media: $media) {
       id
       title
       description
       potrait
       duration
-      tags{
+      tags {
         name
       }
       createdAt
+    }
+  }
+`;
+
+export const MP_USER_REGISTER = gql`
+  mutation MpRegister($data: MpRegisterType!) {
+    MpRegister(data: $data) {
+      error {
+        field
+        message
+      }
+      user {
+        id
+        username
+      }
+      token
+    }
+  }
+`;
+
+export const MP_USER_LOGIN = gql`
+  query MpLogin($username: String!,$password:String!) {
+    MpLogin(username: $username,password: $password) {
+      error {
+        field
+        message
+      }
+      user {
+        id
+        username
+      }
+      token
     }
   }
 `;

@@ -64,7 +64,7 @@ function Header() {
           <div className="row align-items-center">
             <div className="col-md-6 d-none d-md-block">
               <div className="header-top-subs">
-                <p> <span>Subscription !</span> <span id="location" /> </p>
+                <p> <span>{user?.userData?.username && `Welcome back ${user.userData.username}`}</span> </p>
               </div>
             </div>
             <div className="col-md-6">
@@ -158,7 +158,25 @@ function Header() {
                           </select>
                         </form>
                       </li>
-                      {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="btn">Logout</a></li> : <li className="header-btn"><Link to="/login" href="#" className="btn">Sign In</Link></li>}
+                      {user?.userType == 'MpUser' && 
+                    <li className="header-btn">
+                      <a className="btn " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Profile
+                      </a>
+                      </li>}
+                      {user?.userType == 'model' && 
+                    <li className="header-btn">
+                      <Link className="btn " to="/dashboard" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dashboard
+                      </Link>
+                      </li>}
+                      {user?.userType == 'admin' && 
+                    <li className="header-btn">
+                      <Link className="btn " to="/admin" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Admin Backend
+                      </Link>
+                      </li>}
+                      {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="btn">Logout</a></li> : <li className="header-btn"><Link to="/userlogin" href="#" className="btn">Sign In</Link></li>}
                       {!user.token && <li className="header-btn"><Link to="/registernow" className="btn">Register</Link></li>}
 
                     </ul>

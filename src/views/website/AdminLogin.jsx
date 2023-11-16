@@ -60,7 +60,7 @@ function AdminLogin() {
         alertUser.success("Logged in successfully")
        
 
-        dispatch(setUserData(data.modLogin.moderator,data.modLogin.token))
+        dispatch(setUserData(data.modLogin.moderator,data.modLogin.token,'admin'))
         // dispatch(setCommunityDomain(data.modLogin.domain))
         // dispatch(setCommunityDomain(data.modLogin.domain))
 

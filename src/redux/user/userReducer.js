@@ -4,7 +4,8 @@ import {SET_USER_DATA,UPDATE_SETUP_STEP,LOG_OUT_USER,CHNAGE_USERNAME ,SET_COMMUN
 const initialState = {
   userData: null,
   token:null,
-  community_domain:null
+  community_domain:null,
+  userType:null
 }
 
 const userReducer = (state = initialState,action) => {
@@ -15,7 +16,8 @@ const userReducer = (state = initialState,action) => {
         ... state,
         userData:action.userData,
         token:action.token,
-        stateUpdated:true
+        stateUpdated:true,
+        userType:action.userType
       }
       case UPDATE_SETUP_STEP :
         let userData = state.userData
@@ -28,6 +30,7 @@ const userReducer = (state = initialState,action) => {
         return {
           userData:null,
           token:null,
+          userType:null
         }
         case CHNAGE_USERNAME :
           let UuserData = state.userData
