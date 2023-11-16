@@ -30,7 +30,7 @@ function Website() {
           <Route exact path ="/model-login" element= {<ModelLogin/>}/>
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
-          <Route exact path ="/registernow" element= {<UserRegister/>}/>
+          <Route exact path ="/userlogin" element= {<UserLogin/>}/>
           <Route exact path ="/fanclub" element= {<FanClub/>}/>
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>

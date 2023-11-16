@@ -130,6 +130,8 @@ function Header() {
                         </ul>
                       </li>
                       <li><a href="tv-show.html">Join PornTool</a></li>
+                      <li><Link to="/fanclub" href="tv-show.html">Subscribe</Link></li>
+
                       {/* <li><a href="pricing.html">Become A Model</a></li> */}
                       {/* <li class="menu-item-has-children"><a href="#">blog</a>
                                             <ul class="submenu">

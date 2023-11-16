@@ -708,8 +708,8 @@ export const MP_USER_REGISTER = gql`
 `;
 
 export const MP_USER_LOGIN = gql`
-  query MpLogin($username: String!,$password:String!) {
-    MpLogin(username: $username,password: $password) {
+  query MpLogin($username: String!, $password: String!) {
+    MpLogin(username: $username, password: $password) {
       error {
         field
         message
@@ -717,8 +717,35 @@ export const MP_USER_LOGIN = gql`
       user {
         id
         username
+        MPSubscriptions {
+          id
+        }
       }
       token
+    }
+  }
+`;
+export const GET_ALL_SUBSCRIPTIONS = gql`
+  query {
+    porntoolSubscriptions {
+      id
+      packageId
+      packageName
+      subscriptionDuration
+      price
+    }
+  }
+`;
+export const CHECKOUT_STRIPE_MP = gql`
+  mutation createStripeCheckoutMP($input: CheckoutInput!) {
+    createStripeCheckoutMP(input: $input)
+  }
+`;
+
+export const GET_USER_SUBSCRIPTIONS = gql`
+  query getMpUserSubscriptions {
+    getMpUserSubscriptions {
+      id
     }
   }
 `;
