@@ -93,9 +93,12 @@ function Header() {
                 <nav className="menu-nav show">
                   <div className="logo">
                     <Link to="/">
-                      <img src={logo} style={{height: '50px'}} alt="Logo" />
+                      <img src={logo}  alt="Logo" className='lg:h-14 sm:h-8 md:h-8 h-8' />
                     </Link>
                   </div>
+
+                  <div className='lg:hidden flex flex-wrap gap-2 justify-end items-end '>   {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="bg-gray-900 px-2 py-2 text-white border-2 border-yellow-600">Logout</a></li> : <li className="header-btn"><Link to="/userlogin" href="#" className="bg-gray-900 text-white border-2 border-yellow-600 px-2 py-2">Sign In</Link></li>}
+                      {!user.token && <li className="header-btn"><Link to="/registernow" className="bg-gray-900 px-2 py-2 text-white border-2 border-yellow-600">Register</Link></li>}</div>
                   <div className="navbar-wrap main-menu d-none d-lg-flex">
                     <ul className="navigation">
                       <li className="active menu-item-has-children"><a href="#">Studios</a>
@@ -137,6 +140,7 @@ function Header() {
                       {/* <li><a href="contact.html">contacts</a></li> */}
                     </ul>
                   </div>
+                  {/* d-none */}
                   <div className="header-action d-none d-md-block">
                     <ul>
                       {/* <li className="d-none d-xl-block">
