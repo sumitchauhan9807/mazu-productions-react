@@ -13,6 +13,8 @@ import ModelLogin from 'views/Model/Modellogin'
 import AdminLogin from 'views/website/AdminLogin'
 import UserRegister from 'views/website/Userregister'
 import ModelVideo from 'views/website/ModelVideo'
+import FanClub from 'views/website/Fanclub'
+
 import 'website.css'
 
 function Website() {
@@ -28,7 +30,8 @@ function Website() {
           <Route exact path ="/model-login" element= {<ModelLogin/>}/>
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
-          <Route exact path ="/userlogin" element= {<UserLogin/>}/>
+          <Route exact path ="/registernow" element= {<UserRegister/>}/>
+          <Route exact path ="/fanclub" element= {<FanClub/>}/>
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 
