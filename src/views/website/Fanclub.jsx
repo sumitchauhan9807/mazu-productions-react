@@ -13,7 +13,6 @@ const FanClub = () => {
 	const [subscriptions,setSubscriptions] = useState([])
 	const [activeSubscription,setActiveSubscription] = useState(null)
   const [isLoading,setLoading] = useState(false)
-	const [activeSubscriptions,setActiveSubscriptions] = useState([])
   const alertUser = useAlert()
 	const navigate = useNavigate();
 
@@ -22,12 +21,6 @@ const FanClub = () => {
       return state.user
     }
   })
-	console.log(user)
-	useEffect(()=>{
-		if(user.userType == 'MpUser') {
-			setActiveSubscriptions(user.userData.MPSubscriptions)
-		}
-	},[user.userData])
 	useEffect(()=>{
 		(async ()=>{
       try {
