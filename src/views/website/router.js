@@ -14,6 +14,8 @@ import AdminLogin from 'views/website/AdminLogin'
 import UserRegister from 'views/website/Userregister'
 import ModelVideo from 'views/website/ModelVideo'
 import FanClub from 'views/website/Fanclub'
+import Success from 'views/website/Success'
+import Error from 'views/website/Error'
 
 import 'website.css'
 
@@ -32,6 +34,8 @@ function Website() {
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
           <Route exact path ="/userlogin" element= {<UserLogin/>}/>
           <Route exact path ="/fanclub" element= {<FanClub/>}/>
+          <Route exact path ="/success" element= {<Success/>}/>
+          <Route exact path ="/404" element= {<Error/>}/>
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 
