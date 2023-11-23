@@ -10,6 +10,7 @@ import SweetCandy1 from 'assets/image/catpng.png'
 
 
 import PorntoolMovies from 'components/porntool-movies'
+import CarsalSilder from 'components/Casliders'
 import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -250,13 +251,21 @@ function Main() {
   </section>
   <PorntoolMovies/>
 
+  {/* <CarsalSilder/> */}
+
   {/* slider-area-end */}
   {/* up-coming-movie-area */}
   {/*?php  include('./components/movies.php')?*/}
   {/* up-coming-movie-area-end */}
   {/* gallery-area */}
+
+  <div className='bg-gray-900'   style={{backgroundImage:`url(${HeaderBackground})`,  backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  <CarsalSilder/>
+  </div>
   
-  <div className="gallery-area position-relative  bg-gray-900"  >
+  {/* <div className="gallery-area position-relative  bg-gray-900"  >
+    
+<CarsalSilder/>
   <div className="gallery-bg"></div>
     <div className="container-fluid p-0 fix  mx-auto justify-center items-center">
       
@@ -288,10 +297,11 @@ function Main() {
           </div>
         </div>
       </Slider>
+
       <div className="slider-nav"></div>
     </div>
     
-  </div>
+  </div> */}
   <section
     className="services-area services-bg-two"
     data-background="https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg"
