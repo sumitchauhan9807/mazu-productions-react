@@ -7,6 +7,19 @@ import Getstart6 from 'assets/image/getstarted6.jpg'
 import Getstart7 from 'assets/image/getstarted7.jpg'
 import Getstart8 from 'assets/image/getstarted8.jpg'
 import Getstrartedbg from 'assets/image/getstartbg2.jpg'
+
+const sendMessage = () => {
+ 
+    const contactId = 'live:.cid.81d2fda4dce90753';
+
+
+    const skypeUri = `skype:${contactId}?chat`;
+
+
+    window.open(skypeUri);
+  };
+
+    
 export const Modelstep = () => {
     return (
         <div className='  '  >
@@ -21,8 +34,9 @@ export const Modelstep = () => {
                                     <div className="flex flex-col justify-center">
                                         <div className="max-w-xl mb-6">
                                             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight uppercase text-gray-900 sm:text-4xl sm:leading-none">
-                                                WebCam <span className='text-yellow-800'> Models</span> Wanted
-                                            </h2>
+                                                WebCam <span className='text-yellow-800'> Models</span> Wanted <br /> <span className='text-3xl'>Male /Female / Trans</span> 
+                                            </h2> <button className='bg-black px-3 py-2 rounded-2xl text-white hover:bg-yellow-700 shadow-xl' onClick={sendMessage}>Contact us on  Skype for more info</button>
+
                                             <p className="text-base text-gray-700 md:text-lg">
                                                 Becoming a webcam model is an option you might consider if you are looking for a way to work from home and earn some extra cash in your spare time. Being a webcam model often involves presenting yourself in an adult or sexual context. With the right amount of dedication and persistence, you could even turn cam modeling into a full-time job. working for a reputable company like us, you could become a successful webcam model in no time.☺️
                                             </p>
@@ -244,7 +258,7 @@ export const Modelstep = () => {
                                  </h2>
                                  <p className="text-base text-gray-700 md:text-lg">
                                      Becoming a webcam model is an option you might consider if you are looking for a way to work from home and earn some extra cash in your spare time. Being a webcam model often involves presenting yourself in an adult or sexual context. With the right amount of dedication and persistence, you could even turn cam modeling into a full-time job. working for a reputable company like us, you could become a successful webcam model in no time.☺️
-                                 </p>
+                                 </p> <button className='bg-black px-3 py-2 rounded-2xl text-white hover:bg-yellow-700 shadow-xl' onClick={sendMessage}>Contact us on  Skype for more info</button>
                              </div>
 
 
