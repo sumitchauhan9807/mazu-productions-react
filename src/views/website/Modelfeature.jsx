@@ -318,13 +318,13 @@ export const ModelPackage = () => {
             <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20' >
                 <div className="tab flex flex-wrap lg:gap-16 justify-center mb-0 bg-yellow text-white bg-yellow-">
                     <button onClick={() => handleTabClick(1)} className={`uppercase lg:px-16 px-3 py-3 lg:text-2xl text-lg   ${activeTab === 1 ? ' bg-gray-100 rounded-t-xl text-gray-900 text-xl shadow-inner' : 'border-gray-400 text-white rounded-t-xl border-2'}`}>
-                        30% Package
+                        30% Package <br /> Payout
                     </button>
                     <button onClick={() => handleTabClick(2)} className={`uppercase  lg:px-16 px-3 py-3  lg:text-2xl text-lg ${activeTab === 2 ? ' bg-gray-100 rounded-t-xl text-gray-900 text-xl shadow-inner' : 'border-gray-400  text-white rounded-t-xl border-2'}`}>
-                        40% Package
+                        40% Package <br /> Payout
                     </button>
                     <button onClick={() => handleTabClick(3)} className={`uppercase lg:px-16 px-3 py-3 lg:text-2xl text-lg  ${activeTab === 3 ? '  bg-gray-100 rounded-t-xl text-gray-900 text-xl shadow-inner' : 'border-gray-400  text-white rounded-t-xl border-2'}`}>
-                        60% Package
+                        60% Package <br /> Payout
                     </button>
                 </div>
                 <div className="tab-content flex justify-center bg-gray-900 rounded-2xl py-5 border-2 border-white h-3/4 lg:w-3/4 mx-auto">
