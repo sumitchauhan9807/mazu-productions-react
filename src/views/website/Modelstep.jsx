@@ -449,7 +449,8 @@ export const Modelstep = () => {
                              >
                                start now
                              </button></a> <button className='bg-black px-3 py-2 rounded-2xl text-white hover:bg-yellow-700 shadow-xl' onClick={sendMessage}>Contact us on  Skype for more info</button></div>
-                         </div>
+                             <a href="/modelpackage">   <button className='border-yellow-800 border-4 px-3 bg-gray-900 uppercase font-sans  rounded-2xl  shadow-2xl  text-yellow-100 hover:bg-yellow-100 hover:border-gray-900 hover:text-gray-900  w-72 py-3'>Model Packages</button></a>
+                                      </div>
                          <div>
                              <img
                                  className="object-cover w-full h-full rounded shadow-lg "
