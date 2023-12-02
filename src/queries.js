@@ -444,6 +444,12 @@ export const GET_ALL_ACTORS = gql`
         username
         profileComplete
         profilePic
+        user_basic {
+          skype
+        }
+        base_profile {
+          phone
+        }
         recuiter {
           username
         }
