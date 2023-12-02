@@ -94,7 +94,7 @@ const FanClub = () => {
     return (
      <div className='bg-gray-800' style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 			 {isLoading && <Loader/>}
-        <div className="px-2 py-16 mx-auto sm:max-w-xl md:max-w-full  lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="px-2 py-16 mx-auto sm:max-w-xl md:max-w-full  lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-56">
             <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
                 <div className="flex flex-col justify-center">
                     <div className="max-w-xl mb-6">
@@ -166,7 +166,7 @@ const FanClub = () => {
                 </div>
                 <div>
                     <div>
-                        <div className="p-8 bg-gray-900 rounded">
+                        <div className="p-8 bg-gray-900  rounded">
                             <div className="mb-4 text-center">
                                 <p className="text-xl font-medium tracking-wide text-white">
                                     JOIN FAN CLUB
@@ -221,7 +221,7 @@ const FanClub = () => {
                             <button
 														onClick={checkoutStripe}
                                 type="button"
-                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide to-pink-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
+                                className="inline-flex items-center animate-pulse justify-center w-full h-12 px-6 font-medium tracking-wide to-pink-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
                             >
                                 BECOME A FAN
                             </button>
