@@ -258,7 +258,7 @@ export const ModelPackage = () => {
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                                         </svg>
-                                        <span>Marketing (Online, Print, Social)</span>
+                                        <span>Online Sales ( XHamster, Faphouse, ManyVids, IwantClips, Pornhub)</span>
                                     </p>
 
 
@@ -328,15 +328,15 @@ export const ModelPackage = () => {
                     </button>
                 </div>
                 <div className="tab-content flex justify-center bg-gray-900 rounded-2xl py-5 border-2 border-white h-3/4 lg:w-3/4 mx-auto">
-                    <TabContent /> 
+                    <TabContent />
                 </div>
                 <div className='flex flex-wrap justify-center mx-auto py-5'> <a href="/register?aff=arnoldES">  <button
 
-type="button"
-className="inline-flex items-center text-xl  justify-center  h-16 px-6 tracking-wide w-56 uppercase to-yellow-500 bg-gradient-to-r from-yellow-800 via-yellow-300  font-bold text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
->
-start now
-</button></a> </div>
+                    type="button"
+                    className="inline-flex items-center text-xl  justify-center  h-16 px-6 tracking-wide w-56 uppercase to-yellow-500 bg-gradient-to-r from-yellow-800 via-yellow-300  font-bold text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
+                >
+                    start now
+                </button></a> </div>
             </div> </div>
     );
     //     return (
