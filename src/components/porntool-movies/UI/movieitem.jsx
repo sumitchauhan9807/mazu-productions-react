@@ -8,10 +8,10 @@ function MovieItem({movie}) {
   >
     <div className="movie-poster">
       <Link to={`/video/${movie.id}`}>
-        <img className='h-96 object-cover' src={getUrl(movie.potrait)} alt="" />
+        <img className=' lg:object-cover object-fit'  style={{  height: '350px' }} src={getUrl(movie.potrait)} alt="" />
       </Link>
     </div>
-    <div className="movie-content">
+    <div className="movie-content"  style={{  height: '150px' }}>
       <div className="rating">
         <i className="fas fa-star" />
         <i className="fas fa-star" />

@@ -307,7 +307,7 @@ function Main() {
     data-background="https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg"
     style={{backgroundImage:`url(https://themebeyond.com/html/movflx/img/bg/services_bg02.jpg)`}}
   >
-    <div className="container">
+    <div className="container -mt-36">
       <div className="row justify-content-between align-items-center">
         <div className="col-lg-6 order-0 order-lg-2">
           <div className="services-img-wrap">
@@ -369,7 +369,7 @@ function Main() {
     data-background="https://themebeyond.com/html/movflx/img/bg/pricing_bg.jpg"
     style={{backgroundImage:`url(https://themebeyond.com/html/movflx/img/bg/pricing_bg.jpg)`}}
   >
-    <div className="container">
+    <div className="px-0 py-16 mx-auto sm:max-w-2xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-2 lg:py-20 -mt-36">
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="section-title title-style-three text-center mb-70">

@@ -101,7 +101,7 @@
 //   const imagesPerSlide = 2; 
 //   const intervalTime = 3000; 
 
- 
+
 
 //   const images = [
 //     { id: 1, src: Alex, alt: 'Image 1' },
@@ -112,7 +112,7 @@
 //     { id: 6, src: Zed, alt: 'Image 6' },
 //     { id: 7, src: Alex, alt: 'Image 1' },
 //     { id: 8, src: Zed, alt: 'Image 2' },
-   
+
 //   ];
 
 //   const totalSlides = Math.ceil(images.length / imagesPerSlide);
@@ -196,7 +196,7 @@
 //               <h2 className="max-w-lg mb-6 font-sans uppercase  text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
 //                 JOIN MAZU PROdUCTION
 //                 <br className="hidden md:block" />
-               
+
 //                 <span className="relative px-1">
 //                   <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
 //                   <span className="relative inline-block text-yellow-600 text-7xl text-deep-purple-accent-400">
@@ -376,18 +376,19 @@ const Carousel = () => {
 
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-56">
-      <div className="grid gap-5 row-gap-10 lg:grid-cols-2 ">
+     
+     <div className='lg:block hidden'> <div className="grid gap-5 row-gap-10 lg:grid-cols-2  ">
         <div className="flex flex-col justify-center">
-        <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center">
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans uppercase  text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
                 JOIN MAZU PROdUCTIONS
                 <br className="hidden md:block" />
-               
+
                 <span className="relative px-1">
                   <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
                   <span className="relative inline-block text-yellow-600 text-7xl text-deep-purple-accent-400">
-                   FANCLUB
+                    FANCLUB
                   </span>
                 </span>
               </h2>
@@ -436,7 +437,7 @@ const Carousel = () => {
                       />
                     </svg>
                   </span>
-                4K Videos 
+                  4K Videos
                 </li>
                 <li className="flex">
                   <span className="mr-1">
@@ -474,7 +475,7 @@ const Carousel = () => {
                       />
                     </svg>
                   </span>
-                 Full Video
+                  Full Video
                 </li>
                 <li className="flex">
                   <span className="mr-1">
@@ -510,13 +511,13 @@ const Carousel = () => {
                       />
                     </svg>
                   </span>
-                  Find your fetish 
+                  Find your fetish
                 </li>
               </ul>
             </div>
 
-            
-          
+
+
           </div>
         </div>
         <div>
@@ -525,14 +526,175 @@ const Carousel = () => {
             src={images[currentImageIndex]}
             alt={`Slide ${currentImageIndex + 1}`}
           /><div className=' py-5'>  <a href="/fanclub">  <button
-														
-          type="button"
-          className="inline-flex items-center text-xl animate-pulse justify-center w-full h-12 px-6 font-medium tracking-wide to-pink-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
-      >
-          BECOME A FAN
-      </button></a></div>
+
+            type="button"
+            className="inline-flex items-center text-xl animate-pulse justify-center w-full h-12 px-6 font-medium tracking-wide to-pink-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
+          >
+            BECOME A FAN
+          </button></a></div>
         </div>
-      </div>
+      </div></div>
+      {/* mobile */}
+<div className='lg:hidden'>
+      <div className=" row-gap-10  lg:hidden ">
+        <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center">
+            <div className="max-w-xl mb-6">
+              <h2 className="max-w-lg mb-6 font-sans uppercase  text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
+                JOIN MAZU PROdUCTIONS
+                <br className="hidden md:block" />
+
+                <span className="relative px-1">
+                  <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
+                  <span className="relative inline-block text-yellow-600 text-7xl text-deep-purple-accent-400">
+                    FANCLUB
+                  </span>
+                </span>
+              </h2>
+              <p className="text-base text-gray-300 md:text-lg">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae. explicabo.
+              </p>
+            </div>
+            <p className="mb-4 text-sm font-bold tracking-widest uppercase">
+              UNLOCK
+            </p>
+            <div className="grid space-y-3 sm:gap-2 sm:grid-cols-2 sm:space-y-0">
+              <ul className="space-y-3">
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  4k Streams
+                </li>
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  4K Videos
+                </li>
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  Access To all Videos
+                </li>
+              </ul>
+              <ul className="space-y-3">
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  Full Video
+                </li>
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  Quality you deserve — full HD and 4K
+                </li>
+                <li className="flex">
+                  <span className="mr-1">
+                    <svg
+                      className="w-5 h-5 mt-px text-deep-purple-accent-400"
+                      stroke="currentColor"
+                      viewBox="0 0 52 52"
+                    >
+                      <polygon
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        fill="none"
+                        points="29 13 14 29 25 29 23 39 38 23 27 23"
+                      />
+                    </svg>
+                  </span>
+                  Find your fetish
+                </li>
+              </ul>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div className='mt-5'>
+          <img
+            className="object-fit w-full h-96 rounded shadow-lg sm:h-96"
+            src={images[currentImageIndex]}
+            alt={`Slide ${currentImageIndex + 1}`}
+          /><div className=' py-5'>  <a href="/fanclub">  <button
+
+            type="button"
+            className="inline-flex items-center text-xl animate-pulse justify-center w-full h-12 px-6 font-medium tracking-wide to-pink-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none hover:scale-125 transition duration-500 cursor-pointer"
+          >
+            BECOME A FAN
+          </button></a></div>
+        </div>
+      </div></div>
+
+      {/* mobile */}
     </div>
   );
 };

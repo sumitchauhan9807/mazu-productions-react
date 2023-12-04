@@ -18,6 +18,7 @@ import Success from 'views/website/Success'
 import Error from 'views/website/Error'
 import Modelstep from "views/website/Modelstep";
 import Modelpricing from 'views/website/Modelfeature'
+import MazuStudio from 'views/website/MazuStudios'
 
 import 'website.css'
 
@@ -40,6 +41,7 @@ function Website() {
           <Route exact path ="/404" element= {<Error/>}/>
           <Route exact path ="/howtobecomeamodel" element= {<Modelstep/>}/>
           <Route exact path ="/modelpackage" element= {<Modelpricing/>}/>
+          <Route exact path ="/mazustudio" element= {<MazuStudio/>}/>
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 

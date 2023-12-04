@@ -17,7 +17,7 @@ function MovieCarousel({category}) {
   let movies = data.getMediaByCategory
   console.log(category)
   return (
-    <OwlCarousel
+    <OwlCarousel 
       items={5}
       margin={30}
       loop={true}

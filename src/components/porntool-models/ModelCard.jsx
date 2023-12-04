@@ -23,7 +23,7 @@ function ModelCard({model}) {
           </li>
           <li>
             <a href="movie-details.html" className="btn">
-              Join Flan club
+              Join Fan club
             </a>
           </li>
           <li>

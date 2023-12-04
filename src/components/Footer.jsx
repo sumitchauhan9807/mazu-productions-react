@@ -64,7 +64,7 @@ function Footer () {
         <div className="row">
           <div className="col-lg-6 col-md-6">
             <div className="copyright-text">
-              <p>Copyright © 2021. All Rights Reserved By <a href="index.html">MAZU Productions</a></p>
+              <p>Copyright © 2023. All Rights Reserved By <a href="index.html">MAZU Productions</a></p>
             </div>
           </div>
           <div className="col-lg-6 col-md-6">

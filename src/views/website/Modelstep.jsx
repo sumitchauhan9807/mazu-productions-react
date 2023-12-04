@@ -34,7 +34,7 @@ export const Modelstep = () => {
                                     <div className="flex flex-col justify-center">
                                         <div className="max-w-xl mb-6">
                                             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight uppercase text-gray-900 sm:text-4xl sm:leading-none">
-                                                WebCam <span className='text-yellow-800'> Models</span> Wanted <br /> <span className='text-3xl'>Male /Female / Trans</span> 
+                                                WebCam <span className='text-yellow-800'> Models</span> Wanted <br /> <span className='text-xl'>Male /Female / Trans</span> 
                                             </h2> 
 
                                             <p className="text-base text-gray-700 md:text-lg">

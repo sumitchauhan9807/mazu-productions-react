@@ -103,13 +103,13 @@ function Header() {
                         <ul className=" ">
                           <li className="active menu-item-has-children"><a href="#">Studios</a>
                             <ul className="submenu">
-                              <li><a href="index.html">RentAGay Productions
+                              <li><a href="/mazustudio">RentAGay Productions
                               </a></li>
-                              <li><a href="index.html">Cuba Nuevo
+                              <li><a href="/mazustudio">Cuba Nuevo
                               </a></li>
-                              <li className="active"><a href="index-2.html">Pussy Deluxe
+                              <li className="active"><a href="/mazustudio">Pussy Deluxe
                               </a></li>
-                              <li className="active"><a href="index-2.html">Black Bitch Films                                                  </a></li>
+                              <li className="active"><a href="/mazustudio">Black Bitch Films                                                  </a></li>
                             </ul>
                           </li>
                           <li className="menu-item-has-children"><a href="#">Streaming</a>
@@ -147,13 +147,13 @@ function Header() {
                       <ul className="navigation">
                         <li className="active menu-item-has-children"><a href="#">Studios</a>
                           <ul className="submenu">
-                            <li><a href="index.html">RentAGay Productions
+                            <li><a href="/mazustudio">RentAGay Productions
                             </a></li>
-                            <li><a href="index.html">Cuba Nuevo
+                            <li><a href="/mazustudio">Cuba Nuevo
                             </a></li>
-                            <li className="active"><a href="index-2.html">Pussy Deluxe
+                            <li className="active"><a href="/mazustudio">Pussy Deluxe
                             </a></li>
-                            <li className="active"><a href="index-2.html">Black Bitch Films                                                  </a></li>
+                            <li className="active"><a href="/mazustudio">Black Bitch Films                                                  </a></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Streaming</a>
