@@ -93,7 +93,7 @@ return(
               <div className="absolute bg-gradient-to-b from-gray-600 to-gray-500 opacity-0 inset-0 z-0" />
               <div className="w-full  max-w-md z-10">
                 <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6 uppercase">  <span className="text-yellow-500"> U</span>SER login</div>
-                <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> Login to Mazu Productions Account
+                <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> Login to DIALOG<span className='text-white'>maxX</span> Account
                 </div>
               </div>
               {/*-remove custom style*/}

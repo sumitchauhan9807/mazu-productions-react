@@ -44,7 +44,7 @@ function ModelVideo() {
             </div>
             <div className="col-xl-6 col-lg-8">
               <div className="movie-details-content">
-                <h5>Mazu Productions</h5>
+                <h5>DIALOGmaXX</h5>
                 <span className='lg:text-7xl  font-sans  mb-3 text-4xl text-white mt-2 pb-2'>{videoData.title} </span>
                 <div className="banner-meta">
                   <ul>
@@ -71,7 +71,7 @@ function ModelVideo() {
                     <li className="share"><a href="#"><i className="fas fa-share-alt" /> Share</a></li>
                     <li className="streaming">
                       <h6>Video</h6>
-                      <span>Mazu Productions</span>
+                      <span>DIALOG<span className='text-white'>maxX</span></span>
                     </li>
                     <li className="watch"><a href="#sectionToJumpTo" className="btn popup-video"><i className="fas fa-play" /> Watch Now</a></li>
                   </ul>

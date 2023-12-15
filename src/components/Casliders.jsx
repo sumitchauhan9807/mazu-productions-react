@@ -381,8 +381,8 @@ const Carousel = () => {
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-center">
             <div className="max-w-xl mb-6">
-              <h2 className="max-w-lg mb-6 font-sans uppercase  text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
-                JOIN MAZU PROdUCTIONS
+              <h2 className="max-w-lg mb-6 font-sans   text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
+                Join DIALOG<span className='text-white'>maXX</span>
                 <br className="hidden md:block" />
 
                 <span className="relative px-1">
@@ -541,7 +541,7 @@ const Carousel = () => {
           <div className="flex flex-col justify-center">
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans uppercase  text-3xl font-bold tracking-tight text-gray-50 sm:text-4xl sm:leading-none">
-                JOIN MAZU PROdUCTIONS
+                JOIN DIALOG<span className='text-white'>maxX</span>
                 <br className="hidden md:block" />
 
                 <span className="relative px-1">
