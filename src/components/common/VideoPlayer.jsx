@@ -39,7 +39,7 @@ function VideoPlayer({id}) {
     if(userType == USER_TYPES.MP_USER) {
       getVideoData()
     }
-	},[user.userData])
+	},[])
   return (
     <Player
     ref={playerRef}
