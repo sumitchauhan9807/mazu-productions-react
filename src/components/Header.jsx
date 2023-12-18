@@ -110,12 +110,16 @@ function Header() {
                               <li className="active"><a href="/mazustudio">Pussy Deluxe
                               </a></li>
                               <li className="active"><a href="/mazustudio">Black Bitch Films                                                  </a></li>
+                              <li className="active"><a href="/mazustudio">Kraken
+                              </a></li>
+                              <li className="active"><a href="/mazustudio">DialomMaxX Trans
+                              </a></li>
                             </ul>
                           </li>
                           <li className="menu-item-has-children"><a href="#">Streaming</a>
                             <ul className="submenu">
                               <li><a href="movie.html">DVD / Blue Ray                                                  </a></li>
-                              <li><a href="movie-details.html">Actors</a></li>
+                              <li><a href="/category" className="submenu">Actors</a> </li>
                             </ul>
                           </li>
                           <li className="menu-item-has-children"><a href="#">Actors</a>
@@ -154,12 +158,16 @@ function Header() {
                             <li className="active"><a href="/mazustudio">Pussy Deluxe
                             </a></li>
                             <li className="active"><a href="/mazustudio">Black Bitch Films                                                  </a></li>
+                            <li className="active"><a href="/mazustudio">Kraken
+                              </a></li>
+                              <li className="active"><a href="/mazustudio">DialomMaxX Trans
+                              </a></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Streaming</a>
                           <ul className="submenu">
                             <li><a href="movie.html">DVD / Blue Ray                                                  </a></li>
-                            <li><a href="movie-details.html">Actors</a></li>
+                            <li><a href="/category">Actors</a></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Actors</a>
