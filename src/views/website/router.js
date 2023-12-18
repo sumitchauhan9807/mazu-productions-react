@@ -19,6 +19,8 @@ import Error from 'views/website/Error'
 import Modelstep from "views/website/Modelstep";
 import Modelpricing from 'views/website/Modelfeature'
 import MazuStudio from 'views/website/MazuStudios'
+import Golive from 'views/website/GoLive'
+import ModelCategory from 'views/website/ModelCategory'
 
 import 'website.css'
 
@@ -42,6 +44,8 @@ function Website() {
           <Route exact path ="/howtobecomeamodel" element= {<Modelstep/>}/>
           <Route exact path ="/modelpackage" element= {<Modelpricing/>}/>
           <Route exact path ="/mazustudio" element= {<MazuStudio/>}/>
+          <Route exact path = "/live" element={<Golive/>}/>
+          <Route exact path = "/category" element={<ModelCategory/>}/>
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 
@@ -50,5 +54,7 @@ function Website() {
     </React.Fragment>
   )
 }
+
+
 
 export default Website
