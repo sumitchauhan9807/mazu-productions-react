@@ -458,6 +458,20 @@ export const GET_ALL_ACTORS = gql`
     }
   }
 `;
+
+export const GET_VIDEO_DATA = gql`
+  query getMPVideoData($videoId: String!) {
+    getMPVideoData(videoId: $videoId) {
+      id
+      title
+      mediaCloudName
+      preview_url
+      thumbnail
+      cloudUrl
+      potrait
+    }
+  }
+`;
 export const ADD_BASIC_INFO = gql`
   mutation addBasicInformation($options: BasicInfoInput!) {
     addBasicInformation(options: $options)

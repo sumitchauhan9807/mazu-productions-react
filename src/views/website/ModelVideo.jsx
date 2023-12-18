@@ -9,7 +9,7 @@ import { GET_ALL_ACTORS, GET_MEDIA_INFO } from 'queries'
 import { apolloClient } from 'index'
 import { getUrl } from 'helpers'
 import 'video-react/dist/video-react.css';
-import { Player } from 'video-react';
+import VideoPlayer from 'components/common/VideoPlayer'
 function ModelVideo() {
   const params = useParams();
   let id = params.id
@@ -55,7 +55,7 @@ function ModelVideo() {
                     <li className="category">
                       {videoData?.tags?.map((tag) => {
                         return (
-                          <a href="#">{tag.name},</a>
+                          <a key={tag.id} href="#">{tag.name},</a>
                         )
                       })}
                     </li>
@@ -87,11 +87,11 @@ function ModelVideo() {
 
         </div>
       </section>
-      <div style={{ backgroundImage: `url(${HeadersBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}><div id="sectionToJumpTo" className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20'><Player
-        poster="https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg"
-      >
-        <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
-      </Player></div></div>
+      <div style={{ backgroundImage: `url(${HeadersBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}><div id="sectionToJumpTo" className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20'>
+        <VideoPlayer
+        id={id}
+        />
+        </div></div>
 
       <section
         className="movie-area movie-bg"
