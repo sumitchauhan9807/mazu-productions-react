@@ -14,6 +14,7 @@ function ModelVideo() {
   const params = useParams();
   let id = params.id
   const [videoData, setVideoData] = useState({})
+  const [playVideo,setPlayVideo] = useState(false)
   useEffect(() => {
     (async () => {
       try {
@@ -39,44 +40,51 @@ function ModelVideo() {
             <div className="col-xl-3 col-lg-4">
               <div className="movie-details-img">
                 <img src={getUrl(videoData.potrait)} alt="" />
-                <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" className="popup-video"><img src="https://themebeyond.com/html/movflx/img/images/play_icon.png" alt="" /></a>
+                <a href="#" onClick={(e) => {e.preventDefault(); setPlayVideo(true) }} className="popup-video"><img src="https://themebeyond.com/html/movflx/img/images/play_icon.png" alt="" /></a>
               </div>
             </div>
             <div className="col-xl-6 col-lg-8">
-              <div className="movie-details-content">
-                <h5>DIALOGmaXX</h5>
-                <span className='lg:text-7xl  font-sans  mb-3 text-4xl text-white mt-2 pb-2'>{videoData.title} </span>
-                <div className="banner-meta">
-                  <ul>
-                    <li className="quality">
-                      <span>Pg 18</span>
-                      <span>hd</span>
-                    </li>
-                    <li className="category">
-                      {videoData?.tags?.map((tag) => {
-                        return (
-                          <a key={tag.id} href="#">{tag.name},</a>
-                        )
-                      })}
-                    </li>
-                    <li className="release-time">
-                      <span><i className="far fa-calendar-alt" /> 2023</span>
-                      <span><i className="far fa-clock" /> {videoData.duration} min</span>
-                    </li>
-                  </ul>
-                </div>
-                <p>{videoData.description}</p>
-                <div className="movie-details-prime">
-                  <ul>
-                    <li className="share"><a href="#"><i className="fas fa-share-alt" /> Share</a></li>
-                    <li className="streaming">
-                      <h6>Video</h6>
-                      <span>DIALOG<span className='text-white'>maxX</span></span>
-                    </li>
-                    <li className="watch"><a href="#sectionToJumpTo" className="btn popup-video"><i className="fas fa-play" /> Watch Now</a></li>
-                  </ul>
-                </div>
+              {playVideo ? 
+              <VideoPlayer
+              id={id}
+            />
+              : <div className="movie-details-content">
+              <h5>DIALOGmaXX</h5>
+              <span className='lg:text-7xl  font-sans  mb-3 text-4xl text-white mt-2 pb-2'>{videoData.title} </span>
+              <div className="banner-meta">
+                <ul>
+                  <li className="quality">
+                    <span>Pg 18</span>
+                    <span>hd</span>
+                  </li>
+                  <li className="category">
+                    {videoData?.tags?.map((tag) => {
+                      return (
+                        <a key={tag.id} href="#">{tag.name},</a>
+                      )
+                    })}
+                  </li>
+                  <li className="release-time">
+                    <span><i className="far fa-calendar-alt" /> 2023</span>
+                    <span><i className="far fa-clock" /> {videoData.duration} min</span>
+                  </li>
+                </ul>
               </div>
+              <p>{videoData.description}</p>
+              <div className="movie-details-prime">
+                <ul>
+                  <li className="share"><a href="#"><i className="fas fa-share-alt" /> Share</a></li>
+                  <li className="streaming">
+                    <h6>Video</h6>
+                    <span>DIALOG<span className='text-white'>maxX</span></span>
+                  </li>
+                  <li className="watch"><a href="#" onClick={(e) => {e.preventDefault(); setPlayVideo(true) }} className="btn popup-video"><i className="fas fa-play" /> Watch Now</a></li>
+                </ul>
+              </div>
+            </div>
+            }
+              
+              
             </div>
             <div className='lg:block hidden'>
             <div className="movie-details-btn ">
@@ -87,11 +95,11 @@ function ModelVideo() {
 
         </div>
       </section>
-      <div style={{ backgroundImage: `url(${HeadersBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}><div id="sectionToJumpTo" className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20'>
+      {/* <div style={{ backgroundImage: `url(${HeadersBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}><div id="sectionToJumpTo" className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20'>
         <VideoPlayer
         id={id}
         />
-        </div></div>
+        </div></div> */}
 
       <section
         className="movie-area movie-bg"
