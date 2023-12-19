@@ -28,7 +28,12 @@ function VideoPlayer({id}) {
       setPoster(`https://storage.googleapis.com/mazuproductions/${data.getMPVideoData.potrait}`)
       setVideoUrl(data.getMPVideoData.cloudUrl)
       console.log(playerRef,"playerRef")
-      playerRef.current.load()
+      let loaded = playerRef.current.load()
+      console.log(loaded,"loadedloaded")
+      setTimeout(()=>{
+        playerRef.current.play()
+      },500)
+      
     } catch (e) {
       alert(e)
     }
@@ -44,6 +49,10 @@ function VideoPlayer({id}) {
     <Player
     ref={playerRef}
     poster={poster}
+    fluid={false}
+    autoPlay={true}
+    width={'100%'}
+    height={350}
   >
     <source src={videoUrl} />
   </Player>

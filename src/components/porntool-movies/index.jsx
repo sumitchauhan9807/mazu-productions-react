@@ -29,12 +29,12 @@ function PorntoolMovies() {
         <div className="col-lg-6 lg:block hidden">
           <div className="ucm-nav-wrap">
             <ul className="nav nav-tabs" id="myTab" role="tablist">
-              <a href="" onClick={()=> setActiveCat('Gay')} ><CategorySelect name={'Gay'} active={activeCategory == 'Gay'}/></a>
-              <a href="" onClick={()=> setActiveCat('Straight')} ><CategorySelect name={'Straight'} active={activeCategory == 'Straight'} /></a>
-              <a href="" onClick={()=> setActiveCat('Couple')} ><CategorySelect name={'Couple'} active={activeCategory == 'Couple'} /></a>
-              <a href="" onClick={()=> setActiveCat('Trans')} ><CategorySelect name={'Trans'} active={activeCategory == 'Trans'} /></a>
-              <a href="" onClick={()=> setActiveCat('Black')} ><CategorySelect name={'Black'} active={activeCategory == 'Black'} /></a>
-              <a href="" onClick={()=> setActiveCat('Asia')} ><CategorySelect name={'Asia'} active={activeCategory == 'Asia'} /></a>
+              <a href="" onClick={(e)=> {e.preventDefault() ; setActiveCat('Gay')}} ><CategorySelect name={'Gay'} active={activeCategory == 'Gay'}/></a>
+              <a href="" onClick={(e)=> {e.preventDefault();setActiveCat('Straight')}} ><CategorySelect name={'Straight'} active={activeCategory == 'Straight'} /></a>
+              <a href="" onClick={(e)=> {e.preventDefault(); setActiveCat('Couple')}} ><CategorySelect name={'Couple'} active={activeCategory == 'Couple'} /></a>
+              <a href="" onClick={(e)=> {e.preventDefault() ; setActiveCat('Trans')}} ><CategorySelect name={'Trans'} active={activeCategory == 'Trans'} /></a>
+              <a href="" onClick={(e)=> {e.preventDefault(); setActiveCat('Black')}} ><CategorySelect name={'Black'} active={activeCategory == 'Black'} /></a>
+              <a href="" onClick={(e)=> {e.preventDefault(); setActiveCat('Asia')}} ><CategorySelect name={'Asia'} active={activeCategory == 'Asia'} /></a>
             </ul> 
           </div>
         </div>
