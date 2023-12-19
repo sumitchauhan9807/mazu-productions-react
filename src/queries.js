@@ -766,6 +766,11 @@ export const GET_USER_SUBSCRIPTIONS = gql`
   query getMpUserSubscriptions {
     getMpUserSubscriptions {
       id
+      fanclub
+      package{
+        id
+        packageName
+      }
     }
   }
 `;

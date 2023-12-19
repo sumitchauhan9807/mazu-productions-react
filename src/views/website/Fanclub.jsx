@@ -78,7 +78,8 @@ const FanClub = () => {
 						package: String(activeSubscription.packageId),
 						discount: null,
 						coupon: null,
-						currency: 'usd'
+						currency: 'usd',
+                        fanclub:"testTaap"
 					},
 				},
 				fetchPolicy:'no-cache'
