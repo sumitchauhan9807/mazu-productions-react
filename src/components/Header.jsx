@@ -35,7 +35,7 @@ function Header() {
     dispatch(logoutUser())
   }
   return (
-    <div>
+    <div className=''>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <title>DIALOG<span className='text-white'>maxX</span></title>
@@ -58,7 +58,7 @@ function Header() {
       <button className="scroll-top scroll-to-target" data-target="html">
         <i className="fas fa-angle-up" />
       </button>
-      <header className="header-style-two">
+      <header className="header-style-two ">
         <div className="header-top-wrap">
           <div className="container custom-container">
             <div className="row align-items-center">
@@ -84,7 +84,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <div id="sticky-header" className="menu-area">
+        <div id="sticky-header" className="menu-area " >
           <div className="container custom-container">
             <div className="row">
               <div className="col-12">
@@ -93,11 +93,12 @@ function Header() {
                   <nav className="menu-nav show">
                     <div className="logo">
                       <Link to="/">
-                        <img src={logo} alt="Logo" className='lg:h-14 sm:h-8 md:h-8 h-8' />
+                        <img src={logo} alt="Logo" className='lg:h-14 sm:h-10 md:h-10 h-10' />
                       </Link>
                     </div>
 
-                    <div className='lg:hidden flex flex-wrap gap-2 justify-end items-end '>   {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="bg-gray-900 px-2 py-2 text-white border-2 border-yellow-600">Logout</a></li> : <li className="header-btn"><Link to="/userlogin" href="#" className="bg-gray-900 text-white border-2 border-yellow-600 px-2 py-2">Sign In</Link></li>}
+                    <div className='lg:hidden flex flex-wrap gap-2 justify-end items-end '> 
+                      {user.token ? <li className="header-btn"><a onClick={logOut} href="#" className="bg-gray-900 px-2 py-2 text-white border-2 border-yellow-600">Logout</a></li> : <li className="header-btn "><Link to="/userlogin" href="#" className="bg-gray-900 text-white border-2 border-yellow-600 px-2 py-2">Sign In</Link></li>}
                       {!user.token && <li className="header-btn"><Link to="/registernow" className="bg-gray-900 px-2 py-2 text-white border-2 border-yellow-600">Register</Link></li>}
                       <div className="navbar-wrap main-menu  flex flex-wrap">
                         <ul className=" ">
@@ -118,8 +119,8 @@ function Header() {
                           </li>
                           <li className="menu-item-has-children"><a href="#">Streaming</a>
                             <ul className="submenu">
-                              <li><a href="movie.html">DVD / Blue Ray                                                  </a></li>
-                              <li><a href="/category" className="submenu">Actors</a> </li>
+                              {/* <li><a href="movie.html">DVD / Blue Ray                                                  </a></li> */}
+                              <li><a href="/category" >Category</a> </li>
                             </ul>
                           </li>
                           <li className="menu-item-has-children"><a href="#">Actors</a>
@@ -166,8 +167,8 @@ function Header() {
                         </li>
                         <li className="menu-item-has-children"><a href="#">Streaming</a>
                           <ul className="submenu">
-                            <li><a href="movie.html">DVD / Blue Ray                                                  </a></li>
-                            <li><a href="/category">Actors</a></li>
+                            {/* <li><a href="movie.html">DVD / Blue Ray                                                  </a></li> */}
+                            <li><a href="/category">Category</a></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Actors</a>

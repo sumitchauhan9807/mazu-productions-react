@@ -328,7 +328,7 @@ function Main() {
           <div className="services-content-wrap">
             <div className="section-title mb-40">
               <span className="sub-title">ONLINE STREAMING</span>
-              <h2 className="title">Download Your Shows Watch Offline.</h2>
+              <h2 className="title">Mobile App Coming Soon..</h2>
             </div>
             <div className="services-list">
               <ul>
@@ -337,10 +337,9 @@ function Main() {
                     <i className="flaticon-television" />
                   </div>
                   <div className="content">
-                    <h5>Enjoy on Your TV.</h5>
+                    <h5>Enjoy Your Favorite Actors Anytime </h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consecetur adipiscing elit,
-                      sed do eiusmod tempor.
+                    Discover endless entertainment as you relish the brilliance of your beloved actors at any moment, immersing yourself in their captivating performance
                     </p>
                   </div>
                 </li>
@@ -349,10 +348,14 @@ function Main() {
                     <i className="flaticon-video-camera" />
                   </div>
                   <div className="content">
-                    <h5>Watch Everywhere.</h5>
+                    <h5>Save And Download To Your Mobile Device 
+
+
+
+
+</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consecetur adipiscing elit,
-                      sed do eiusmod tempor.
+                    Conveniently save and download your favorite content to enjoy on the go, directly on your mobile device..
                     </p>
                   </div>
                 </li>

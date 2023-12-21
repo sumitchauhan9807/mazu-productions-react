@@ -17,9 +17,9 @@ function Footer () {
                 <nav className='flex flex-wrap'>
                   <ul className=" flex flex-wrap  gap-5">
                     <li><a href="index.html" className='text-yellow-500'>Home</a></li>
-                    <li><a href="index.html" className='text-white' >Movie</a></li>
-                    <li><a href="index.html" className='text-white'>tv show</a></li>
-                    <li><a href="index.html" className='text-white'>pages</a></li>
+                    {/* <li><a href="index.html" className='text-white' >Movie</a></li> */}
+                    <li><a href="/category" className='text-white'>Category</a></li>
+                    {/* <li><a href="index.html" className='text-white'>pages</a></li> */}
                     <li><a href="/register" className='text-yellow-600'>MODELS NEEDED</a></li>
                   </ul>
                   <div className="footer-search">

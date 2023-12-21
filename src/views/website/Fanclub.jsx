@@ -108,9 +108,7 @@ const FanClub = () => {
                             </span>
                         </h2>
                         <p className="text-base text-gray-50 md:text-lg">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                            quae. explicabo.
+                        Gain exclusive access to full-length videos and enjoy uninterrupted entertainment by accessing our premium content today.
                         </p>
                     </div>
                     <div className="grid gap-8 row-gap-8 sm:grid-cols-2">
