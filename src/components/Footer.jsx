@@ -40,8 +40,8 @@ function Footer () {
                 <ul className='flex flex-wrap justify-start items-start gap-5'>
                   <li><a href="#" className='text-white'>FAQ</a></li>
                   <li><a href="#" className='text-white'>Help Center</a></li>
-                  <li><a href="#" className='text-white'>Terms of Use</a></li>
-                  <li><a href="#" className='text-white'>Privacy</a></li>
+                  <li><a href="/terms" className='text-white'>Terms of Use</a></li>
+                  <li><a href="privacy" className='text-white'>Privacy</a></li>
                 </ul>
               </div>
             </div>

@@ -27,6 +27,8 @@ import AsiaCatg from "views/website/AsiaCatg"
 import TransCatg from "views/website/TransCatg"
 import CouplelMovies from "views/website/CoupleCatg";
 import BlacklMovies from "views/website/BlackCatg";
+import TermsAndConditions from "views/website/Terms";
+import PrivacyPolicy from "views/website/Privacy";
 
 import 'website.css'
 
@@ -58,6 +60,9 @@ function Website() {
           <Route exact path = "/transmovies" element={<TransCatg/>}/>
           <Route exact path = "/couplemovies" element={<CouplelMovies/>}/>
           <Route exact path = "/blackmovies" element={<BlacklMovies/>}/>
+          <Route exact path = "/terms" element={<TermsAndConditions/>}/>
+          <Route exact path = "/privacy" element={<PrivacyPolicy/>}/>
+
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 
