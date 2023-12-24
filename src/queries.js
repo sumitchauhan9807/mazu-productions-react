@@ -703,6 +703,7 @@ export const GET_MEDIA_INFO = gql`
       description
       potrait
       duration
+      preview_url
       tags {
         name
       }
