@@ -79,9 +79,10 @@ const FanClub = () => {
 			}
 			setLoading(true)
 			let subscriptions = await getUserSubscriptions()
+			let findSubscription = subscriptions.find(s => s.fanclub == fanclub)
 			console.log(subscriptions)
-			if(subscriptions.length) {
-				alertUser.show("You already have an active Subscription")
+			if(findSubscription) {
+				alertUser.show(`You already have an active Subscription for ${fanclub}`)
 				return
 			}
 			alertUser.show("Redirecting to checkout")
