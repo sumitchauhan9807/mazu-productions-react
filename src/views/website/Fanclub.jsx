@@ -69,7 +69,7 @@ const FanClub = () => {
 	const checkoutStripe = async () => {
 		try {
 			if(!user.userData) {
-				navigate('/userlogin')
+				navigate('/registernow')
 				alertUser.show("Please Login to buy Membership")
 				return
 			}
