@@ -393,9 +393,7 @@ const Carousel = () => {
                 </span>
               </h2>
               <p className="text-base text-gray-300 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
+              Join the exclusive DialogmaxX fan club today and immerse yourself in a world of entertainment and excitement!
               </p>
             </div>
             <p className="mb-4 text-sm font-bold tracking-widest uppercase">

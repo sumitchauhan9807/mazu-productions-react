@@ -21,6 +21,14 @@ import Modelpricing from 'views/website/Modelfeature'
 import MazuStudio from 'views/website/MazuStudios'
 import Golive from 'views/website/GoLive'
 import ModelCategory from 'views/website/ModelCategory'
+import GaylMovies from "views/website/GayCatg";
+import StraightMovies from "views/website/StraightCatg";
+import AsiaCatg from "views/website/AsiaCatg"
+import TransCatg from "views/website/TransCatg"
+import CouplelMovies from "views/website/CoupleCatg";
+import BlacklMovies from "views/website/BlackCatg";
+import TermsAndConditions from "views/website/Terms";
+import PrivacyPolicy from "views/website/Privacy";
 
 import 'website.css'
 
@@ -46,6 +54,15 @@ function Website() {
           <Route exact path ="/mazustudio" element= {<MazuStudio/>}/>
           <Route exact path = "/live" element={<Golive/>}/>
           <Route exact path = "/category" element={<ModelCategory/>}/>
+          <Route exact path = "/gaymovies" element={<GaylMovies/>}/>
+          <Route exact path = "/straightmovies" element={<StraightMovies/>}/>
+          <Route exact path = "/asiamovies" element={<AsiaCatg/>}/>
+          <Route exact path = "/transmovies" element={<TransCatg/>}/>
+          <Route exact path = "/couplemovies" element={<CouplelMovies/>}/>
+          <Route exact path = "/blackmovies" element={<BlacklMovies/>}/>
+          <Route exact path = "/terms" element={<TermsAndConditions/>}/>
+          <Route exact path = "/privacy" element={<PrivacyPolicy/>}/>
+
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
 

@@ -92,8 +92,8 @@ return(
             <div className="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative"style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <div className="absolute bg-gradient-to-b from-gray-600 to-gray-500 opacity-0 inset-0 z-0" />
               <div className="w-full  max-w-md z-10">
-                <div className="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6 uppercase">  <span className="text-yellow-500"> U</span>SER login</div>
-                <div className="sm:text-sm xl:text-md text-gray-200 font-normal"> Login to DIALOG<span className='text-white'>maxX</span> Account
+                <div className="sm:text-4xl xl:text-7xl font-bold leading-tight mb-6 uppercase">  <span className="text-yellow-500"> U</span>SER login</div>
+                <div className="sm:text-sm xl:text-xl text-gray-200 font-normal"> Login to Dialog<span className='text-white'>maxX</span> Account
                 </div>
               </div>
               {/*-remove custom style*/}
