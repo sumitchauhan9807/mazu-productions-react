@@ -113,14 +113,21 @@ const FanClub = () => {
             <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
                 <div className="flex flex-col justify-center">
                     <div className="max-w-xl mb-6">
-                        <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
+                        {fanclub == 'all' ? <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
                             Get access
                             <br className="hidden md:block" />
 
                             <span className="inline-block text-5xl text-white text-deep-purple-accent-400">
                                 to Full Videos{' '}
                             </span>
-                        </h2>
+                        </h2> : <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
+                            Join Fanclub
+                            <br className="hidden md:block" />
+
+                            <span className="inline-block text-5xl text-white text-deep-purple-accent-400">
+                              of {fanclub}
+                            </span>
+                        </h2>}
                         <p className="text-base text-gray-50 md:text-lg">
                         Gain exclusive access to full-length videos and enjoy uninterrupted entertainment by accessing our premium content today.
                         </p>
@@ -182,7 +189,7 @@ const FanClub = () => {
                         <div className="p-8 bg-gray-900  rounded">
                             <div className="mb-4 text-center">
                                 <p className="text-xl font-medium tracking-wide text-white">
-                                    JOIN FAN CLUB
+                                   {fanclub == 'all' ? 'Videos Access' : `JOIN ${fanclub} FAN CLUB`} 
                                 </p>
                                 <div className="flex items-center justify-center">
                                     <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">
