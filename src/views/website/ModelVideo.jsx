@@ -116,7 +116,7 @@ function ModelVideo() {
       </section>
       {/* movie-area-end */}
       {/* newsletter-area */}
-      <section className="newsletter-area newsletter-bg" data-background="https://themebeyond.com/html/movflx/img/bg/newsletter_bg.jpg" style={{ backgroundImage: 'url("https://themebeyond.com/html/movflx/img/bg/newsletter_bg.jpg")' }}>
+      {/* <section className="newsletter-area newsletter-bg" data-background="https://themebeyond.com/html/movflx/img/bg/newsletter_bg.jpg" style={{ backgroundImage: 'url("https://themebeyond.com/html/movflx/img/bg/newsletter_bg.jpg")' }}>
         <div className="container">
           <div className="newsletter-inner-wrap">
             <div className="row align-items-center">
@@ -135,7 +135,7 @@ function ModelVideo() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* newsletter-area-end */}
     </main>
 
