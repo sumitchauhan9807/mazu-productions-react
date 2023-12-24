@@ -17,7 +17,7 @@ function VideoPlayer(props) {
   const alertUser = useAlert()
   const playerRef = useRef()
   const [poster,setPoster] = useState(getUrl(props.poster))
-  const [videoUrl,setVideoUrl] = useState(getUrl(props.preview))
+  const [videoUrl,setVideoUrl] = useState('https://storage.googleapis.com/mazuproductions/1222%20(1).mp4')
   const [playedUpdated,setPlayerUpdated] = useState(false)
 
   const getVideoData = async () => {
