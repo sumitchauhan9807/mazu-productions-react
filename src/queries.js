@@ -753,6 +753,9 @@ export const GET_ALL_SUBSCRIPTIONS = gql`
       packageName
       subscriptionDuration
       price
+      isMp
+      fanclub
+      packageDesc
     }
   }
 `;

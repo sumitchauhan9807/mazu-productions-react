@@ -8,6 +8,7 @@ import Loader from 'components/UI/Loader'
 import {useDispatch,useSelector} from 'react-redux'
 import { useAlert } from 'react-alert'
 import { useNavigate } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 const FanClub = () => {
 	const [subscriptions,setSubscriptions] = useState([])
@@ -15,8 +16,11 @@ const FanClub = () => {
   const [isLoading,setLoading] = useState(false)
   const alertUser = useAlert()
 	const navigate = useNavigate();
+	const params = useParams();
+  let fanclub = params.username
+	if(!fanclub) fanclub = 'all'
 
-	const user = useSelector((state)=>{
+ const user = useSelector((state)=>{
     if(state._persist.rehydrated) {
       return state.user
     }

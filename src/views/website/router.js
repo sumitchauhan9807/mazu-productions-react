@@ -38,7 +38,7 @@ function Website() {
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
           <Route exact path ="/userlogin" element= {<UserLogin/>}/>
-          <Route exact path ="/fanclub" element= {<FanClub/>}/>
+          <Route exact path ="/fanclub/:username?" element= {<FanClub/>}/>
           <Route exact path ="/success" element= {<Success/>}/>
           <Route exact path ="/404" element= {<Error/>}/>
           <Route exact path ="/howtobecomeamodel" element= {<Modelstep/>}/>
