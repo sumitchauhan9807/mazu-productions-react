@@ -32,6 +32,7 @@ import PrivacyPolicy from "views/website/Privacy";
 import Profile from "views/website/Profile"
 import SupportPage from "views/website/Support";
 import Allactors from "views/website/Allactors";
+import ImprintPage from "views/website/Imprint";
 
 
 import 'website.css'
@@ -69,6 +70,7 @@ function Website() {
           <Route exact path = "/profile" element={<Profile/>}/>
           <Route exact path = "/support" element={<SupportPage/>}/>
           <Route exact path = "/allactors" element={<Allactors/>}/>
+          <Route exact path = "/imprint" element={<ImprintPage/>}/>
 
 
 
