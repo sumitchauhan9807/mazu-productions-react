@@ -211,7 +211,7 @@ const FanClub = () => {
 																	<div key={subscription.id} className="">
                                     <div className="inline-flex items-center ">
                                         <label
-                                            className="relative flex cursor-pointer  items-center rounded-full p-3  hover:scale-125 transition duration-500 cursor-pointer"
+                                            className="relative flex  items-center rounded-full p-3  hover:scale-125 transition duration-500 cursor-pointer"
                                             for="html"
                                             data-ripple-dark="true"
                                         >
@@ -234,11 +234,10 @@ const FanClub = () => {
                                             </div>
                                         </label>
                                         <label
-                                            className="mt-px cursor-pointer select-none w-full font-light text-xl text-gray-50"
-                                            for="html"
+                                            className="mt-px  select-none w-full font-light text-xl text-gray-50"
                                         >
                                             {subscription.packageName} &nbsp;
-                                            {subscription.subscriptionDuration < 999 ? `${(subscription.price/subscription.subscriptionDuration) - 0.01} /Month` : ''}  
+                                            {subscription.subscriptionDuration < 999 ? `$${(subscription.price/subscription.subscriptionDuration) - 0.01} /Month` : `$${subscription.price}`}  
                                         </label>
                                     </div>
 																</div>
