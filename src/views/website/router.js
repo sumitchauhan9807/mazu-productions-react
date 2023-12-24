@@ -66,6 +66,8 @@ function Website() {
           <Route exact path = "/blackmovies" element={<BlacklMovies/>}/>
           <Route exact path = "/terms" element={<TermsAndConditions/>}/>
           <Route exact path = "/privacy" element={<PrivacyPolicy/>}/>
+          <Route exact path = "/profile" element={<Profile/>}/>
+
 
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
