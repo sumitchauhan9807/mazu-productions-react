@@ -756,6 +756,7 @@ export const GET_ALL_SUBSCRIPTIONS = gql`
       isMp
       fanclub
       packageDesc
+      subscriptionDuration
     }
   }
 `;

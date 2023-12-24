@@ -33,9 +33,19 @@ const FanClub = () => {
           query: GET_ALL_SUBSCRIPTIONS,
           fetchPolicy:'no-cache'
         })
-				setSubscriptions(data.porntoolSubscriptions)
-				setActiveSubscription(data?.porntoolSubscriptions[0])
-        setLoading(false)
+				let mpGeneralSubscriptions = data.porntoolSubscriptions.filter(sub => sub.isMp && !sub.fanclub)
+				let mpFanclubSubscriptions = data.porntoolSubscriptions.filter(sub => sub.isMp && sub.fanclub)
+				if(fanclub == 'all') {
+					setSubscriptions(mpGeneralSubscriptions)
+					setActiveSubscription(mpGeneralSubscriptions[0])
+					console.log(mpGeneralSubscriptions)
+				}else {
+					setSubscriptions(mpFanclubSubscriptions)
+					setActiveSubscription(mpFanclubSubscriptions[0])
+					console.log(mpFanclubSubscriptions)
+				}
+				// console.log(mpFanclubSubscriptions)
+				setLoading(false)
 
       }catch(e) {
         setLoading(false)
@@ -83,7 +93,7 @@ const FanClub = () => {
 						discount: null,
 						coupon: null,
 						currency: 'usd',
-                        fanclub:"testTaap"
+            fanclub:fanclub
 					},
 				},
 				fetchPolicy:'no-cache'
@@ -176,9 +186,15 @@ const FanClub = () => {
                                 </p>
                                 <div className="flex items-center justify-center">
                                     <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                                        ${activeSubscription && activeSubscription.price - 0.01 }
+																			{activeSubscription && activeSubscription?.subscriptionDuration < 999 ? 
+																			 `$ ${(activeSubscription.price/activeSubscription.subscriptionDuration) - 0.01}` 
+																			: ''}
+																			
                                     </p>
-                                    <p className="text-lg text-gray-500">/ month</p>
+                                    <p className="text-lg text-gray-500">
+																			{activeSubscription && activeSubscription?.subscriptionDuration < 999 ? '/ month' :'Lifetime Subscription'}
+																			
+																			</p>
                                 </div>
                             </div>
                             <ul className="mb-8 ">
@@ -214,7 +230,7 @@ const FanClub = () => {
                                             for="html"
                                         >
                                             {subscription.packageName} &nbsp;
-                                            ${subscription.price - 0.01} /Month
+                                            {subscription.subscriptionDuration < 999 ? `${(subscription.price/subscription.subscriptionDuration) - 0.01} /Month` : ''}  
                                         </label>
                                     </div>
 																</div>
