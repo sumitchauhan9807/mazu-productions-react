@@ -132,6 +132,7 @@ function Header() {
                                   </li>
                                 )
                               })}
+                              <li>view all actors</li>
                             </ul>
                           </li>
                           <li className='-mt-12'><a href="/howtobecomeamodel">Models Wanted</a></li>
@@ -179,7 +180,7 @@ function Header() {
                                   <Link to={`/actor/${pref}`}>{pref}</Link>
                                 </li>
                               )
-                            })}
+                            })} <li  > <a href="/allactors">view all actors</a></li>
                           </ul>
                         </li>
                         <li><a href="/howtobecomeamodel">Models Wanted</a></li>

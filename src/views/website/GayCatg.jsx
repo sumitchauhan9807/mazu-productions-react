@@ -27,7 +27,7 @@ function GaylMovies() {
                 ONLINE STREAMING{' '}
                 <span className="text-yellow-500">{activeCategory}</span>
               </span>
-              <h2 className="title">Porntool Movies</h2>
+              <h2 className="title">DialogMaxX Movies</h2>
             </div>
           </div>
           <div className="col-lg-6 lg:block hidden">

@@ -29,6 +29,9 @@ import CouplelMovies from "views/website/CoupleCatg";
 import BlacklMovies from "views/website/BlackCatg";
 import TermsAndConditions from "views/website/Terms";
 import PrivacyPolicy from "views/website/Privacy";
+import SupportPage from "views/website/Support";
+import Allactors from "views/website/Allactors";
+
 
 import 'website.css'
 
@@ -62,6 +65,9 @@ function Website() {
           <Route exact path = "/blackmovies" element={<BlacklMovies/>}/>
           <Route exact path = "/terms" element={<TermsAndConditions/>}/>
           <Route exact path = "/privacy" element={<PrivacyPolicy/>}/>
+          <Route exact path = "/support" element={<SupportPage/>}/>
+          <Route exact path = "/allactors" element={<Allactors/>}/>
+         
 
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
