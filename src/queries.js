@@ -778,3 +778,14 @@ export const GET_USER_SUBSCRIPTIONS = gql`
     }
   }
 `;
+
+
+export const USER_PROFILE_PUBLIC = gql`
+  query userProfilePublic($username:String!) {
+    userProfilePublic(username:$username) {
+      id
+      username
+      profilePic
+    }
+  }
+`;
