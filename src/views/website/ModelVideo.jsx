@@ -46,6 +46,8 @@ function ModelVideo() {
             <div className="col-xl-6 col-lg-8">
               {playVideo ? 
               <VideoPlayer
+              poster={videoData?.potrait}
+              preview={videoData?.preview_url}
               id={id}
             />
               : <div className="movie-details-content">

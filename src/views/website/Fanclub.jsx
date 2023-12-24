@@ -8,6 +8,7 @@ import Loader from 'components/UI/Loader'
 import {useDispatch,useSelector} from 'react-redux'
 import { useAlert } from 'react-alert'
 import { useNavigate } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 const FanClub = () => {
 	const [subscriptions,setSubscriptions] = useState([])
@@ -15,8 +16,11 @@ const FanClub = () => {
   const [isLoading,setLoading] = useState(false)
   const alertUser = useAlert()
 	const navigate = useNavigate();
+	const params = useParams();
+  let fanclub = params.username
+	if(!fanclub) fanclub = 'all'
 
-	const user = useSelector((state)=>{
+ const user = useSelector((state)=>{
     if(state._persist.rehydrated) {
       return state.user
     }
@@ -29,9 +33,19 @@ const FanClub = () => {
           query: GET_ALL_SUBSCRIPTIONS,
           fetchPolicy:'no-cache'
         })
-				setSubscriptions(data.porntoolSubscriptions)
-				setActiveSubscription(data?.porntoolSubscriptions[0])
-        setLoading(false)
+				let mpGeneralSubscriptions = data.porntoolSubscriptions.filter(sub => sub.isMp && !sub.fanclub)
+				let mpFanclubSubscriptions = data.porntoolSubscriptions.filter(sub => sub.isMp && sub.fanclub)
+				if(fanclub == 'all') {
+					setSubscriptions(mpGeneralSubscriptions)
+					setActiveSubscription(mpGeneralSubscriptions[0])
+					console.log(mpGeneralSubscriptions)
+				}else {
+					setSubscriptions(mpFanclubSubscriptions)
+					setActiveSubscription(mpFanclubSubscriptions[0])
+					console.log(mpFanclubSubscriptions)
+				}
+				// console.log(mpFanclubSubscriptions)
+				setLoading(false)
 
       }catch(e) {
         setLoading(false)
@@ -65,9 +79,10 @@ const FanClub = () => {
 			}
 			setLoading(true)
 			let subscriptions = await getUserSubscriptions()
+			let findSubscription = subscriptions.find(s => s.fanclub == fanclub)
 			console.log(subscriptions)
-			if(subscriptions.length) {
-				alertUser.show("You already have an active Subscription")
+			if(findSubscription) {
+				alertUser.show(`You already have an active Subscription for ${fanclub}`)
 				return
 			}
 			alertUser.show("Redirecting to checkout")
@@ -79,7 +94,7 @@ const FanClub = () => {
 						discount: null,
 						coupon: null,
 						currency: 'usd',
-                        fanclub:"testTaap"
+            fanclub:fanclub
 					},
 				},
 				fetchPolicy:'no-cache'
@@ -99,14 +114,21 @@ const FanClub = () => {
             <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
                 <div className="flex flex-col justify-center">
                     <div className="max-w-xl mb-6">
-                        <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
+                        {fanclub == 'all' ? <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
                             Get access
                             <br className="hidden md:block" />
 
                             <span className="inline-block text-5xl text-white text-deep-purple-accent-400">
                                 to Full Videos{' '}
                             </span>
-                        </h2>
+                        </h2> : <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
+                            Join Fanclub
+                            <br className="hidden md:block" />
+
+                            <span className="inline-block text-5xl text-white text-deep-purple-accent-400">
+                              of {fanclub}
+                            </span>
+                        </h2>}
                         <p className="text-base text-gray-50 md:text-lg">
                         Gain exclusive access to full-length videos and enjoy uninterrupted entertainment by accessing our premium content today.
                         </p>
@@ -168,13 +190,19 @@ const FanClub = () => {
                         <div className="p-8 bg-gray-900  rounded">
                             <div className="mb-4 text-center">
                                 <p className="text-xl font-medium tracking-wide text-white">
-                                    JOIN FAN CLUB
+                                   {fanclub == 'all' ? 'Videos Access' : `JOIN ${fanclub} FAN CLUB`} 
                                 </p>
                                 <div className="flex items-center justify-center">
                                     <p className="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                                        ${activeSubscription && activeSubscription.price - 0.01 }
+																			{activeSubscription && activeSubscription?.subscriptionDuration < 999 ? 
+																			 `$ ${(activeSubscription.price/activeSubscription.subscriptionDuration) - 0.01}` 
+																			: ''}
+																			
                                     </p>
-                                    <p className="text-lg text-gray-500">/ month</p>
+                                    <p className="text-lg text-gray-500">
+																			{activeSubscription && activeSubscription?.subscriptionDuration < 999 ? '/ month' :'Lifetime Subscription'}
+																			
+																			</p>
                                 </div>
                             </div>
                             <ul className="mb-8 ">
@@ -183,7 +211,7 @@ const FanClub = () => {
 																	<div key={subscription.id} className="">
                                     <div className="inline-flex items-center ">
                                         <label
-                                            className="relative flex cursor-pointer  items-center rounded-full p-3  hover:scale-125 transition duration-500 cursor-pointer"
+                                            className="relative flex  items-center rounded-full p-3  hover:scale-125 transition duration-500 cursor-pointer"
                                             for="html"
                                             data-ripple-dark="true"
                                         >
@@ -206,11 +234,10 @@ const FanClub = () => {
                                             </div>
                                         </label>
                                         <label
-                                            className="mt-px cursor-pointer select-none w-full font-light text-xl text-gray-50"
-                                            for="html"
+                                            className="mt-px  select-none w-full font-light text-xl text-gray-50"
                                         >
                                             {subscription.packageName} &nbsp;
-                                            ${subscription.price - 0.01} /Month
+                                            {subscription.subscriptionDuration < 999 ? `$${(subscription.price/subscription.subscriptionDuration) - 0.01} /Month` : `$${subscription.price}`}  
                                         </label>
                                     </div>
 																</div>

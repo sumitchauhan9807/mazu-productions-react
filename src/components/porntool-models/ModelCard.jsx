@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {getUrlFT} from '../../helpers'
 function ModelCard({model}) {
   const divStyle = {
@@ -22,15 +23,15 @@ function ModelCard({model}) {
             <i className="fas fa-star" />
           </li>
           <li>
-            <a href="movie-details.html" className="btn">
+            <Link to={`/fanclub/${model.username}`} className="btn">
               Join Fan club
-            </a>
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <a href="movie-details.html" className="btn">
               Details
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="movie-content">

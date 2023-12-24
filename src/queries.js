@@ -703,6 +703,7 @@ export const GET_MEDIA_INFO = gql`
       description
       potrait
       duration
+      preview_url
       tags {
         name
       }
@@ -753,6 +754,10 @@ export const GET_ALL_SUBSCRIPTIONS = gql`
       packageName
       subscriptionDuration
       price
+      isMp
+      fanclub
+      packageDesc
+      subscriptionDuration
     }
   }
 `;
@@ -771,6 +776,17 @@ export const GET_USER_SUBSCRIPTIONS = gql`
         id
         packageName
       }
+    }
+  }
+`;
+
+
+export const USER_PROFILE_PUBLIC = gql`
+  query userProfilePublic($username:String!) {
+    userProfilePublic(username:$username) {
+      id
+      username
+      profilePic
     }
   }
 `;

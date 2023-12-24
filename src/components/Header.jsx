@@ -183,7 +183,7 @@ function Header() {
                             })} <li  > <a href="/allactors">view all actors</a></li>
                           </ul>
                         </li>
-                        <li><a href="/howtobecomeamodel">Models Wanted</a></li>
+                        <li><Link to="/howtobecomeamodel">Models Wanted</Link></li>
                         <li><Link to="/fanclub" href="tv-show.html">Subscribe</Link></li>
 
                         {/* <li><a href="pricing.html">Become A Model</a></li> */}
@@ -220,9 +220,9 @@ function Header() {
                         </li>
                         {user?.userType == 'MpUser' &&
                           <li className="header-btn">
-                            <a className="btn " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <Link className="btn " to="/profile" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Profile
-                            </a>
+                            </Link>
                           </li>}
                         {user?.userType == 'model' &&
                           <li className="header-btn">

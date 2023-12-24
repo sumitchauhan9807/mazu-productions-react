@@ -29,6 +29,7 @@ import CouplelMovies from "views/website/CoupleCatg";
 import BlacklMovies from "views/website/BlackCatg";
 import TermsAndConditions from "views/website/Terms";
 import PrivacyPolicy from "views/website/Privacy";
+import Profile from "views/website/Profile"
 import SupportPage from "views/website/Support";
 import Allactors from "views/website/Allactors";
 
@@ -49,7 +50,7 @@ function Website() {
           <Route exact path ="/ad-login" element= {<AdminLogin/>}/>
           <Route exact path ="/registernow" element= {<UserRegister/>}/>
           <Route exact path ="/userlogin" element= {<UserLogin/>}/>
-          <Route exact path ="/fanclub" element= {<FanClub/>}/>
+          <Route exact path ="/fanclub/:username?" element= {<FanClub/>}/>
           <Route exact path ="/success" element= {<Success/>}/>
           <Route exact path ="/404" element= {<Error/>}/>
           <Route exact path ="/howtobecomeamodel" element= {<Modelstep/>}/>
@@ -65,9 +66,6 @@ function Website() {
           <Route exact path = "/blackmovies" element={<BlacklMovies/>}/>
           <Route exact path = "/terms" element={<TermsAndConditions/>}/>
           <Route exact path = "/privacy" element={<PrivacyPolicy/>}/>
-          <Route exact path = "/support" element={<SupportPage/>}/>
-          <Route exact path = "/allactors" element={<Allactors/>}/>
-         
 
 
           <Route exact path ="/video/:id" element= {<ModelVideo/>}/>
