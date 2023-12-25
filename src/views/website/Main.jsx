@@ -15,6 +15,7 @@ import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom'
 
 function NextArrow() {
   return <span class="slick-next">Next <i class="fas fa-caret-right"></i></span>
@@ -200,14 +201,14 @@ function Main() {
                     </li>
                   </ul>
                 </div>
-                <a
-                  href="https://www.youtube.com/watch?v=R2gbPxeNk2E"
+                <Link
+                  to="/video/696"
                   className="banner-btn btn popup-video"
                   data-animation="fadeInUp"
                   data-delay=".8s"
                 >
                   <i className="fas fa-play" /> Watch Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
