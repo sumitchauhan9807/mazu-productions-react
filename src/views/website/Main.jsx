@@ -403,8 +403,8 @@ function Main() {
                     <i className="fas fa-check" /> Resolution <span>480p</span>
                   </li>
                   <li>
-                    <i className="fas fa-check" /> Screens you can watch{" "}
-                    <span>1</span>
+                    <i className="fas fa-check" /> 24 months{" "}
+                    <span></span>
                   </li>
                   <li>
                     <i className="fas fa-check" /> Cancel anytime
@@ -437,8 +437,8 @@ function Main() {
                     <i className="fas fa-check" /> Resolution <span>1080p</span>
                   </li>
                   <li>
-                    <i className="fas fa-check" /> Screens you can watch{" "}
-                    <span>2</span>
+                    <i className="fas fa-check" /> 12 months{" "}
+                    <span></span>
                   </li>
                   <li>
                     <i className="fas fa-check" /> Cancel anytime
@@ -472,8 +472,8 @@ function Main() {
                     <span>4K+HDR</span>
                   </li>
                   <li>
-                    <i className="fas fa-check" /> Screens you can watch{" "}
-                    <span>4</span>
+                    <i className="fas fa-check" /> 3 months{" "}
+                    <span></span>
                   </li>
                   <li>
                     <i className="fas fa-check" /> Cancel anytime
@@ -507,8 +507,8 @@ function Main() {
                     <span>4K+HDR</span>
                   </li>
                   <li>
-                    <i className="fas fa-check" /> Screens you can watch{" "}
-                    <span>4</span>
+                    <i className="fas fa-check" /> Monthly{" "}
+                    <span></span>
                   </li>
                   <li>
                     <i className="fas fa-check" /> Cancel anytime
