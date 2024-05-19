@@ -93,7 +93,7 @@ function Header() {
                   <nav className="menu-nav show">
                     <div className="logo">
                       <Link to="/">
-                        <img src={logo} alt="Logo" className='lg:h-14 sm:h-10 md:h-10 h-10' />
+                        <img src={logo} alt="Logo" className='lg:h-14 sm:h-9 md:h-10 h-10' />
                       </Link>
                     </div>
 

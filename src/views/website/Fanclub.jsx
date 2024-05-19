@@ -111,7 +111,7 @@ const FanClub = () => {
      <div className='bg-gray-800' style={{ backgroundImage: `url(${registerBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 			 {isLoading && <Loader/>}
         <div className="px-2 py-16 mx-auto sm:max-w-xl md:max-w-full  lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-56">
-            <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
+            <div className="md:grid gap-12 row-gap-8 lg:grid-cols-2">
                 <div className="flex flex-col justify-center">
                     <div className="max-w-xl mb-6">
                         {fanclub == 'all' ? <h2 className="max-w-lg mb-6 uppercase font-sans text-6xl font-bold tracking-tight text-yellow-600 sm:text-6xl sm:leading-none">
