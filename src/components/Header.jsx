@@ -153,23 +153,19 @@ function Header() {
                       <ul className="navigation">
                         <li className="active menu-item-has-children"><a href="#">Studios</a>
                           <ul className="submenu">
-                            <li><a href="/mazustudio">RentAGay Productions
-                            </a></li>
-                            <li><a href="/mazustudio">Cuba Nuevo
-                            </a></li>
-                            <li className="active"><a href="/mazustudio">Pussy Deluxe
-                            </a></li>
-                            <li className="active"><a href="/mazustudio">Black Bitch Films                                                  </a></li>
-                            <li className="active"><a href="/mazustudio">Kraken
-                              </a></li>
-                              <li className="active"><a href="/mazustudio">DialomMaxX Trans
-                              </a></li>
+                            {/* mazustudio below will be exchanged to links to the actual pages for the actors */}
+                            <li><Link to ="/mazustudio">RentAGay Productions</Link></li>
+                            <li><Link to ="/mazustudio">Cuba Nuevo</Link></li>
+                            <li><Link to ="/mazustudio">Pussy Deluxe</Link></li>
+                            <li><Link to ="/mazustudio">Black Bitch Films</Link></li>
+                            <li><Link to ="/mazustudio">Kraken</Link></li>
+                            <li><Link to ="/mazustudio">DialogmaxX Trans</Link></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Streaming</a>
                           <ul className="submenu">
                             {/* <li><a href="movie.html">DVD / Blue Ray                                                  </a></li> */}
-                            <li><a href="/category">Category</a></li>
+                            <li><Link to ="/category">Category</Link></li>
                           </ul>
                         </li>
                         <li className="menu-item-has-children"><a href="#">Actors</a>
